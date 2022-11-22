@@ -1,76 +1,137 @@
 
-<div class="card-body">
-    <button type="button" class="btn btn-primary" style="float:right;">Primary</button>
 
-<div class="table-responsive">
-    <table class="table table-hover mb-0">
-      <thead>
-      <tr>
-        <th class="pt-0">Nom Bonplan</th>
-        <th class="pt-0">Catégorie</th>
-        <th class="pt-0">Adresse</th>
-        <th class="pt-0">Frait D'inscription</th>
-        <th class="pt-0">Temps de Travail</th>
-        <th class="pt-0">Details></th>
-        <th class="pt-0">Modifier></th>
-        <th class="pt-0">Supprimet></th>
+<div class="col-md-12 grid-margin stretch-card">
+  <div class="card">
+  <h1 >Liste categorie</h1>
+ 
+  </div>
+</div>
 
-      </tr>
-      </thead>
-      <tbody>
-      <tr>
-        <td>1</td>
-        <td>NobleUI jQuery</td>
-        <td>01/01/2022</td>
-        <td>26/04/2022</td>
-        <td><span class="badge bg-danger">Released</span></td>
-        <td><button class="btn btn-primary">Details</button></td>
-        <td><button class="btn btn-Success">Modifier</button></td>
-        <td><button class="btn btn-Danger">Supprimer</button></td>
-      </tr>
-      <tr>
-        <td>2</td>
-        <td>NobleUI Angular</td>
-        <td>01/01/2022</td>
-        <td>26/04/2022</td>
-        <td><span class="badge bg-success">Review</span></td>
-        <td><span class="badge bg-danger">Released</span></td>
-        <td><button class="btn btn-primary">Details</button></td>
-        <td><button class="btn btn-Success" data-toggle="modal" data-target="#modifierBP" data-whatever="@mdo">Modifier</button></td>
-        <td><button class="btn btn-Danger">Supprimer</button></td>
-      </tr>
-     
-      </tbody>
-    </table>
+<form class="search-form">
+  <div class="input-group">
+    <div class="input-group-text">
+      <i data-feather="search"></i>
+    </div>
+    <input type="text" class="form-control" id="navbarForm" placeholder="Search here...">
   </div>
 
-
-  <div class="modal fade" id="modifierBP" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">New message</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <form>
-            <div class="form-group">
-              <label for="recipient-name" class="col-form-label">Recipient:</label>
-              <input type="text" class="form-control" id="recipient-name">
-            </div>
-            <div class="form-group">
-              <label for="message-text" class="col-form-label">Message:</label>
-              <textarea class="form-control" id="message-text"></textarea>
-            </div>
-          </form>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Send message</button>
-        </div>
+<div class="col-md-12 grid-margin stretch-card">
+  <div class="card">
+    <div class="card-body">
+     <!-- <h6 class="card-title">liste bonplan</h6>-->
+     <!-- <p class="text-muted mb-3">Add class <code>.table-hover</code></p>-->
+      <div class="table-responsive">
+        <table class="table table-hover">
+          <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nom categorie</th>
+            <th>Modifier</th>
+            <th>Supprimer</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <th>1</th>
+            <td>Café</td>
+            <td><button class="btn btn-Success">Modifier</button></td>
+            <td><button class="btn btn-danger">Details</button></td>
+          </tr>
+          <tr>
+            <th>2</th>
+            <td>Hotel</td>
+            <td><button class="btn btn-Success">Modifier</button></td>
+            <td><button class="btn btn-danger">Details</button></td>
+          </tr>
+          <tr>
+            <th>3</th>
+            <td>Maison d'hode</td>
+            <td><button class="btn btn-Success">Modifier</button></td>
+            <td><button class="btn btn-danger">Details</button></td>
+          </tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </div>
 </div>
+
+
+  <div >
+  <a routerLink="" class="btn btn-primary" style="float:right ;">Ajouter categorie</a>
+  </div>
+
+
+<!--bonplan-->
+<div class="col-md-12 grid-margin stretch-card">
+  <div class="card">
+  <h1 >Liste boplans</h1>
+ 
+  </div>
+</div>
+
+<form class="search-form">
+  <div class="input-group">
+    <div class="input-group-text">
+      <i data-feather="search"></i>
+    </div>
+    <input type="text" class="form-control" id="navbarForm" placeholder="Search here...">
+  </div>
+
+<div class="col-md-12 grid-margin stretch-card">
+  <div class="card">
+    <div class="card-body">
+     <!-- <h6 class="card-title">liste bonplan</h6>-->
+     <!-- <p class="text-muted mb-3">Add class <code>.table-hover</code></p>-->
+      <div class="table-responsive">
+        <table class="table table-hover">
+          <thead>
+          <tr>
+            <th>Nom bonplan</th>
+            <th>Categorie</th>
+            <th>Adresse/th>
+            <th>Details</th>
+            <th>Modifier</th>
+            <th>Supprimer</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <th>Frigua</th>
+            <td>Café</td>
+            <td>cité edir le kef</td>
+            <td><button class="btn btn-primary">Details</button></td>
+            <td><button class="btn btn-Success">Modifier</button></td>
+            <td><button class="btn btn-danger">Details</button></td>
+          </tr>
+          <tr>
+            <th>Darna</th>
+            <td>Hotel</td>
+            <td>cité edir le kef</td>
+            <td><button class="btn btn-primary">Details</button></td>
+            <td><button class="btn btn-Success">Modifier</button></td>
+            <td><button class="btn btn-danger">Details</button></td>
+          </tr>
+          <tr>
+            <th>Sidi abdallah</th>
+            <td>Maison d'hode</td>
+            <td>cité sidi abdallah le kef</td>
+            <td><button class="btn btn-primary">Details</button></td>
+            <td><button class="btn btn-Success">Modifier</button></td>
+            <td><button class="btn btn-danger">Details</button></td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div >
+  <a routerLink="addbonpan" class="btn btn-primary" style="float:right ;">Ajouter bonplans</a>
+  </div>
+
+
+
+
+  
