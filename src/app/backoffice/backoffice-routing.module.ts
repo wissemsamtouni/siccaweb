@@ -7,6 +7,7 @@ import {DashboardComponent} from "./componentback/dashboard/dashboard.component"
 
 import {TableusersComponent} from "./componentback/tableusers/tableusers.component";
 import {ChatComponent} from "./componentback/chat/chat.component";
+import { FormeventComponent } from './componentback/formevent/formevent.component';
 
 
 
@@ -17,6 +18,7 @@ const routes: Routes = [
       {path:'basic',component:FormulaireComponent},
 
       {path:'tableusers',component:TableusersComponent},
+      {path:'formevent', component:FormeventComponent},
 
 
     ]}

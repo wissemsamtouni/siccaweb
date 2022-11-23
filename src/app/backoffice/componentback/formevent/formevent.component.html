@@ -1,1 +1,112 @@
-<p>formevent works!</p>
+<nav class="page-breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="#">Forms</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Basic Elements</li>
+    </ol>
+  </nav>
+  
+  <div class="row">
+    <div class="col-md-6 grid-margin stretch-card">
+      <div class="card">
+        <div class="card-body">
+  
+          <h6 class="card-title">Evenements</h6>
+  
+          <form class="forms-sample">
+                   <div class="row">
+                 <div class="col-md-12 grid-margin stretch-card">
+                  <div class="card">
+                   <div class="card-body">
+                     <h6 class="card-title">Ajouter Evenements</h6>
+         
+  
+            <div class="mb-3">
+              <label for="exampleInputText1" class="form-label">Titre </label>
+              <input type="text" class="form-control" id="exampleInputText1" placeholder="Enter Titre">
+            </div>
+            <div class="mb-3">
+              <label for="exampleFormControlTextarea1" class="form-label">Discription</label>
+              <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
+            </div>
+          <div class="row">
+            <div class="row">
+              <div class="col-md-6 grid-margin stretch-card">
+                <div class="card">
+
+                  <div class="card-body">
+                 
+                  <table>  
+                    <tbody>
+                      <tr>
+                        <td> 
+                            <h6 class="card-title">Date Début</h6>
+                            <div class="input-group flatpickr" id="flatpickr-date">
+                            <input type="text" class="form-control" placeholder="Select date" data-input>
+                            <span class="input-group-text input-group-addon" data-toggle><i data-feather="calendar"></i></span>
+                            </div>
+                        </td>
+                        <td> 
+                            <h6 class="card-title">Date Fin</h6>
+                            <div class="input-group flatpickr" id="flatpickr-date">
+                            <input type="text" class="form-control" placeholder="Select date" data-input>
+                            <span class="input-group-text input-group-addon" data-toggle><i data-feather="calendar"></i></span>
+                            </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                     
+                  </table>
+                  
+                  </div>
+                </div>
+              </div>
+           
+             
+               
+            <div class="mb-3">
+              <label for="exampleInputText1" class="form-label">Nombers de tickets</label>
+              </div>
+              <div class="site-blocks-table">
+                <table class="table">
+                  <tbody>
+                    <tr>
+                    <td>
+              <div class="input-group mb-3 d-flex align-items-center quantity-container" style="max-width: 120px;">
+                <div class="input-group-prepend">
+                  <button class="btn btn-outline-black decrease" type="button">&minus;</button>
+                </div>
+                <input type="text" class="form-control text-center quantity-amount" value="1" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1">
+                <div class="input-group-append">
+                  <button class="btn btn-outline-black increase" type="button">&plus;</button>
+                </div>
+              </div>
+            </td>
+              </tr>
+            </tbody>
+              </table>
+              </div>
+
+            <div class="mb-3">
+              <label for="exampleFormControlSelect1" class="form-label">Disponibilité</label>
+              <select class="form-select" id="exampleFormControlSelect1">
+                <option selected disabled>Disponible ou non</option>
+                <option>OnStocket</option>
+                <option>OrStocket</option>
+              
+              </select>
+            </div>
+            <div class="mb-3">
+              <label class="form-label" for="formFile">Image Evenements</label>
+              <input class="form-control" type="file" id="formFile">
+            </div>
+  
+            <button class="btn btn-primary" type="submit">Ajouter Evenement</button>
+    </div>
+  
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  
