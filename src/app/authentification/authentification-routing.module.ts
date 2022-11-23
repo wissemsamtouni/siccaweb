@@ -7,12 +7,17 @@ import {FormulaireComponent} from "../backoffice/componentback/formulaire/formul
 import {LoginComponent} from "./componentauth/login/login.component";
 import {RegistrComponent} from "./componentauth/registr/registr.component";
 import {ForgetpasswordComponent} from "./componentauth/forgetpassword/forgetpassword.component";
+import {CodeconfirmationComponent} from "./componentauth/codeconfirmation/codeconfirmation.component";
+import {ChangermotdepasseComponent} from "./componentauth/changermotdepasse/changermotdepasse.component";
 
 const routes: Routes = [
   {path:'',component :AuthentificationComponent,children:[
       { path: 'login', component: LoginComponent },
       {path:'registr',component:RegistrComponent},
-      {path:'forgetpassword',component:ForgetpasswordComponent}
+      {path:'forgetpassword',component:ForgetpasswordComponent},
+      {path:'code',component:CodeconfirmationComponent},
+      {path:'nvmdp',component:ChangermotdepasseComponent},
+
     ]},
 ];
 
