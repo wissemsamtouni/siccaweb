@@ -2421,7 +2421,7 @@ textarea.form-control-lg {
   outline: 0;
 }
 .form-range:focus::-webkit-slider-thumb {
-  box-shadow: 0 0 0 1px #f9fafb, none;
+  box-shadow: 0 0 0 1px #f9fafb,none;
 }
 .form-range:focus::-moz-range-thumb {
   box-shadow: 0 0 0 1px #f9fafb, none;
@@ -19585,7 +19585,7 @@ body {
   z-index: 999;
 }
 .sidebar .sidebar-header {
-  background: #0d162b;
+  background: #0c1427;
   height: 60px;
   border-bottom: 1px solid #e9ecef;
   display: flex;
@@ -19608,11 +19608,11 @@ body {
   transition: opacity 0.5s ease;
   font-weight: 700;
   font-size: 25px;
-  color: #000000;
+  color: #dddddd;
   direction: ltr/*rtl:ignore*/;
 }
 .sidebar .sidebar-header .sidebar-brand span {
-  color: #e4aa04;
+  color: #f8b810;
   font-weight: 300;
 }
 .sidebar .sidebar-header .sidebar-toggler {

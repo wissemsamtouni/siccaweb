@@ -5,10 +5,13 @@ import {NotfoundComponent} from "./backoffice/notfound/notfound.component";
 
 
 const routes: Routes = [
+
  { path: 'front', loadChildren: () => import('./frontoffice/frontoffice.module').then(m => m.FrontofficeModule)},
+
   { path: 'back', loadChildren: () => import('./backoffice/backoffice.module').then(m => m.BackofficeModule) },
 
-  { path: 'authentification', loadChildren: () => import('./authentification/authentification.module').then(m => m.AuthentificationModule) },
+  { path: 'auth', loadChildren: () => import('./authentification/authentification.module').then(m => m.AuthentificationModule) },
+
   {path:'**',component:NotfoundComponent}];
 
 
