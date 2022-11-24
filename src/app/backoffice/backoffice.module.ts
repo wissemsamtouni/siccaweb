@@ -17,6 +17,7 @@ import { FormpromoComponent } from './componentback/formpromo/formpromo.componen
 import { ChatComponent } from './componentback/chat/chat.component';
 import { CalendrierComponent } from './componentback/calendrier/calendrier.component';
 import { EmailComponent } from './componentback/email/email.component';
+import{FormsModule} from'@angular/forms';
 
 
 
@@ -41,7 +42,8 @@ import { EmailComponent } from './componentback/email/email.component';
   ],
   imports: [
     CommonModule,
-    BackofficeRoutingModule
+    BackofficeRoutingModule,
+    FormsModule
   ]
 })
 export class BackofficeModule { }
