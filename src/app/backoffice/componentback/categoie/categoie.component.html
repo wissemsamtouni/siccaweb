@@ -1,0 +1,131 @@
+<div class="col-md-12 grid-margin stretch-card">
+    <div class="card">
+      <div class="text-center">
+    <h2 class="text-muted"  >Liste categorie</h2>
+      </div>
+    </div>
+  </div>
+  
+  <form class="search-form">
+    <div class="input-group">
+      <div class="input-group-text">
+        <i data-feather="search"></i>
+      </div>
+      <input type="text" class="form-control" id="navbarForm" placeholder="Search here...">
+    </div>
+  
+  <div class="col-md-12 grid-margin stretch-card">
+    <div class="card">
+      <div class="card-body">
+       <!-- <h6 class="card-title">liste bonplan</h6>-->
+       <!-- <p class="text-muted mb-3">Add class <code>.table-hover</code></p>-->
+        <div class="table-responsive">
+          <table class="table table-hover">
+            <thead>
+            <tr>
+              <th>ID</th>
+              <th>Nom categorie</th>
+              <th>Modifier</th>
+              <th>Supprimer</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <th>1</th>
+              <td>Café</td>
+              <td><button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modifiercat" >Modifier</button></td>
+              <td><button class="btn btn-danger">supprimer</button></td>
+            </tr>
+            <tr>
+              <th>2</th>
+              <td>Hotel</td>
+              <td><button class="btn btn-primary" >Modifier</button></td>
+              <td><button class="btn btn-danger">supprimer</button></td>
+            </tr>
+            <tr>
+              <th>3</th>
+              <td>Maison d'hode</td>
+              <td><button class="btn btn-primary" >Modifier</button></td>
+              <td><button class="btn btn-danger">supprimer</button></td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+    <div >
+    <button class="btn btn-Success" data-bs-toggle="modal" data-bs-target="#cat" style="float:right ;">Ajouter categorie</button>
+    </div>
+
+
+    
+
+<!-- Modal ajouter categorie-->
+<div class="modal fade" id="cat" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+                              <!---aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa-->
+          <form #f="ngForm" >
+            <div class="mb-3">
+              <label for="exampleInputText1" class="form-label">Nom categorie</label>
+              <input type="text" class="form-control" placeholder="Enter bonplan" minlength="2" required name="cat"
+                #cat="ngModel" ngModel>
+            </div>
+  
+            <div class="alert alert-danger" *ngIf="cat.invalid && cat.touched">
+              <div *ngIf="cat.errors?.['required']">La categorie est obligatoire</div>
+              <div *ngIf="cat.errors?.['minlength']">Nombre minimum de caractère est 2</div>
+            </div>
+  
+            
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="submit" [disabled]="f.invalid" class="btn btn-primary">Ajouter</button>
+        </div>
+  
+  
+  <!-- Modal ajouter categorie-->
+  <div class="modal fade" id="modifiercat" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modifiercat">Modal title</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+                              <!---aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa-->
+          <form #f="ngForm" >
+            <div class="mb-3">
+              <label for="exampleInputText1" class="form-label">Nom categorie</label>
+              <input type="text" class="form-control" placeholder="Enter bonplan" minlength="2" required name="cat"
+                #cat="ngModel" ngModel>
+            </div>
+  
+            <div class="alert alert-danger" *ngIf="cat.invalid && cat.touched">
+              <div *ngIf="cat.errors?.['required']">La categorie est obligatoire</div>
+              <div *ngIf="cat.errors?.['minlength']">Nombre minimum de caractère est 2</div>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="submit" [disabled]="f.invalid" class="btn btn-primary">Ajouter</button>
+        </div>
+  
+  
+  
+  
+  
+  
+        
+  

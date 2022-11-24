@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BonplansService } from 'src/app/services/bonplans.service';
-
+import { FormsModule } from '@angular/forms';
 @Component({
   selector: 'app-listebonplan',
   templateUrl: './listebonplan.component.html',

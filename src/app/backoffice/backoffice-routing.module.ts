@@ -9,6 +9,7 @@ import {TableusersComponent} from "./componentback/tableusers/tableusers.compone
 import {ChatComponent} from "./componentback/chat/chat.component";
 import { FormbonplanComponent } from './componentback/formbonplan/formbonplan.component';
 import { ListebonplanComponent } from './componentback/listebonplan/listebonplan.component';
+import { CategoieComponent } from './componentback/categoie/categoie.component';
 
 
 
@@ -19,7 +20,8 @@ const routes: Routes = [
       {path:'basic',component:FormulaireComponent},
       {path:'tableusers',component:TableusersComponent},
       {path:'addbonpan',component:FormbonplanComponent},
-      {path:'showbonplan',component:ListebonplanComponent}
+      {path:'showbonplan',component:ListebonplanComponent},
+      {path:'categorie',component:CategoieComponent}
 
     ]}
 

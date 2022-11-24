@@ -35,18 +35,43 @@
           <span class="link-title">Gestion evennement</span>
         </a>
       </li>
+      
       <li class="nav-item">
         <a routerLink="" class="nav-link">
           <i class="link-icon" data-feather="truck"></i>
           <span class="link-title">Gestion materiel</span>
         </a>
       </li>
+<!--
       <li class="nav-item">
-        <a routerLink="" class="nav-link">
+        <a routerLink="/showbonplan" class="nav-link">
           <i class="link-icon" data-feather="coffee"></i>
           <span class="link-title">Gestion Bonplan</span>
         </a>
       </li>
+    -->
+    <li class="nav-item">
+      <a class="nav-link" data-bs-toggle="collapse" href="#authPages" role="button" aria-expanded="false" aria-controls="authPages">
+        <i class="link-icon" data-feather="unlock"></i>
+        <span class="link-title">Gestion Bonplan</span>
+        <i class="link-arrow" data-feather="chevron-down"></i>
+      </a>
+      <div class="collapse" id="authPages">
+        <ul class="nav sub-menu">
+          <li class="nav-item">
+            <a routerLink="/showbonplan" class="nav-link">Bonplan</a>
+          </li>
+          <li class="nav-item">
+            <a routerLink="/addbonpan" class="nav-link">Categorie</a>
+          </li>
+        </ul>
+      </div>
+    </li>
+
+
+
+
+
       <li class="nav-item">
         <a routerLink="" class="nav-link">
           <i class="link-icon" data-feather="truck"></i>

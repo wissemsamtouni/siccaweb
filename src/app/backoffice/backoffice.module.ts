@@ -18,6 +18,8 @@ import { ChatComponent } from './componentback/chat/chat.component';
 import { CalendrierComponent } from './componentback/calendrier/calendrier.component';
 import { EmailComponent } from './componentback/email/email.component';
 import{FormsModule} from'@angular/forms';
+import { ListebonplanComponent } from './componentback/listebonplan/listebonplan.component';
+import { CategoieComponent } from './componentback/categoie/categoie.component';
 
 
 
@@ -37,8 +39,8 @@ import{FormsModule} from'@angular/forms';
     FormpromoComponent,
     ChatComponent,
     CalendrierComponent,
-    EmailComponent
-
+ListebonplanComponent,
+CategoieComponent
   ],
   imports: [
     CommonModule,
