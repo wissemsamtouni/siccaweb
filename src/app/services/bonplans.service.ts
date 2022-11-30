@@ -8,15 +8,17 @@ export class BonplansService {
   constructor(private hhtp:HttpClient) { }
   //bonplan//
   getallbp(){
-  return this.hhtp.get('url')
+  return this.hhtp.get('http://localhost:5000/bonplans/')
   }
-  getallcategorie(){
-    return this.hhtp.get('url')
-    }
-    //categorie//
+
   addbp(bonplan:any){
-return this.hhtp.post('url',bonplan)
-  }
+    return this.hhtp.post('http://localhost:5000/bonplans/addbp',bonplan)
+      }
+ 
+    //categorie//
+    getallcategorie(){
+      return this.hhtp.get('url')
+      }
   addcategorie(cat:any){
     return this.hhtp.post('url',cat)
       }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BonplansService } from 'src/app/services/bonplans.service';
+
 import { FormsModule } from '@angular/forms';
 @Component({
   selector: 'app-listebonplan',
@@ -10,7 +11,7 @@ export class ListebonplanComponent implements OnInit {
   listeBP:any
 
   constructor(private bp:BonplansService) {
-this.bp.getallbp().subscribe(data=>this.listeBP=data)
+this.bp.getallbp().subscribe(data=>console.log(data));
    }
 
   ngOnInit(): void {

@@ -7,18 +7,18 @@
 
           <div class="mb-3">
             <label for="exampleInputText1" class="form-label">Nom bonplas</label>
-            <input type="text" class="form-control" placeholder="Enter bonplan" minlength="2" required name="nombp"
-              #nombp="ngModel" ngModel>
+            <input type="text" class="form-control" placeholder="Enter bonplan" minlength="2" required name="non_bp"
+              #non_bp="ngModel" ngModel>
           </div>
 
-          <div class="alert alert-danger" *ngIf="nombp.invalid && nombp.touched">
-            <div *ngIf="nombp.errors?.['required']">Le non bonplan est obligatoire</div>
-            <div *ngIf="nombp.errors?.['minlength']">Nombre minimum de caractère est 2</div>
+          <div class="alert alert-danger" *ngIf="non_bp.invalid && nombp.touched">
+            <div *ngIf="non_bp.errors?.['required']">Le non bonplan est obligatoire</div>
+            <div *ngIf="non_bp.errors?.['minlength']">Nombre minimum de caractère est 2</div>
           </div>
 
           <div class="mb-3">
             <label for="exampleFormControlSelect1" class="form-label">categorie</label>
-            <select class="form-select" required name="categoriebp" #categoriebp="ngModel" ngModel>
+            <select class="form-select" required name="CategorieI" #CategorieId="ngModel" ngModel>
               <option selected disabled>Select your age</option>
               <option>12-18</option>
               <option>18-22</option>
@@ -29,7 +29,7 @@
           </div>
 
           <div class="alert alert-danger" *ngIf="categoriebp.invalid && categoriebp.touched">
-            <div *ngIf="categoriebp.errors?.['required']">La categorie est obligatoire</div>
+            <div *ngIf="CategorieId.errors?.['required']">La categorie est obligatoire</div>
           </div>
 
           <div class="mb-3">
@@ -99,9 +99,12 @@
 
           <div class="mb-3">
             <label class="form-label" for="formFile">Image upload</label>
-            <input class="form-control" type="file">
+            <!--(change)="onFileChange($event)-->
+            <input class="form-control" type="file"  name="imageSRC"   #imageSRC="ngModel" ngModel>
           </div>
-
+          <div class="alert alert-danger" *ngIf="imageSRC.invalid && adresse.touched">
+            <div *ngIf="imageSRC.errors?.['required']">La description est obligatoire</div>
+</div>
           <div class="alert alert-danger" *ngIf="messageErr">
             {{messageErr}}
           </div>
