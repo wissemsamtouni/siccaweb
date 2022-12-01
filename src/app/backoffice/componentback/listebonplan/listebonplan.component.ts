@@ -10,7 +10,7 @@ export class ListebonplanComponent implements OnInit {
   listeBP:any
 
   constructor(private bp:BonplansService) {
-this.bp.getallbp().subscribe(data=>this.listeBP=data)
+this.bp.getallbp().subscribe(data=>this.listeBP=data.bpl)
    }
 
   ngOnInit(): void {
