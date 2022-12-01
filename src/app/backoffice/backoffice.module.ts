@@ -20,6 +20,19 @@ import { EmailComponent } from './componentback/email/email.component';
 import{FormsModule} from'@angular/forms';
 import { ListebonplanComponent } from './componentback/listebonplan/listebonplan.component';
 import { CategoieComponent } from './componentback/categoie/categoie.component';
+const SCRIPT_PATH_LISt=[
+  "../../../assets/backassets/vendors/core/core.js",
+ "../../..assets/backassets/vendors/flatpickr/flatpickr.min.js",
+"../../..assets/backassets/vendors/apexcharts/apexcharts.min.js",
+  "../../../assets/backassets/vendors/feather-icons/feather.min.js",
+  "../assets/backassets/js/template.js",
+  "../../../assets/backassets/js/dashboard-light.js",
+	"../../../assets/frontassets/js/bootstrap.bundle.min.js",
+	"../../../assets/frontassets/js/tiny-slider.js",
+		"../../../assets/frontassets/js/custom.js"
+
+
+]
 
 
 
