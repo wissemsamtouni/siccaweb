@@ -8,7 +8,7 @@ export class BonplansService {
   constructor(private hhtp:HttpClient) { }
   //bonplan//
   getallbp(){
-  return this.hhtp.get('url')
+  return this.hhtp.get('http://localhost:5000/bonplans/')
   }
   getallcategorie(){
     return this.hhtp.get('url')

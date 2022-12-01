@@ -28,37 +28,22 @@
           <tr>
             <th>Nom bonplan</th>
             <th>Categorie</th>
-            <th>Adresse/th>
+            <th>Adresse</th>
             <th>Details</th>
             <th>Modifier</th>
             <th>Supprimer</th>
           </tr>
           </thead>
           <tbody>
-          <tr>
-            <th>Frigua</th>
-            <td>Café</td>
-            <td>cité edir le kef</td>
+          <tr *ngFor="let bp of listeBP">
+            <th>{{bp.non_bp}}</th>
+            <td>{{bp.CategorieId}}</td>
+            <td>{{bp.adresse}}</td>
             <td><button class="btn btn-primary">Details</button></td>
             <td><button class="btn btn-Success">Modifier</button></td>
             <td><button class="btn btn-danger">Details</button></td>
           </tr>
-          <tr>
-            <th>Darna</th>
-            <td>Hotel</td>
-            <td>cité edir le kef</td>
-            <td><button class="btn btn-primary">Details</button></td>
-            <td><button class="btn btn-Success">Modifier</button></td>
-            <td><button class="btn btn-danger">Details</button></td>
-          </tr>
-          <tr>
-            <th>Sidi abdallah</th>
-            <td>Maison d'hode</td>
-            <td>cité sidi abdallah le kef</td>
-            <td><button class="btn btn-primary">Details</button></td>
-            <td><button class="btn btn-Success">Modifier</button></td>
-            <td><button class="btn btn-danger">Details</button></td>
-          </tr>
+
           </tbody>
         </table>
       </div>
@@ -67,7 +52,7 @@
 </div>
 
   <div >
-  <a routerLink="addbonpan" class="btn btn-primary" style="float:right ;">Ajouter bonplans</a>
+  <a routerLink="/addbonpan" class="btn btn-primary" style="float:right ;">Ajouter bonplans</a>
   </div>
 <!--
 
