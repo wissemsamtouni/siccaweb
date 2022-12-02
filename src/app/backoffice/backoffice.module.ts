@@ -20,6 +20,8 @@ import { EmailComponent } from './componentback/email/email.component';
 import{FormsModule} from'@angular/forms';
 import { ListebonplanComponent } from './componentback/listebonplan/listebonplan.component';
 import { CategoieComponent } from './componentback/categoie/categoie.component';
+import { FormulairecategorieComponent } from './componentback/formulairecategorie/formulairecategorie.component';
+import { ModifierbonplanComponent } from './componentback/modifierbonplan/modifierbonplan.component';
 const SCRIPT_PATH_LISt=[
   "../../../assets/backassets/vendors/core/core.js",
  "../../..assets/backassets/vendors/flatpickr/flatpickr.min.js",
@@ -53,7 +55,9 @@ const SCRIPT_PATH_LISt=[
     ChatComponent,
     CalendrierComponent,
 ListebonplanComponent,
-CategoieComponent
+CategoieComponent,
+FormulairecategorieComponent,
+ModifierbonplanComponent
   ],
   imports: [
     CommonModule,

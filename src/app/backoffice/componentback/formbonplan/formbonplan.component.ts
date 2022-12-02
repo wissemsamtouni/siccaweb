@@ -11,7 +11,7 @@ import { BonplansService } from 'src/app/services/bonplans.service';
 })
 export class FormbonplanComponent implements OnInit {
   messageErr = ""
- form:f;
+ 
   constructor(private bp: BonplansService, private route: Router) {
 
   }

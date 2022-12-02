@@ -1,0 +1,8 @@
+{
+"/apib/*":{
+"target":"http://localhost:5000/categorie/",
+"secure":false,
+"changeOrigin":false,
+"loglevel":"debug"
+}    
+}
