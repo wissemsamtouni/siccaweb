@@ -34,8 +34,8 @@
             <tr *ngFor="let c of listcategorie;index as i">
               <th>{{c.id}}</th>
               <td>{{c.nomcat}}</td>
-              <td><button class="btn btn-primary" (click)="getcategorie(c.nomcat,c._id)" data-bs-toggle="modal" data-bs-target="#modifiercat" >Modifier</button></td>
-              <td><button  class="btn btn-danger"  (click)="delete(c._id,i)">supprimer</button></td>
+              <td><button class="btn btn-primary" (click)="getcategorie(c.nomcat,c.id)" data-bs-toggle="modal" data-bs-target="#modifiercat" >Modifier</button></td>
+              <td><button  class="btn btn-danger"  (click)="delete(c.id,i)">supprimer</button></td>
             </tr>
            
             </tbody>
@@ -54,7 +54,7 @@
     
 
 <!-- Modal modifier categorie-->
-<div class="modal fade" id="cat" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="modifiercat" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
@@ -63,15 +63,15 @@
         </div>
         <div class="modal-body">
                               <!--form-->
-          <form #f="ngForm" (ngSubmit)="updatecategorie(f)" >
+          <form #f="ngForm" >
 
             <div class="mb-3">
               <label for="exampleInputText1" class="form-label">ID</label>
-              <input type="text" class="form-control" [(ngModel)]="upcategorie.id" required name="idcat">
+              <input type="text" class="form-control" [(ngModel)]="upcategorie.id" required name="id">
             </div>
             <div class="mb-3">
               <label for="exampleInputText1" class="form-label">Nom categorie</label>
-              <input type="text" class="form-control" [(ngModel)]="upcategorie.nomcat"  minlength="2" required name="cat"
+              <input type="text" class="form-control" [(ngModel)]="upcategorie.nomcat"  minlength="2" required name="nomcat"
                 #cat="ngModel" ngModel>
             </div>
   
@@ -85,7 +85,7 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="submit" [disabled]="f.invalid" class="btn btn-primary">Ajouter</button>
+          <button type="submit" [disabled]="f.invalid" class="btn btn-primary" (click)="updatecategorie(f)" >Modifier</button>
         </div>
   
   
