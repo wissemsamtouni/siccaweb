@@ -33,9 +33,10 @@ this.upcategorie.id=id
 }
 updatecategorie(f:any){
   let data=f.value
+  console.log(data)
   this.ct.updatecategorie(this.upcategorie.id,data).subscribe(response=>{
     console.log(response)
-    let indexId=this.listcategorie.findIndex((object:any)=>object._id==this.upcategorie.id)
+    let indexId=this.listcategorie.findIndex((object:any)=>object.id==this.upcategorie.id)
     this.listcategorie[indexId].nomcat=data.nomcat
   },(err:HttpErrorResponse)=>{console.log(err.message)
 })

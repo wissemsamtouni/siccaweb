@@ -2,9 +2,9 @@
   <div class="col-md-12 grid-margin stretch-card">
     <div class="card">
       <div class="card-body">
-        
-        <form #f="ngForm" (ngSubmit)="add(f)">
 
+       
+          <form #f="ngForm" (ngSubmit)="add(f)" >
           <div class="mb-3">
             <label for="exampleInputText1" class="form-label">Nom bonplas</label>
             <input type="text" class="form-control" placeholder="Enter bonplan" minlength="2" required name="non_bp"
@@ -18,19 +18,14 @@
 
           <div class="mb-3">
             <label for="exampleFormControlSelect1" class="form-label">categorie</label>
-            <select class="form-select" required name="nomcat" #CategorieId="ngModel" ngModel>
-              <option selected disabled>Select your age</option>
-              <option>12-18</option>
-              <option>18-22</option>
-              <option>22-30</option>
-              <option>30-60</option>
-              <option>Above 60</option>
+            <select class="form-select" required Name="nomcat" (change)="changecategorie($event)"
+            name="nomcat">
+              <option *ngFor="let c of listecategorie"[value]="c.nomcat">{{c.nomcat}}</option>
+
             </select>
           </div>
 
-          <div class="alert alert-danger" *ngIf="CategorieId.invalid && CategorieId.touched">
-            <div *ngIf="CategorieId.errors?.['required']">La categorie est obligatoire</div>
-          </div>
+
 
           <div class="mb-3">
             <label for="exampleInputEmail3" class="form-label">Adresse</label>
@@ -65,8 +60,8 @@
 
           <div class="mb-3">
             <label for="exampleInputDisabled1" class="form-label">Horaire</label>
-            <input type="text" class="form-control" name="horaire" placeholder="Entrer horaire" minlength="2" required
-              #horaire="ngModel" ngModel>
+            <input type="text" class="form-control" type="text" name="horaire" placeholder="Entrer horaire"
+              minlength="2" required #horaire="ngModel" ngModel>
           </div>
 
 
@@ -77,8 +72,8 @@
 
           <div class="mb-3">
             <label for="exampleInputPlaceholder" class="form-label">Frais inscription</label>
-            <input type="text" class="form-control" name="frais" minlength="2" placeholder="Entrer frais d'inscription"
-              required #frais="ngModel" ngModel>
+            <input type="text" class="form-control" type="text" name="frais" minlength="2"
+              placeholder="Entrer frais d'inscription" required #frais="ngModel" ngModel>
           </div>
 
           <div class="alert alert-danger" *ngIf="frais.invalid && adresse.touched">
@@ -88,7 +83,7 @@
 
           <div class="mb-3">
             <label for="exampleFormControlTextarea1" class="form-label">Discription</label>
-            <textarea class="form-control" name="description" required rows="5" #descriptin="ngModel"
+            <textarea class="form-control" type="text" name="description" required rows="5" #descriptin="ngModel"
               ngModel></textarea>
           </div>
 
@@ -99,17 +94,15 @@
 
           <div class="mb-3">
             <label class="form-label" for="formFile">Image upload</label>
-            
-            <input class="form-control" type="file"  name="imageSRC"   #imageSRC="ngModel" ngModel>
+
+            <input class="form-control" type="file" name="imageSRC" #imageSRC="ngModel" ngModel>
           </div>
           <div class="alert alert-danger" *ngIf="imageSRC.invalid && adresse.touched">
-            <div *ngIf="imageSRC.errors?.['required']">La description est obligatoire</div>
-</div>
-          <div class="alert alert-danger" *ngIf="messageErr">
-            {{messageErr}}
+            <div *ngIf="imageSRC.errors?.['required']">L'image' est obligatoire</div>
           </div>
+          
 
-          <button class="btn btn-primary" type="submit" [disabled]="f.invalid">Ajouter</button>
+          <button class="btn btn-primary" [disabled]="f.invalid">Ajouter</button>
         </form>
       </div>
     </div>
@@ -131,8 +124,8 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-                            <!---aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa-->
-       
+        <!---aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa-->
+
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

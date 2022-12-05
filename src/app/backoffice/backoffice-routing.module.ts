@@ -12,6 +12,7 @@ import { ListebonplanComponent } from './componentback/listebonplan/listebonplan
 import { CategoieComponent } from './componentback/categoie/categoie.component';
 import { FormulairecategorieComponent } from './componentback/formulairecategorie/formulairecategorie.component';
 import { ModifierbonplanComponent } from './componentback/modifierbonplan/modifierbonplan.component';
+import { DetaillebonplansComponent } from './componentback/detaillebonplans/detaillebonplans.component';
 
 
 
@@ -24,6 +25,7 @@ const routes: Routes = [
       {path:'addbonpan',component:FormbonplanComponent},
       {path:'showbonplan',component:ListebonplanComponent},
       {path:'updatebonplan',component:ModifierbonplanComponent },
+      {path:'detailsbp/:id',component:DetaillebonplansComponent},
       {path:'categorie',component:CategoieComponent},
       {path:'addcategorie',component:FormulairecategorieComponent}
       
