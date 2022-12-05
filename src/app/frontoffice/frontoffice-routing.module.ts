@@ -11,6 +11,7 @@ import { MaterielComponent } from './materiel/materiel.component';
 import { PaiementComponent } from './paiement/paiement.component';
 import { PanierComponent } from './panier/panier.component';
 import { ThankyouComponent } from './thankyou/thankyou.component';
+import {ClientGuard} from "../guard/client.guard";
 
 
 const routes: Routes = [

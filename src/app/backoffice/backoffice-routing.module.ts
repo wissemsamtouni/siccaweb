@@ -8,6 +8,7 @@ import {DashboardComponent} from "./componentback/dashboard/dashboard.component"
 import {TableusersComponent} from "./componentback/tableusers/tableusers.component";
 import {ChatComponent} from "./componentback/chat/chat.component";
 import {FormpromoComponent} from "./componentback/formpromo/formpromo.component";
+import {GuardGuard} from "../guard/guard.guard";
 
 
 
@@ -16,7 +17,6 @@ const routes: Routes = [
   {path:'',component :BackofficeComponent,children:[
       { path: 'dash', component: DashboardComponent },
       {path:'basic',component:FormulaireComponent},
-
       {path:'tableusers',component:TableusersComponent},
       {path:'promo',component:FormpromoComponent},
 

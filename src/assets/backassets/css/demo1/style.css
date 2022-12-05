@@ -2404,10 +2404,12 @@ textarea.form-control-lg {
   clip: rect(0, 0, 0, 0);
   pointer-events: none;
 }
+
 .btn-check[disabled] + .btn, .wizard > .actions .btn-check[disabled] + a, div.tox .btn-check[disabled] + .tox-button, .swal2-popup .swal2-actions .btn-check[disabled] + button, .fc .btn-check[disabled] + .fc-button-primary, .btn-check:disabled + .btn, .wizard > .actions .btn-check:disabled + a, div.tox .btn-check:disabled + .tox-button, .swal2-popup .swal2-actions .btn-check:disabled + button, .fc .btn-check:disabled + .fc-button-primary {
   pointer-events: none;
   filter: none;
   opacity: 0.65;
+
 }
 
 .form-range {
@@ -19374,6 +19376,7 @@ body {
   flex-grow: 1;
   padding: 25px;
   margin-top: 60px;
+
 }
 @media (max-width: 767px) {
   .main-wrapper .page-wrapper .page-content {
@@ -21501,8 +21504,9 @@ div.tox .btn-group-lg > .btn-icon-text.tox-button .btn-icon-append,
 .auth-page .auth-side-wrapper {
   width: 100%;
   height: 100%;
-  background-image: url(https://via.placeholder.com/219x452);
+  background-image: url(../../images/login.jpg);
   background-size: cover;
+
 }
 
 .email-aside-nav.collapse {

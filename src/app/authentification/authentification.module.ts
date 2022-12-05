@@ -10,6 +10,8 @@ import { ForgetpasswordComponent } from './componentauth/forgetpassword/forgetpa
 import { CodeconfirmationComponent } from './componentauth/codeconfirmation/codeconfirmation.component';
 import { ChangermotdepasseComponent } from './componentauth/changermotdepasse/changermotdepasse.component';
 
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+
 
 @NgModule({
   declarations: [
@@ -18,11 +20,17 @@ import { ChangermotdepasseComponent } from './componentauth/changermotdepasse/ch
     RegistrComponent,
     ForgetpasswordComponent,
     CodeconfirmationComponent,
-    ChangermotdepasseComponent
+    ChangermotdepasseComponent,
+
   ],
   imports: [
     CommonModule,
-    AuthentificationRoutingModule
+    AuthentificationRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+
+
+
   ]
 })
 export class AuthentificationModule { }

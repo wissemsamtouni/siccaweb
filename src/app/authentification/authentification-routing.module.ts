@@ -9,10 +9,11 @@ import {RegistrComponent} from "./componentauth/registr/registr.component";
 import {ForgetpasswordComponent} from "./componentauth/forgetpassword/forgetpassword.component";
 import {CodeconfirmationComponent} from "./componentauth/codeconfirmation/codeconfirmation.component";
 import {ChangermotdepasseComponent} from "./componentauth/changermotdepasse/changermotdepasse.component";
+import {LoginguardGuard} from "../guard/loginguard.guard";
 
 const routes: Routes = [
   {path:'',component :AuthentificationComponent,children:[
-      { path: 'login', component: LoginComponent },
+      { path: 'login', component: LoginComponent  },
       {path:'registr',component:RegistrComponent},
       {path:'forgetpassword',component:ForgetpasswordComponent},
       {path:'code',component:CodeconfirmationComponent},

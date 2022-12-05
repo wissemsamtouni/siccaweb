@@ -1,0 +1,30 @@
+#myVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  max-width: 100%;
+  min-height: 100%;
+  opacity: 0.90;
+}
+.btn{
+  background-color: #0c63e4;
+color: white;
+  border-color: #dddddd;
+}
+
+.page-content auth-side-wrapper{
+  opacity: 0.9;
+
+}
+
+.auth-form-wrapper{
+  opacity: 0.90;
+}
+.card{
+  opacity: 0.90;
+
+}
+.form-label{
+  color: #1a252f;
+  opacity: 0.99;
+}
