@@ -1,7 +1,13 @@
 <body>
+<video autoplay muted loop id="myVideo">
+  <source src="assets/backassets/images/pexels-rostislav-uzunov-7670836.mp4" type="video/mp4">
+</video>
 <div class="main-wrapper">
+
   <div class="page-wrapper full-page">
+
     <div class="page-content d-flex align-items-center justify-content-center">
+
 
       <div class="row w-100 mx-0 auth-page">
         <div class="col-md-8 col-xl-6 mx-auto">
@@ -14,16 +20,16 @@
               </div>
               <div class="col-md-8 ps-md-0">
                 <div class="auth-form-wrapper px-4 py-5">
-                  <a href="#" class="noble-ui-logo d-block mb-2">Noble<span>UI</span></a>
+                  <a href="#" class="noble-ui-logo d-block mb-2" style="text-decoration: unset">Sicca<span>PLAN</span></a>
                   <h5 class="text-muted fw-normal mb-4">Welcome back! Log in to your account.</h5>
-                  <form class="forms-sample">
+                  <form class="forms-sample"[formGroup]="form" (submit)="submit()">
                     <div class="mb-3">
                       <label for="userEmail" class="form-label">Email address</label>
-                      <input type="email" class="form-control" id="userEmail" placeholder="Email">
+                      <input type="text" style="opacity: 0.99" formControlName="login"   class="form-control" id="userEmail" placeholder="Email">
                     </div>
                     <div class="mb-3">
                       <label for="userPassword" class="form-label">Password</label>
-                      <input type="password" class="form-control" id="userPassword" autocomplete="current-password" placeholder="Password">
+                      <input type="password" formControlName="mdp"   class="form-control" id="userPassword" autocomplete="current-password" placeholder="Password">
                     </div>
                     <div class="form-check mb-3">
                       <input type="checkbox" class="form-check-input" id="authCheck">
@@ -32,15 +38,15 @@
                       </label>
                     </div>
                     <div>
-                      <a href="../../dashboard.html" class="btn btn-primary me-2 mb-2 mb-md-0 text-white">Login</a>
-                      <button type="button" class="btn btn-outline-primary btn-icon-text mb-2 mb-md-0">
+
+                      <button type="submit" class="btn btn-outline-primary btn-icon-text mb-2 mb-md-0">
                         <i class="btn-icon-prepend" data-feather="twitter"></i>
-                        Login with twitter
+                        Login
                       </button>
                     </div>
-                    <a routerLink="/authentification/forgetpassword" class="d-block mt-3 text-muted">Forget Your Password ?</a>
-                    <a routerLink="/authentification/registr" class="d-block mt-3 text-muted">Not a user? Sign up</a>
-                    <a routerLink="/dash" class="d-block mt-3 text-muted">HOME</a>
+                    <a routerLink="/auth/forgetpassword" class="d-block mt-3 text-muted text-decoration-none">Forget Your Password ?</a>
+                    <a routerLink="/auth/registr" class="d-block mt-3 text-muted text-decoration-none">Not a user? Sign up</a>
+                    <a routerLink="/front/Acceuil" class="d-block mt-3 text-muted text-decoration-none">HOME</a>
                   </form>
                 </div>
               </div>
