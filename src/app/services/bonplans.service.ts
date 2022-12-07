@@ -21,7 +21,7 @@ export class BonplansService {
         return this.http.delete('http://localhost:5000/bonplans/delete/'+id)
       }
       updatebp(id: any,newbonplans:any) {
-        return this.http.patch('http://localhost:5000/bonplans/update/'+id,newbonplans)
+        return this.http.put('http://localhost:5000/bonplans/update/'+id,newbonplans)
       }
   getone(id:any){
     return this.http.get<any>('http://localhost:5000/bonplans/'+id)

@@ -18,11 +18,13 @@
 
           <div class="mb-3">
             <label for="exampleFormControlSelect1" class="form-label">categorie</label>
-            <select class="form-select" required Name="nomcat" (change)="changecategorie($event)"
+            <!--<select class="form-select" required name="nomcat" (change)="changecategorie($event)"
             name="nomcat">
-              <option *ngFor="let c of listecategorie"[value]="c.nomcat">{{c.nomcat}}</option>
+              <option *ngFor="let c of listecategorie">{{c.nomcat}}</option>
 
-            </select>
+            </select>-->
+            <input type="text" class="form-control" name="nomcat" minlength="2" required placeholder="Entrer adresse"
+            #adresse="ngModel" ngModel>
           </div>
 
 

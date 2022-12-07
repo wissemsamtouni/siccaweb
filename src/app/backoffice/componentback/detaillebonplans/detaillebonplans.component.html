@@ -3,7 +3,7 @@
         <div class="card-body">
 
             <div class="table-responsive">
-                <table class="table table-hover" >
+                <table class="table table-hover">
                     <tr>
                         <td>Nom</td>
                         <td>{{listbp.non_bp}}</td>
@@ -36,10 +36,24 @@
                     <tr>
                         <td>Image</td>
                     </tr>
-              <tr>
-                <td>{{listbp.imageSRC}}</td>
-              </tr>
+                    <tr>
+                        <td img src="localhost:5000/public/images">{{listbp.imageSRC}}</td>
+                    </tr>
                 </table>
             </div>
         </div>
     </div>
+    </div>
+    <div class="card bg-dark text-white">
+        <img src="..." class="card-img" alt="...">
+        <div class="card-img-overlay">
+            <h5 class="card-title">{{listbp.non_bp}}</h5>
+            <p class="card-text">{{listbp.nomcat}}</p>
+            <p class="card-text">{{listbp.adresse}}</p>
+            <p class="card-text">{{listbp.descriptin}}</p>
+            <p class="card-text">{{listbp.horaire}}</p>
+            <p class="card-text">{{listbp.frais}}</p>
+        </div>
+        <div class="full" id="map">
+
+        </div>

@@ -14,7 +14,7 @@
     <div class="input-group-text">
       <i data-feather="search"></i>
     </div>
-    <input type="text" class="form-control" id="navbarForm" placeholder="Search here...">
+    <input type="text" class="form-control" name="bonplans" id="navbarForm" [(ngModel)]="bpfilter" placeholder="Search here...">
   </div>
 
 <div class="col-md-12 grid-margin stretch-card">
@@ -34,14 +34,14 @@
             <th>Supprimer</th>
           </tr>
           </thead>
-          <tbody>
-          <tr *ngFor="let bp of listeBP">
+          <tbody *ngFor="let bp of listeBP;index as i ">
+          <tr *ngIf="bp.CategorieId === bpfilter ||bp.non_bp === bpfilter || bpfilter==null" >
             <th>{{bp.non_bp}}</th>
             <td>{{bp.CategorieId}}</td>
             <td>{{bp.adresse}}</td>
             <td><button class="btn btn-primary" (click)="details(bp.id)">Details</button></td>
-            <td><button class="btn btn-Success">Modifier</button></td>
-            <td><button class="btn btn-danger">Details</button></td>
+            <td><button class="btn btn-Success" (click)="getbp(bp.nomcat,bp.id,bp.non_bp,bp.adresse,bp.description,bp.logitude,bp.latitude,bp.horaire,bp.frais,bp.imageSRC)" data-bs-toggle="modal" data-bs-target="#modifierbp">Modifier</button></td>
+            <td><button class="btn btn-danger" (click)="deletebonplans(bp.id,i)">Supprimer</button></td>
           </tr>
           </tbody>
         </table>
@@ -55,3 +55,120 @@
   </div>
 
 
+<!-- Modal modifier bonplans-->
+<div class="modal fade" id="modifierbp" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+
+        <form #f="ngForm" >
+          <div class="mb-3">
+            <label for="exampleInputText1" class="form-label">Nom bonplas</label>
+            <input type="text" class="form-control" placeholder="Enter bonplan" minlength="2" required name="non_bp"
+              #non_bp="ngModel" ngModel  [(ngModel)]="upbonblans.non_bp">
+          </div>
+
+          <div class="alert alert-danger" *ngIf="non_bp.invalid && non_bp.touched">
+            <div *ngIf="non_bp.errors?.['required']">Le non bonplan est obligatoire</div>
+            <div *ngIf="non_bp.errors?.['minlength']">Nombre minimum de caractère est 2</div>
+          </div>
+
+          <div class="mb-3">
+            <label for="exampleFormControlSelect1" class="form-label">categorie</label>
+            <!--<select class="form-select" required name="nomcat" (change)="changecategorie($event)"
+            name="nomcat">
+              <option *ngFor="let c of listecategorie">{{c.nomcat}}</option>
+
+            </select>-->
+            <input type="text" class="form-control" name="nomcat" minlength="2" required placeholder="Entrer adresse"
+            #adresse="ngModel" ngModel [(ngModel)]="upbonblans.nomcat">
+          </div>
+
+
+
+          <div class="mb-3">
+            <label for="exampleInputEmail3" class="form-label">Adresse</label>
+            <input type="text" class="form-control" name="adresse" minlength="2" required placeholder="Entrer adresse"
+              #adresse="ngModel" ngModel [(ngModel)]="upbonblans.adresse">
+          </div>
+
+          <div class="alert alert-danger" *ngIf="adresse.invalid && adresse.touched">
+            <div *ngIf="adresse.errors?.['required']">L'adresse' est obligatoire</div>
+            <div *ngIf="adresse.errors?.['minlength']">Nombre minimum de caractère est 2</div>
+          </div>
+
+          <div class="mb-3">
+            <label for="exampleInputNumber1" class="form-label">Logitude</label>
+            <input type="number" class="form-control" name="logitude" placeholder="Entrer logitude" required
+              #logitude="ngModel" ngModel [(ngModel)]="upbonblans.logitude">
+          </div>
+
+          <div class="alert alert-danger" *ngIf="logitude.invalid && logitude.touched">
+            <div *ngIf="logitude.errors?.['required']">logitude est obligatoire</div>
+          </div>
+
+          <div class="mb-3">
+            <label for="exampleInputPassword3" class="form-label">Latitude</label>
+            <input type="number" class="form-control" placeholder="Entrer latitude" name="latitude" required
+              #latitude="ngModel" ngModel [(ngModel)]="upbonblans.latitude">
+          </div>
+
+          <div class="alert alert-danger" *ngIf="latitude.invalid && logitude.touched">
+            <div *ngIf="latitude.errors?.['required']">latitude est obligatoire</div>
+          </div>
+
+          <div class="mb-3">
+            <label for="exampleInputDisabled1" class="form-label">Horaire</label>
+            <input type="text" class="form-control" type="text" name="horaire" placeholder="Entrer horaire"
+              minlength="2" required #horaire="ngModel" ngModel [(ngModel)]="upbonblans.horaire">
+          </div>
+
+
+          <div class="alert alert-danger" *ngIf="horaire.invalid && adresse.touched">
+            <div *ngIf="horaire.errors?.['required']">L'horaire' est obligatoire</div>
+            <div *ngIf="horaire.errors?.['minlength']">Nombre minimum de caractère est 2</div>
+          </div>
+
+          <div class="mb-3">
+            <label for="exampleInputPlaceholder" class="form-label">Frais inscription</label>
+            <input type="text" class="form-control" type="text" name="frais" minlength="2"
+              placeholder="Entrer frais d'inscription" required #frais="ngModel" ngModel [(ngModel)]="upbonblans.frais">
+          </div>
+
+          <div class="alert alert-danger" *ngIf="frais.invalid && adresse.touched">
+            <div *ngIf="frais.errors?.['required']">Le frais d'inscription est obligatoire</div>
+            <div *ngIf="frais.errors?.['minlength']">Nombre minimum de caractère est 2</div>
+          </div>
+
+          <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Discription</label>
+            <textarea class="form-control" type="text" name="description" required rows="5" #descriptin="ngModel"
+              ngModel [(ngModel)]="upbonblans.description"></textarea>
+          </div>
+
+          <div class="alert alert-danger" *ngIf="descriptin.invalid && adresse.touched">
+            <div *ngIf="descriptin.errors?.['required']">La description est obligatoire</div>
+            <div *ngIf="descriptin.errors?.['minlength']">Nombre minimum de caractère est 2</div>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label" for="formFile">Image upload</label>
+
+            <input class="form-control" type="file" name="imageSRC" #imageSRC="ngModel" ngModel>
+          </div>
+          <div class="alert alert-danger" *ngIf="imageSRC.invalid && adresse.touched">
+            <div *ngIf="imageSRC.errors?.['required']">L'image' est obligatoire</div>
+          </div>
+          
+
+        </form>                    <!--form-->
+      
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="Submit" [disabled]="f.invalid" class="btn btn-primary" (click)="updatebonplans(f)" >Modifier</button>
+      </div>

@@ -18,6 +18,6 @@ export class CategorieService {
     return this.http.delete('http://localhost:5000/categorie/delete/'+id)
   }
   updatecategorie(id: any,newcat:any) {
-    return this.http.patch('http://localhost:5000/categorie/update/'+id,newcat)
+    return this.http.put('http://localhost:5000/categorie/update/'+id,newcat)
   }
 }
