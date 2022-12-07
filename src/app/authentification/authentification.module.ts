@@ -11,6 +11,7 @@ import { CodeconfirmationComponent } from './componentauth/codeconfirmation/code
 import { ChangermotdepasseComponent } from './componentauth/changermotdepasse/changermotdepasse.component';
 
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {ToastrModule} from "ngx-toastr";
 
 
 @NgModule({
@@ -28,7 +29,6 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
     AuthentificationRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-
 
 
   ]

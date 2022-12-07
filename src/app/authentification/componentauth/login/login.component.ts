@@ -16,7 +16,7 @@ import {observeNotification} from "rxjs/internal/Notification";
 export class LoginComponent implements OnInit {
   utilisateur!:utilisateur;
   form!: FormGroup;
-  constructor(private formBuilder: FormBuilder,
+  constructor(private formBuilder: FormBuilder,private toastr: ToastrService,
               private http: HttpClient,
               private router: Router) { }
 
@@ -40,26 +40,40 @@ export class LoginComponent implements OnInit {
 
 
       console.log(response.x);
+
       if(response.y==="0"){
+
         console.error("user banned");
+        this.toastr.success('user banned');
 
       }
 
      else if(response.x==='client'){
 
+
         this.router.navigate(['front/Acceuil']).then(() => {
-          window.location.reload();
+
+
+         this.toastr.success('Welcome ');
+
+
 
         });
       }else if(response.x==='admin'){
+
+
         this.router.navigate(['/back/dash']).then(() => {
-          window.location.reload();
+
+          this.toastr.success('Welcome');
+
 
         });
 
       }
     }, err => {
       console.log(err);
+      this.toastr.error('Login ou mot de passe incorrect');
+
 
     }
 );

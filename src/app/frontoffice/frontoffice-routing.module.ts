@@ -12,10 +12,13 @@ import { PaiementComponent } from './paiement/paiement.component';
 import { PanierComponent } from './panier/panier.component';
 import { ThankyouComponent } from './thankyou/thankyou.component';
 import {ClientGuard} from "../guard/client.guard";
+import {ProfileComponent} from "./profileedit/profile/profile.component";
+import {PasswordComponent} from "./profileedit/password/password.component";
 
 
 const routes: Routes = [
   {path:'',component :FrontofficeComponent,children:[
+      {path:'Profile',component:ProfileComponent},
     {path:'Acceuil', component: AcceuilComponent},
     {path:'Evenement', component:EvenementsComponent},
     {path:'Apropos ', component:ApproposComponent},
@@ -24,7 +27,8 @@ const routes: Routes = [
     {path:'Contact', component:ContactComponent},
     {path:'panier', component:PanierComponent},
     {path:'paiement', component:PaiementComponent},
-    {path:'thankyou', component:ThankyouComponent}
+    {path:'thankyou', component:ThankyouComponent},
+    {path:'password', component:PasswordComponent},
   ]}
 
 
