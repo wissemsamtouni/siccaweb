@@ -37,7 +37,7 @@
           <tbody *ngFor="let bp of listeBP;index as i ">
           <tr *ngIf="bp.CategorieId === bpfilter ||bp.non_bp === bpfilter || bpfilter==null" >
             <th>{{bp.non_bp}}</th>
-            <td>{{bp.CategorieId}}</td>
+            <td>{{bp.CategorieId.nomcat}}</td>
             <td>{{bp.adresse}}</td>
             <td><button class="btn btn-primary" (click)="details(bp.id)">Details</button></td>
             <td><button class="btn btn-Success" (click)="getbp(bp.nomcat,bp.id,bp.non_bp,bp.adresse,bp.description,bp.logitude,bp.latitude,bp.horaire,bp.frais,bp.imageSRC)" data-bs-toggle="modal" data-bs-target="#modifierbp">Modifier</button></td>
