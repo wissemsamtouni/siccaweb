@@ -1,112 +1,479 @@
-<nav class="page-breadcrumb">
-    <ol class="breadcrumb">
-      <li class="breadcrumb-item"><a href="#">Forms</a></li>
-      <li class="breadcrumb-item active" aria-current="page">Basic Elements</li>
-    </ol>
-  </nav>
-  
-  <div class="row">
-    <div class="col-md-6 grid-margin stretch-card">
-      <div class="card">
-        <div class="card-body">
-  
-          <h6 class="card-title">Evenements</h6>
-  
-          <form class="forms-sample">
-                   <div class="row">
-                 <div class="col-md-12 grid-margin stretch-card">
-                  <div class="card">
-                   <div class="card-body">
-                     <h6 class="card-title">Ajouter Evenements</h6>
-         
-  
-            <div class="mb-3">
-              <label for="exampleInputText1" class="form-label">Titre </label>
-              <input type="text" class="form-control" id="exampleInputText1" placeholder="Enter Titre">
-            </div>
-            <div class="mb-3">
-              <label for="exampleFormControlTextarea1" class="form-label">Discription</label>
-              <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
-            </div>
-          <div class="row">
-            <div class="row">
-              <div class="col-md-6 grid-margin stretch-card">
-                <div class="card">
 
-                  <div class="card-body">
-                 
-                  <table>  
-                    <tbody>
-                      <tr>
-                        <td> 
-                            <h6 class="card-title">Date Début</h6>
-                            <div class="input-group flatpickr" id="flatpickr-date">
-                            <input type="text" class="form-control" placeholder="Select date" data-input>
-                            <span class="input-group-text input-group-addon" data-toggle><i data-feather="calendar"></i></span>
-                            </div>
-                        </td>
-                        <td> 
-                            <h6 class="card-title">Date Fin</h6>
-                            <div class="input-group flatpickr" id="flatpickr-date">
-                            <input type="text" class="form-control" placeholder="Select date" data-input>
-                            <span class="input-group-text input-group-addon" data-toggle><i data-feather="calendar"></i></span>
-                            </div>
-                        </td>
-                      </tr>
-                    </tbody>
+
+
+
+<div class="row" xmlns="http://www.w3.org/1999/html">
+  <div class="col-md-12 grid-margin stretch-card">
+    <div class="card">
+      <div class="card-body">
+        <h6 class="card-title">Evenements</h6>
+        <form class="forms-sample">
+          <div class="row">
+            <div class="col-md-12 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h6 class="card-title">Ajouter Evenements</h6>
+
+                   <form #form="ngForm" >
+                  <div class="mb-3">
+                    <label class="form-label">Titre : <span style="color: red">*</span> </label>
+                    <input #inputtitre type="text" class="form-control" placeholder="Enter Titre" name="titre" required ngModel
+                          [(ngModel)]="evennement.titre" #titre="ngModel" pattern="[A-Z a-z]*">
+                    <div class="invalid-feedback d-block text-left" *ngIf="titre.invalid && titre.touched && titre.hasError('required')">Titre est Obligatoire</div>
+                    <div class="invalid-feedback d-block text-left" *ngIf="titre.invalid && titre.touched && titre.hasError('pattern')">Titre est contient seulment chaine</div>
+
+                  </div>
+
+          <div class="mb-3">
+                    <label class="form-label">Description : <span style="color: red">*</span>  </label>
+
+                    <input #inputdescription type="textarea" class="form-control"  maxlength="450" minlength="10" placeholder="Enter Titre" name="discription" required ngModel
+                           #desc="ngModel" [(ngModel)]="evennement.discription" >
+                    <div class="invalid-feedback d-block text-left" *ngIf="desc.invalid && desc.touched && desc.hasError('required')">Description est Obligatoire</div>
+                    <div class="invalid-feedback d-block text-left" *ngIf="desc.invalid && desc.touched && desc.hasError('maxlength')">le langeur maximun de description est 450 caractere</div>
+                    <div class="invalid-feedback d-block text-left" *ngIf="desc.invalid && desc.touched && desc.hasError('minlength')">le langeur minimum de description est 10 caractere</div>
+
+                  </div>
+
+
+
+
+                  <div class="row">
+                    <div class="row">
+                      <div class="col-md-12 grid-margin stretch-card">
+                        <div class="card">
+
+                          <div class="card-body justify-content-between">
+
+                            <table class="col-md-12 grid-margin">
+                              <tbody>
+                              <tr>
+                                <td>
+                                  <h6 class="card-title">Date Début : <span style="color: red">*</span></h6>
+                                  <div class="input-group flatpickr" id="flatpickr-date">
+                                    <input #inputdated type="text" class="form-control" placeholder="Select date" data-input name="datedebut" required [(ngModel)]="evennement.datedebut" >
+                                    <span class="input-group-text input-group-addon" data-toggle><i data-feather="calendar"></i></span>
+                                  </div>
+                                </td>
+                                <td>
+                                  <h6 class="card-title">Date Début : <span style="color: red">*</span></h6>
+                                  <div class="input-group flatpickr" id="flatpickr-date" >
+                                    <input #inputdatef type="text" class="form-control" placeholder="Select date" data-input name="datefin" required  [(ngModel)]="evennement.datefin" >
+                                    <span class="input-group-text input-group-addon" data-toggle><i data-feather="calendar"></i></span>
+                                  </div>
+                                </td>
+                              </tr>
+                              </tbody>
+                              <h3></h3>
+                            </table>
+
+                          </div>
+
+                        </div>
+                      </div>
+
+
+                      <div class="mb-3">
+                        <label  class="form-label" name="nbr">Nombers de tickets : <span style="color: red">*</span></label>
+                      </div>
+                      <div class="site-blocks-table">
+                        <table class="table">
+                          <tbody>
+                          <tr>
+                            <td>
+                              <div class="input-group mb-3 d-flex align-items-center quantity-container"
+                                   style="max-width: 120px;" >
+                                <div class="input-group-prepend">
+                                  <button class="btn btn-outline-black decrease" type="button">&minus;</button>
+                                </div>
+                                <input #inputnbrticket type="Number" class="form-control text-center quantity-amount" value="1"
+                                        aria-label="Example text with button addon"
+                                       aria-describedby="button-addon1" name="nbrticket" [(ngModel)]="evennement.nbrticket">
+                                <div class="input-group-append">
+                                  <button class="btn btn-outline-black increase" type="button">&plus;</button>
+                                </div>
+                              </div>
+                            </td>
+                          </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="mb-3">
+                        <label class="form-label">Prix Ticket : <span style="color: red">*</span> </label>
+                        <input #inputprix type="Number" class="form-control" placeholder="Enter nomber de ticket.." name="prixticket"
+                               [(ngModel)]="evennement.prixticket" >
+
+
+                      </div>
+                      <div class="form-group">
+
+                        <div  class="invalid-feedback">
+                          <div >Categories is required</div>
                      
-                  </table>
+                        </div>
+                        <div class="mb-3">
+                          <label class="form-label" >Image Evenements : <span style="color: red">*</span></label>
                   
+                            <input #inputimage class="form-control" type="file"
+
+                                   [(ngModel)]="evennement.image" name="image" class="form-control" type="file">
+
+                            <div class="invalid-feedback">
+                              <div >L'image est requis</div>
+
+                              <div >L'image est uniquement au format txt</div>
+
+                          </div>
+
+                          <button class="btn btn-primary"  (click)="submit()" type="submit">Ajouter Evenement</button>
+
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+</form>
+                </div>
+
+              </div>
+
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+            <div class="page-content">
+
+              <nav class="page-breadcrumb">
+                <ol class="breadcrumb">
+
+                  <li class="breadcrumb-item active" aria-current="page">Liste des Evenements</li>
+                </ol>
+              </nav>
+
+              <div class="row">
+
+
+
+
+
+
+                <div class="col-md-12 grid-margin stretch-card">
+
+                  <div class="card">
+                    <div class="card-body">
+
+                      <div class=" d-flex justify-content-between">
+                        <table>
+                          <tbody>
+                          <th >Show</th>
+                          <th><select name="dataTableExample_length" aria-controls="dataTableExample"
+                                      class="form-select form-select-sm">
+                            <option value="0" >{{countevent}}</option>
+                          </select></th>
+                          <th>entries</th>
+                          </tbody>
+                        </table>
+                        <div class="">
+                          <input type="text" class="form-control me-sm-auto" placeholder="Search"
+                                 id="input"   aria-controls="Search " [(ngModel)]="aaa" name="aaa">
+                        </div>
+                      </div>
+
+                      </div>
+
+
+                      <div class="table-responsive">
+                      <div class="table-responsive">
+
+                       <!-- <button class="btn btn-outline-success my-2 my-sm-0" type="submit" (click)="search()">Search</button>
+                        -->
+                        <br>
+                        <table id="dataTableExample" class="table table-hover">
+                          <thead>
+                          <tr>
+                            <th>Evenement</th>
+                            <th>Titre</th>
+                            <th>Date Début</th>
+                            <th>Date Fin</th>
+                            <th>Discription</th>
+                            <th>Nombers de tickets</th>
+                            <th>Prix Ticket</th>
+
+
+                          </tr>
+                          </thead>
+                          <tbody>
+                          <tr *ngFor="let e of listevent | filter:aaa ; let i=index">
+                            <td><img src="/api/{{e.image}}"></td>
+                            <td>{{e.titre}}</td>
+                            <td>{{e.datedebut}}</td>
+                            <td>{{e.datefin}}</td>
+                            <td>{{e.discription}}</td>
+                            <td>{{e.nbrticket}}</td>
+                            <td>{{e.prixticket}}</td>
+                            <td><button class="btn btn-primary"  data-bs-toggle="modal" data-bs-target="#modupdate" (click)="getevenemeny(e)" ><i class="fa fa-edit"></i></button></td>
+                            <td><button type="button" class="btn  btn-danger" title="delete" data-bs-toggle="modal" data-bs-target="#modsupp" (click)="getevenemeny(e)"><i class="fa-solid fa-trash-can"></i></button></td>
+
+
+
+
+                          </tr>
+
+                          </tbody>
+                        </table>
+                      </div>
+
+
+                    </div>
                   </div>
                 </div>
-              </div>
-           
-             
-               
-            <div class="mb-3">
-              <label for="exampleInputText1" class="form-label">Nombers de tickets</label>
-              </div>
-              <div class="site-blocks-table">
-                <table class="table">
-                  <tbody>
-                    <tr>
-                    <td>
-              <div class="input-group mb-3 d-flex align-items-center quantity-container" style="max-width: 120px;">
-                <div class="input-group-prepend">
-                  <button class="btn btn-outline-black decrease" type="button">&minus;</button>
-                </div>
-                <input type="text" class="form-control text-center quantity-amount" value="1" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1">
-                <div class="input-group-append">
-                  <button class="btn btn-outline-black increase" type="button">&plus;</button>
-                </div>
-              </div>
-            </td>
-              </tr>
-            </tbody>
-              </table>
+
+
               </div>
 
-            <div class="mb-3">
-              <label for="exampleFormControlSelect1" class="form-label">Disponibilité</label>
-              <select class="form-select" id="exampleFormControlSelect1">
-                <option selected disabled>Disponible ou non</option>
-                <option>OnStocket</option>
-                <option>OrStocket</option>
-              
-              </select>
             </div>
-            <div class="mb-3">
-              <label class="form-label" for="formFile">Image Evenements</label>
-              <input class="form-control" type="file" id="formFile">
-            </div>
-  
-            <button class="btn btn-primary" type="submit">Ajouter Evenement</button>
-    </div>
-  
-        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- modal supprmier evenement-->
+<div class="modal fade new-project-modal" tabindex="-1" id="modsupp" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Supprmier  un evenement</h5>
+        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <a>
+          Vous les vous supprmier l'evenement?
+        </a>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary " data-bs-dismiss="modal" >Annuler</button>
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal"  (click)="delete(evennement.id)" >Supprmier</button>
       </div>
     </div>
   </div>
+</div>
 
-  
-  
+
+
+<!-- modal modifier evenement-->
+<div class="modal fade new-project-modal col-xxl-12" tabindex="-1" id="modupdate" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Modifier  un evenement</h5>
+        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+          <div class="row">
+            <div class="col-md-12 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h6 class="card-title">Evenements</h6>
+                  <form class="forms-sample">
+                    <div class="row">
+                      <div class="col-md-12 grid-margin stretch-card">
+                        <div class="card">
+                          <div class="card-body">
+                            <h6 class="card-title">Modifier Evenements</h6>
+                            <form #f="ngForm" >
+                              <div class="mb-3">
+                                <label class="form-label">Titre : <span style="color: red">*</span> </label>
+                                <input #inputtitre type="text" class="form-control" placeholder="Enter Titre" name="titre" required ngModel
+                                       [(ngModel)]="evennement.titre" #titre="ngModel" pattern="[A-Z a-z]*">
+                                <div class="invalid-feedback d-block text-left" *ngIf="titre.invalid && titre.touched && titre.hasError('required')">Titre est Obligatoire</div>
+                                <div class="invalid-feedback d-block text-left" *ngIf="titre.invalid && titre.touched && titre.hasError('pattern')">Titre est contient seulment chaine</div>
+                              </div>
+                              <div class="mb-3">
+                                <label class="form-label">Description : <span style="color: red">*</span>  </label>
+                                <input #inputdescription type="textarea" class="form-control"  maxlength="450" minlength="10" placeholder="Enter Titre" name="discription" required ngModel
+                                       #desc="ngModel" [(ngModel)]="evennement.discription" >
+                                <div class="invalid-feedback d-block text-left" *ngIf="desc.invalid && desc.touched && desc.hasError('required')">Description est Obligatoire</div>
+                                <div class="invalid-feedback d-block text-left" *ngIf="desc.invalid && desc.touched && desc.hasError('maxlength')">le langeur maximun de description est 450 caractere</div>
+                                <div class="invalid-feedback d-block text-left" *ngIf="desc.invalid && desc.touched && desc.hasError('minlength')">le langeur minimum de description est 10 caractere</div>
+
+                              </div>
+                              <div class="row">
+                                <div class="row">
+                                  <div class="col-md-12 grid-margin stretch-card">
+                                    <div class="card">
+
+                                      <div class="card-body justify-content-between">
+
+                                        <table class="col-md-12 grid-margin">
+                                          <tbody>
+                                          <tr>
+                                            <td>
+                                              <h6 class="card-title">Date Début : <span style="color: red">*</span></h6>
+                                              <div class="input-group flatpickr" id="flatpickr-date">
+                                                <input #inputdated type="text" class="form-control" placeholder="Select date" data-input name="datedebut" required [(ngModel)]="evennement.datedebut" >
+                                                <span class="input-group-text input-group-addon" data-toggle><i data-feather="calendar"></i></span>
+                                                <!--<div class="invalid-feedback d-block text-left" *ngIf="datedebut.invalid && datedebut.touched && datedebut.hasError('required')">Date est Obligatoire</div>
+            -->
+                                              </div>
+                                            </td>
+                                            <td>
+                                              <h6 class="card-title">Date Début : <span style="color: red">*</span></h6>
+
+                                              <div class="input-group flatpickr" id="flatpickr-date" >
+                                                <input #inputdatef type="text" class="form-control" placeholder="Select date" data-input name="datefin" required  [(ngModel)]="evennement.datefin" >
+                                                <span class="input-group-text input-group-addon" data-toggle><i data-feather="calendar"></i></span>
+
+                                              </div>
+                                            </td>
+                                          </tr>
+                                          </tbody>
+
+                                        </table>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="mb-3">
+                                    <label  class="form-label" name="nbr">Nombers de tickets : <span style="color: red">*</span></label>
+                                  </div>
+                                  <div class="site-blocks-table">
+                                    <table class="table">
+                                      <tbody>
+                                      <tr>
+                                        <td>
+                                          <div class="input-group mb-3 d-flex align-items-center quantity-container"
+                                               style="max-width: 120px;" >
+                                            <div class="input-group-prepend">
+                                              <button class="btn btn-outline-black decrease" type="button">&minus;</button>
+                                            </div>
+                                            <input #inputnbrticket type="Number" class="form-control text-center quantity-amount" value="1"
+                                                   aria-label="Example text with button addon"
+                                                   aria-describedby="button-addon1" name="nbrticket" [(ngModel)]="evennement.nbrticket">
+                                            <div class="input-group-append">
+                                              <button class="btn btn-outline-black increase" type="button">&plus;</button>
+                                            </div>
+                                          </div>
+                                          <div class="mb-3">
+                                            <label class="form-label">Prix Ticket : <span style="color: red">*</span> </label>
+                                            <input #inputprix type="Number" class="form-control" placeholder="Enter nomber de ticket.." name="prixticket"
+                                                   [(ngModel)]="evennement.prixticket" >
+
+                                          </div>
+                                        </td>
+                                      </tr>
+                                      </tbody>
+                                    </table>
+                                  </div>
+
+                                  <!--<div class="mb-3">
+                                    <label class="form-label" >Image Evenements : <span style="color: red">*</span></label>
+
+                                    <input #inputimage class="form-control" type="file"
+
+                                           [(ngModel)]="evennement.image" name="image" class="form-control" type="file">
+
+                                    <div class="invalid-feedback">
+                                      <div >L'image est requis</div>
+
+                                      <div >L'image est uniquement au format txt</div>
+
+                                    </div>
+
+                              </div>-->
+
+                          </div>
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary " data-bs-dismiss="modal" >Annuler</button>
+                                <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="updateevenement()" >Modifier</button>
+                              </div>
+                            </form>
+
+                      </div>
+      </div>
+
+
+
+
+  </div>
+</div>
+
+
+
+
+

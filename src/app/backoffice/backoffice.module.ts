@@ -17,6 +17,10 @@ import { FormpromoComponent } from './componentback/formpromo/formpromo.componen
 import { ChatComponent } from './componentback/chat/chat.component';
 import { CalendrierComponent } from './componentback/calendrier/calendrier.component';
 import { EmailComponent } from './componentback/email/email.component';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { PipeevenementPipe } from './componentback/pipeevent/pipeevenement.pipe';
+import {Ng2SearchPipeModule} from "ng2-search-filter";
+
 
 
 
@@ -36,12 +40,16 @@ import { EmailComponent } from './componentback/email/email.component';
     FormpromoComponent,
     ChatComponent,
     CalendrierComponent,
-    EmailComponent
+    EmailComponent,
+    PipeevenementPipe
 
   ],
   imports: [
     CommonModule,
-    BackofficeRoutingModule
+    BackofficeRoutingModule,
+    ReactiveFormsModule,
+    FormsModule,
+    Ng2SearchPipeModule
   ]
 })
 export class BackofficeModule { }

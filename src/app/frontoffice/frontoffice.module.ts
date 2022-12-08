@@ -15,6 +15,9 @@ import { PanierComponent } from './panier/panier.component';
 import { PaiementComponent } from './paiement/paiement.component';
 import { ThankyouComponent } from './thankyou/thankyou.component';
 
+import { FormsModule } from '@angular/forms';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+
 
 @NgModule({
   declarations: [
@@ -29,11 +32,15 @@ import { ThankyouComponent } from './thankyou/thankyou.component';
     ContactComponent,
     PanierComponent,
     PaiementComponent,
-    ThankyouComponent
+    ThankyouComponent,
+   
   ],
   imports: [
     CommonModule,
-    FrontofficeRoutingModule
+    FrontofficeRoutingModule,
+    FormsModule,
+    Ng2SearchPipeModule
+    
   ]
 })
 export class FrontofficeModule { }
