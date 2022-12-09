@@ -10,7 +10,7 @@
                     </tr>
                     <tr>
                         <td>categorie</td>
-                        <td>{{listbp.nomcat}}</td>
+                        <td>{{listbp.Categorie.nomcat}}</td>
                     </tr>
 
                     <tr>
@@ -37,7 +37,7 @@
                         <td>Image</td>
                     </tr>
                     <tr>
-                        <td img src="localhost:5000/public/images">{{listbp.imageSRC}}</td>
+                        <td ><img src="http://localhost:5000/{{listbp.imageSRC}}"></td>
                     </tr>
                 </table>
             </div>
@@ -45,10 +45,10 @@
     </div>
     </div>
     <div class="card bg-dark text-white">
-        <img src="..." class="card-img" alt="...">
+        <img src="http://localhost:5000/{{listbp.imageSRC}}" class="card-img" alt="...">
         <div class="card-img-overlay">
             <h5 class="card-title">{{listbp.non_bp}}</h5>
-            <p class="card-text">{{listbp.nomcat}}</p>
+            <p class="card-text">{{listbp.Categorie.nomcat}}</p>
             <p class="card-text">{{listbp.adresse}}</p>
             <p class="card-text">{{listbp.descriptin}}</p>
             <p class="card-text">{{listbp.horaire}}</p>
