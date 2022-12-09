@@ -1,0 +1,91 @@
+
+<div class="col-md-12 grid-margin stretch-card">
+    <div class="card">
+      <div class="text-center">
+    <h2 class="text-muted"  >Liste categorie</h2>
+      </div>
+    </div>
+  </div>
+  
+  <form class="search-form">
+    <div class="input-group">
+      <div class="input-group-text">
+        <i data-feather="search"></i>
+      </div>
+      <input type="text" class="form-control" id="navbarForm" name="categorie" [(ngModel)]="bpfilter" placeholder="Search here...">
+    </div>
+  
+  <div class="col-md-12 grid-margin stretch-card">
+    <div class="card">
+      <div class="card-body">
+       <!-- <h6 class="card-title">liste bonplan</h6>-->
+       <!-- <p class="text-muted mb-3">Add class <code>.table-hover</code></p>-->
+        <div class="table-responsive">
+          <table class="table table-hover">
+            <thead>
+            <tr>
+              <th>ID</th>
+              <th>Nom categorie</th>
+              <th>Modifier</th>
+              <th>Supprimer</th>
+            </tr>
+            </thead>
+            <tbody *ngFor="let c of listcategorie;index as i">
+            <tr *ngIf="c.nomcat === bpfilter || bpfilter==null" >
+              <th>{{c.id}}</th>
+              <td>{{c.nomcat}}</td>
+              <td><button class="btn btn-primary" (click)="getcategorie(c.nomcat,c.id)" data-bs-toggle="modal" data-bs-target="#modifiercat" >Modifier</button></td>
+              <td><button  class="btn btn-danger"  (click)="delete(c.id,i)">supprimer</button></td>
+            </tr>
+           
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+    
+
+    <div >
+      <a routerLink="/addcategorie" class="btn btn-primary" style="float:right ;">Ajouter Categorie</a>
+      </div>
+    
+
+<!-- Modal modifier categorie-->
+<div class="modal fade" id="modifiercat" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+                              <!--form-->
+          <form #f="ngForm" >
+
+            <div class="mb-3">
+              <label for="exampleInputText1" class="form-label">ID</label>
+              <input type="text" class="form-control" [(ngModel)]="upcategorie.id" required name="id">
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputText1" class="form-label">Nom categorie</label>
+              <input type="text" class="form-control" [(ngModel)]="upcategorie.nomcat"  minlength="2" required name="nomcat"
+                #cat="ngModel" ngModel>
+            </div>
+  
+            <div class="alert alert-danger" *ngIf="cat.invalid && cat.touched">
+              <div *ngIf="cat.errors?.['required']">La categorie est obligatoire</div>
+              <div *ngIf="cat.errors?.['minlength']">Nombre minimum de caractère est 2</div>
+            </div>
+  
+            
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="Submit" (click)="updatecategorie(f)" [disabled]="f.invalid" class="btn btn-primary"  >Modifier</button>
+        </div>
+  
+  

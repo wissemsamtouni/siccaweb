@@ -1,0 +1,26 @@
+<div class="col-md-12 grid-margin stretch-card">
+    <div class="card">
+      <div class="text-center">
+    <h2 class="text-muted"  >Ajouter categorie</h2>
+      </div>
+    </div>
+  </div>
+  
+  
+  
+  <div class="container">
+  
+    <form #f="ngForm" (ngSubmit)="addcat(f)" >
+      <div class="mb-3">
+        <label for="exampleInputText1" class="form-label">Nom categorie</label>
+        <input type="text" class="form-control" placeholder="Enter bonplan" minlength="2" required name="nomcat"
+          #cat="ngModel" ngModel>
+      </div>
+  
+      <div class="alert alert-danger" *ngIf="cat.invalid && cat.touched">
+        <div *ngIf="cat.errors?.['required']">La categorie est obligatoire</div>
+        <div *ngIf="cat.errors?.['minlength']">Nombre minimum de caractère est 2</div>
+      </div>
+  <button class="btn btn-primary" [disabled]="f.invalid">Ajouter</button>
+      
+    </form>
