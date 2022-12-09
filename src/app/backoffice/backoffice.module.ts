@@ -36,6 +36,8 @@ const SCRIPT_PATH_LISt = [
 
 
 ]
+import {Ng2SearchPipeModule} from "ng2-search-filter";
+
 
 
 
@@ -60,11 +62,18 @@ const SCRIPT_PATH_LISt = [
     FormulairecategorieComponent,
     ModifierbonplanComponent,
     DetaillebonplansComponent
+    EmailComponent,
+
+
+
+
   ],
   imports: [
     CommonModule,
     BackofficeRoutingModule,
     FormsModule,ReactiveFormsModule
+    FormsModule,
+    Ng2SearchPipeModule
   ]
 })
 export class BackofficeModule { }

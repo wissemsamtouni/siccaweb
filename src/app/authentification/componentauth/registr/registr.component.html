@@ -1,4 +1,7 @@
 <body>
+<video autoplay muted loop id="myVideo">
+  <source src="assets/backassets/images/pexels-rostislav-uzunov-7670836.mp4" type="video/mp4">
+</video>
 <div class="main-wrapper">
   <div class="page-wrapper full-page">
     <div class="page-content d-flex align-items-center justify-content-center">
@@ -14,35 +17,46 @@
               </div>
               <div class="col-md-8 ps-md-0">
                 <div class="auth-form-wrapper px-4 py-5">
-                  <a href="#" class="noble-ui-logo d-block mb-2">Noble<span>UI</span></a>
+                  <a href="#" class="noble-ui-logo d-block mb-2" style="text-decoration: unset">Sicca<span>PLAN</span></a>
                   <h5 class="text-muted fw-normal mb-4">Create a free account.</h5>
-                  <form class="forms-sample">
+                  <form class="forms-sample" #form="ngForm">
                     <div class="mb-3">
-                      <label for="exampleInputUsername1" class="form-label">Username</label>
-                      <input type="text" class="form-control" id="exampleInputUsername1" autocomplete="Username" placeholder="Username">
+                      <label for="exampleInputUsername1" class="form-label">First Name </label>
+                      <input type="text" name="nom" class="form-control" [(ngModel)]="utilisateur.nom" id="exampleInputUsername1" autocomplete="Username" placeholder="Username">
                     </div>
                     <div class="mb-3">
-                      <label for="userEmail" class="form-label">Email address</label>
-                      <input type="email" class="form-control" id="userEmail" placeholder="Email">
+                      <label for="exampleInputUsername1" class="form-label">Last Name</label>
+                      <input type="text" name="prenom"class="form-control"  [(ngModel)]="utilisateur.prenom" autocomplete="Username" placeholder="Username">
                     </div>
                     <div class="mb-3">
-                      <label for="userPassword" class="form-label">Password</label>
-                      <input type="password" class="form-control" id="userPassword" autocomplete="current-password" placeholder="Password">
+                      <label class="form-label">Email</label>
+                      <input type="text" [(ngModel)]="utilisateur.mail" name="mail" class="form-control"  placeholder="Email">
                     </div>
-                    <div class="form-check mb-3">
-                      <input type="checkbox" class="form-check-input" id="authCheck">
-                      <label class="form-check-label" for="authCheck">
-                        Remember me
-                      </label>
+                    <div class="mb-3">
+                      <label class="form-label">Login</label>
+                      <input type="text" [(ngModel)]="utilisateur.login" name="login" class="form-control"  placeholder="Email">
+                    </div>
+                    <div class="mb-3">
+                      <label for="userPassword" class="form-label">Mot de Passe</label>
+                      <input type="password" name="mdp" class="form-control" id="userPassword"  [(ngModel)]="utilisateur.mdp" autocomplete="Username" placeholder="Username">
+                    </div>
+                    <div class="mb-3">
+                      <label  class="form-label">telephone</label>
+                      <input type="number" [(ngModel)]="utilisateur.tel" name="tel" class="form-control"  placeholder="Email">
+                    </div>
+
+                    <div class="mb-3">
+                      <label  class="form-label">Adresse</label>
+                      <input type="text" [(ngModel)]="utilisateur.adresse" name="adresse" class="form-control"  autocomplete="current-password" placeholder="Password">
                     </div>
                     <div>
-                      <a href="../../dashboard.html" class="btn btn-primary text-white me-2 mb-2 mb-md-0">Sign up</a>
-                      <button type="button" class="btn btn-outline-primary btn-icon-text mb-2 mb-md-0">
+                      <a (click)="saveUser()" class="btn btn-primary text-white me-2 mb-2 mb-md-0 text-decoration-none">Sign up</a>
+                      <button type="button"  class="btn btn-outline-primary btn-icon-text mb-2 mb-md-0">
                         <i class="btn-icon-prepend" data-feather="twitter"></i>
                         Sign up with twitter
                       </button>
                     </div>
-                    <a routerLink="/authentification/login" class="d-block mt-3 text-muted">Already a user? Sign in</a>
+                    <a routerLink="/auth/login" class="d-block mt-3 text-muted text-decoration-none">Already a user? Sign in</a>
                   </form>
                 </div>
               </div>

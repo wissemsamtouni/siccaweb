@@ -1,4 +1,12 @@
 import { Component, OnInit } from '@angular/core';
+import {utilisateur} from "../../../model/utilisateur";
+import {LoginService} from "../../../services/authService/login.service";
+import {FormBuilder, FormGroup} from "@angular/forms";
+import {HttpClient} from "@angular/common/http";
+import {Router} from "@angular/router";
+import {Emitters} from "../../../emitters/emitters";
+import {ToastrService} from 'ngx-toastr';
+import {observeNotification} from "rxjs/internal/Notification";
 
 @Component({
   selector: 'app-login',
@@ -6,10 +14,79 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-
-  constructor() { }
+  utilisateur!:utilisateur;
+  form!: FormGroup;
+  constructor(private formBuilder: FormBuilder,private toastr: ToastrService,
+              private http: HttpClient,
+              private router: Router) { }
 
   ngOnInit(): void {
+    this.form = this.formBuilder.group({
+      login: '',
+      mdp: ''
+    });
+  }
+
+  submit(): void {
+
+    console.log(this.form.getRawValue())
+
+  try {
+    this.http.post('http://localhost:5000/utilisateurs/login', this.form.getRawValue(), {
+      withCredentials: true
+    }).subscribe((response:any) => {
+      console.log("hello");
+      Emitters.authEmitter.emit(true);
+
+
+      console.log(response.x);
+
+      if(response.y==="0"){
+
+        console.error("user banned");
+        this.toastr.success('user banned');
+
+      }
+
+     else if(response.x==='client'){
+
+
+        this.router.navigate(['front/Acceuil']).then(() => {
+
+
+         this.toastr.success('Welcome ');
+
+
+
+        });
+      }else if(response.x==='admin'){
+
+
+        this.router.navigate(['/back/dash']).then(() => {
+
+          this.toastr.success('Welcome');
+
+
+        });
+
+      }
+    }, err => {
+      console.log(err);
+      this.toastr.error('Login ou mot de passe incorrect');
+
+
+    }
+);
+
+
+
+
+  } catch (error) {
+    console.log(error);
+
+  }
+
+
   }
 
 }

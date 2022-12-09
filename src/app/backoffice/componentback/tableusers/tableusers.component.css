@@ -1,0 +1,23 @@
+.btn{
+  background-color: red;
+  color: white;
+  border-color: #dddddd;
+}
+.btn2
+{
+  background-color: #00bb00;
+  color: white;
+  border-color: #dddddd;
+}
+
+table th{
+  background-color: #1a252f;
+  color: white;
+  border-color: #dddddd;
+
+}
+#input{
+  background-color: #dddddd;
+  color: white;
+  ;
+}

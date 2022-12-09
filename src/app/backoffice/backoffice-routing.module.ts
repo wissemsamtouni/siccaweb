@@ -13,6 +13,9 @@ import { CategoieComponent } from './componentback/categoie/categoie.component';
 import { FormulairecategorieComponent } from './componentback/formulairecategorie/formulairecategorie.component';
 import { ModifierbonplanComponent } from './componentback/modifierbonplan/modifierbonplan.component';
 import { DetaillebonplansComponent } from './componentback/detaillebonplans/detaillebonplans.component';
+import {FormpromoComponent} from "./componentback/formpromo/formpromo.component";
+import {GuardGuard} from "../guard/guard.guard";
+
 
 
 
@@ -27,8 +30,8 @@ const routes: Routes = [
       {path:'updatebonplan',component:ModifierbonplanComponent },
       {path:'detailsbp/:id',component:DetaillebonplansComponent},
       {path:'categorie',component:CategoieComponent},
-      {path:'addcategorie',component:FormulairecategorieComponent}
-      
+      {path:'addcategorie',component:FormulairecategorieComponent},
+      {path:'promo',component:FormpromoComponent},
 
     ]}
 

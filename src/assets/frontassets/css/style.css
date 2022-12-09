@@ -34,7 +34,7 @@ a {
 .custom-navbar {
   background: transparent  !important;
   padding-top: 20px;
-  padding-bottom: 20px; 
+  padding-bottom: 20px;
   margin-left: -300px ;
   width: 130%;
   }
@@ -100,7 +100,7 @@ a {
       .custom-navbar .custom-navbar-cta li:first-child {
         margin-right: 20px; }
  #myVideo {
-        
+
           right: 0;
           bottom: 0;
           min-width: 100%;
@@ -109,20 +109,20 @@ a {
         .logo{
           width: 130px;
           margin-left: -200px;
-        
+
          }
 .btn:not(:disabled), [type=button]:not(:disabled), [type=reset]:not(:disabled), [type=submit]:not(:disabled) {
     cursor: pointer; background-color: #f8b810; border-color: #f8b810;}
 
 .panier{
   padding-top: 8px;
-}    
+}
 #motdepasse{
   padding-top: 16px;
   color: #f8b810;
 }
 .hero {
-  
+
   padding: calc(4rem - 30px) 0 0rem 0; }
   @media (min-width: 768px) {
     .hero {

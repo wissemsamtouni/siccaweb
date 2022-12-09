@@ -14,6 +14,9 @@ import { ContactComponent } from './contact/contact.component';
 import { PanierComponent } from './panier/panier.component';
 import { PaiementComponent } from './paiement/paiement.component';
 import { ThankyouComponent } from './thankyou/thankyou.component';
+import { ProfileComponent } from './profileedit/profile/profile.component';
+import {FormsModule} from "@angular/forms";
+import { PasswordComponent } from './profileedit/password/password.component';
 
 
 @NgModule({
@@ -29,11 +32,15 @@ import { ThankyouComponent } from './thankyou/thankyou.component';
     ContactComponent,
     PanierComponent,
     PaiementComponent,
-    ThankyouComponent
+    ThankyouComponent,
+    ProfileComponent,
+    PasswordComponent
   ],
   imports: [
     CommonModule,
-    FrontofficeRoutingModule
+    FrontofficeRoutingModule,
+    FormsModule,
+
   ]
 })
 export class FrontofficeModule { }
