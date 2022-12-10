@@ -5,3 +5,7 @@
 .card-title{
 color: blue;
 }
+.full{
+    height: 100vw;
+    width: 100vw;
+}

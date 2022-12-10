@@ -17,6 +17,7 @@ import { DetaillebonplansComponent } from './componentback/detaillebonplans/deta
 
 
 
+
 const routes: Routes = [
   {path:'',component :BackofficeComponent,children:[
       { path: 'dash', component: DashboardComponent },

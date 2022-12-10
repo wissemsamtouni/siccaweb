@@ -23,6 +23,11 @@ import { CategoieComponent } from './componentback/categoie/categoie.component';
 import { FormulairecategorieComponent } from './componentback/formulairecategorie/formulairecategorie.component';
 import { ModifierbonplanComponent } from './componentback/modifierbonplan/modifierbonplan.component';
 import { DetaillebonplansComponent } from './componentback/detaillebonplans/detaillebonplans.component';
+
+
+
+
+
 const SCRIPT_PATH_LISt = [
   "../../../assets/backassets/vendors/core/core.js",
   "../../..assets/backassets/vendors/flatpickr/flatpickr.min.js",
@@ -59,12 +64,18 @@ const SCRIPT_PATH_LISt = [
     CategoieComponent,
     FormulairecategorieComponent,
     ModifierbonplanComponent,
-    DetaillebonplansComponent
+    DetaillebonplansComponent,
+    
+ 
   ],
   imports: [
     CommonModule,
     BackofficeRoutingModule,
-    FormsModule,ReactiveFormsModule
+    FormsModule,
+    ReactiveFormsModule,
+   
+    
+   
   ]
 })
 export class BackofficeModule { }
