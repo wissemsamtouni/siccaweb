@@ -17,6 +17,7 @@ import { FormpromoComponent } from './componentback/formpromo/formpromo.componen
 import { ChatComponent } from './componentback/chat/chat.component';
 import { CalendrierComponent } from './componentback/calendrier/calendrier.component';
 import { EmailComponent } from './componentback/email/email.component';
+import { PipeevenementPipe } from './componentback/pipeevent/pipeevenement.pipe';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ListebonplanComponent } from './componentback/listebonplan/listebonplan.component';
 import { CategoieComponent } from './componentback/categoie/categoie.component';
@@ -38,9 +39,6 @@ const SCRIPT_PATH_LISt = [
 ]
 import {Ng2SearchPipeModule} from "ng2-search-filter";
 
-
-
-
 @NgModule({
   declarations: [
     BackofficeComponent,
@@ -57,16 +55,15 @@ import {Ng2SearchPipeModule} from "ng2-search-filter";
     FormpromoComponent,
     ChatComponent,
     CalendrierComponent,
+
+    EmailComponent,
+    PipeevenementPipe
     ListebonplanComponent,
     CategoieComponent,
     FormulairecategorieComponent,
     ModifierbonplanComponent,
     DetaillebonplansComponent
     EmailComponent,
-
-
-
-
   ],
   imports: [
     CommonModule,

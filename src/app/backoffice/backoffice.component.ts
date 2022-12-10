@@ -10,6 +10,10 @@ const SCRIPT_PATH_LIST =[
   "../../assets/backassets/js/template.js",
   "../../assets/backassets/js/dashboard-light.js",
   "../../assets/backassets/js/pickr.js",
+   "../../assets/backassets/vendors/moment/moment.min.js",
+  "../assets/frontassets/js/bootstrap.bundle.min.js",
+  "../assets/frontassets/js/tiny-slider.js",
+  "../assets/frontassets/js/custom.js"
   "../../assets/backassets/js/flatpickr.js",
  "../../assets/backassets/vendors/jquery-validation/jquery.validate.min.js",
     "../../assets/backassets/vendors/bootstrap-maxlength/bootstrap-maxlength.min.js",
@@ -19,8 +23,6 @@ const SCRIPT_PATH_LIST =[
    "../../assets/backassets/vendors/jquery-tags-input/jquery.tagsinput.min.js",
     "../../assets/backassets/vendors/dropzone/dropzone.min.js",
    "../../assets/backassets/vendors/dropify/dist/dropify.min.js",
-
-
     "../../assets/backassets/js/form-validation.js",
     "../../assets/backassets/js/bootstrap-maxlength.js",
     "../../assets/backassets/js/inputmask.js",
@@ -29,6 +31,7 @@ const SCRIPT_PATH_LIST =[
    "../../assets/backassets/js/tags-input.js",
     "../../assets/backassets/js/dropzone.js",
    "../../assets/backassets/js/dropify.js",
+
 
 
 ]

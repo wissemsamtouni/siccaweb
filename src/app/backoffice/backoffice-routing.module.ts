@@ -7,6 +7,7 @@ import {DashboardComponent} from "./componentback/dashboard/dashboard.component"
 
 import {TableusersComponent} from "./componentback/tableusers/tableusers.component";
 import {ChatComponent} from "./componentback/chat/chat.component";
+import { FormeventComponent } from './componentback/formevent/formevent.component';
 import { FormbonplanComponent } from './componentback/formbonplan/formbonplan.component';
 import { ListebonplanComponent } from './componentback/listebonplan/listebonplan.component';
 import { CategoieComponent } from './componentback/categoie/categoie.component';
@@ -20,11 +21,14 @@ import {GuardGuard} from "../guard/guard.guard";
 
 
 
+
 const routes: Routes = [
   {path:'',component :BackofficeComponent,children:[
       { path: 'dash', component: DashboardComponent },
       {path:'basic',component:FormulaireComponent},
       {path:'tableusers',component:TableusersComponent},
+
+      {path:'formevent', component:FormeventComponent},
       {path:'addbonpan',component:FormbonplanComponent},
       {path:'showbonplan',component:ListebonplanComponent},
       {path:'updatebonplan',component:ModifierbonplanComponent },
@@ -32,7 +36,6 @@ const routes: Routes = [
       {path:'categorie',component:CategoieComponent},
       {path:'addcategorie',component:FormulairecategorieComponent},
       {path:'promo',component:FormpromoComponent},
-
     ]}
 
 ];

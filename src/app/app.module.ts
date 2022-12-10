@@ -18,16 +18,18 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
   imports: [
     BrowserModule,
     AppRoutingModule,
+    ToastrModule.forRoot({
+      timeOut: 2000,
+      progressBar: true,
+      progressAnimation: 'increasing',
+      preventDuplicates: true
+    }),
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
     Ng2SearchPipeModule,
     BrowserAnimationsModule, // required animations module
-    ToastrModule.forRoot({
-      timeOut: 15000, // 15 seconds
-      closeButton: true,
-      progressBar: true,
-    }),
+  
 
   ],
   providers: [],
