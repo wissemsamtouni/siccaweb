@@ -9,16 +9,29 @@ import { PanierService } from 'src/app/services/panier.service';
 })
 export class PanierComponent implements OnInit {
   paymentHandler: any = null;
-  stripeAPIKey: any = 'pk_test_51MDASDLtBuFc9f6ITsWNl0DjpGO9xM1WnUDpzpeP0e9Rv8IE35sjlFHQE9oCvGCxGFpAJyZdJV8xXxDNnamcJqfw00MDn3JGTy';
+  stripeAPIKey: any = 'sk_test_51MDASDLtBuFc9f6IcbpcBmHigR1LiuffNI5tVBNKM7Nt8Gv0HUdPNMPK7YY8b6K5wniys87T6pRHOqfrB4jEi7W800vnmuDPbU';
   constructor(private panierservic: PanierService, private tostrservice:ToastrService) { }
 listeItems: any;
 reservation: any;
 panier: any;
+prixtotal: number=0;
+success: boolean = false
+  
+failure:boolean = false
   ngOnInit(): void {
-    this.panierservic.getpanier().subscribe((data) =>{this.listeItems = data.lignepanier});
+    this.panierservic.getpanier().subscribe((data) =>{this.listeItems = data.lignepanier;this.calculprixtotal(data.lignepanier)});
     this.invokeStripe();
+   
+   
+   
   }
-
+calculprixtotal(list:any){
+  console.log(list);
+  list.forEach((element: any) => {
+    console.log(element)
+    this.prixtotal +=  parseInt(element.prixticket)*parseInt(element.quantite);
+    
+  });console.log(this.prixtotal);}
   delete(idpanier:any, iditem:any ){
     console.log(idpanier,iditem)
     this.panierservic.deletpanier(iditem,idpanier,1).subscribe({
@@ -29,19 +42,33 @@ panier: any;
     })
 }
 
-makePayment(amount: any) {
+
+makePayment(amount: number){
   const paymentHandler = (<any>window).StripeCheckout.configure({
     key: this.stripeAPIKey,
     locale: 'auto',
     token: function (stripeToken: any) {
       console.log(stripeToken);
       alert('Stripe token generated!');
+      paymentstripe(stripeToken) ;
     },
   });
+  const paymentstripe = (stripeToken: any) => {
+    this.panierservic.makePayment(stripeToken).subscribe({next:(data: any) => {
+      console.log(data);
+      if (data.data === "success") {
+        this.success = true
+      }
+      else {
+        this.failure = true
+      }
+    },error:(err)=>{console.log(err);},});
+  };
   paymentHandler.open({
-    name: 'ItSolutionStuff.com',
-    description: '3 widgets',
-    amount: amount * 100,
+    name: 'Evenement réservée',
+    description: '',
+    amount: amount,
+   
   });
 }
 invokeStripe() {
