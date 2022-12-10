@@ -1,4 +1,5 @@
 import { Component, Input, OnInit, Output } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 import { EventEmitter } from 'stream';
 import {evenement} from "../../model/evenement";
 import {EvenementService} from "../../services/evenement.service";
@@ -13,7 +14,8 @@ export class EvenementsComponent implements OnInit {
   evennement!: evenement;
   searchevent !: string;
 
-  constructor(private eventService: EvenementService) { }
+  constructor(private eventService: EvenementService,
+    private tostrservice:ToastrService) { }
 
   ngOnInit(): void {
     this.evennement = new evenement();
@@ -28,6 +30,11 @@ export class EvenementsComponent implements OnInit {
 
   ajouterevenement(evenement: evenement) {
  console.log(evenement)
-    this.eventService.addpanier(evenement.id,1,1,evenement.prixticket).subscribe((data) => {} );
+    this.eventService.addpanier(evenement.id,1,1,evenement.prixticket).subscribe((data) => {
+      this.tostrservice.success( 'Ajouter au panier avec success');
+    } );
+  
+
+    
   }
 }

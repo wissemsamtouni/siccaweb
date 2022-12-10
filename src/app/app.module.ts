@@ -16,6 +16,7 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
   imports: [
     BrowserModule,
     AppRoutingModule,
+    
    HttpClientModule,
     FormsModule,
     Ng2SearchPipeModule,
@@ -26,6 +27,8 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
       progressAnimation: 'increasing',
       preventDuplicates: true
     }),
+   
+ 
   ],
   providers: [],
   bootstrap: [AppComponent]

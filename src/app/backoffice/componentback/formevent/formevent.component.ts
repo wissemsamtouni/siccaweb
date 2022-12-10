@@ -1,5 +1,5 @@
 import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
-import {  FormControl, FormGroup} from '@angular/forms';
+import {  FormControl, FormGroup, NgForm} from '@angular/forms';
 
 import {EvenementService} from "../../../services/evenement.service";
 import {evenement} from "../../../model/evenement";
@@ -16,6 +16,8 @@ import {ToastrService} from 'ngx-toastr'
 export class FormeventComponent implements OnInit {
 aaa!: string;
 countevent : number=0;
+  @ViewChild('myForm', { static: false })
+  myForm!: NgForm;
 
   @ViewChild('inputimage', {static: false}) inputimage!: ElementRef;
   @ViewChild('inputtitre') inputtitre!: ElementRef;
@@ -82,6 +84,9 @@ countevent : number=0;
 
 
   }
+  Reset(){
+    this.myForm.resetForm ();
+  }
 
   ajouterevenement() {
     console.log(this.evennement);
@@ -130,7 +135,8 @@ countevent : number=0;
 
     } catch (error) {
       console.log(error);
-    }
+    } 
+    this.Reset();
 
   }
 
@@ -142,9 +148,9 @@ countevent : number=0;
 
 delete(id:any ){
     this.eventService.deleteevent(id).subscribe({
-      next:(result)=>{alert("suppression")
+      next:(result)=>{
         // @ts-ignore
-        this.tostrservice.success( 'suppression avec success');
+        this.tostrservice.success( 'supprimer  evenement avec success');
 
 
 
