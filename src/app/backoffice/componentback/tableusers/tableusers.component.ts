@@ -21,7 +21,7 @@ export class TableusersComponent implements OnInit {
     this.dashService.getUsers().subscribe((data)=>this.list=(data.users),);
   }
   banner(id_utilisateur:number){
-    this.banService.banner(id_utilisateur,this.Utilisateur).subscribe((data)=> window.location.reload(),);
-
+    this.banService.banner(id_utilisateur,this.Utilisateur).subscribe();
+    this.ngOnInit()
   }
 }

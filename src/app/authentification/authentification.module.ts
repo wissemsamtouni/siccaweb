@@ -7,7 +7,6 @@ import { AuthentificationComponent } from './authentification.component';
 import { LoginComponent } from './componentauth/login/login.component';
 import { RegistrComponent } from './componentauth/registr/registr.component';
 import { ForgetpasswordComponent } from './componentauth/forgetpassword/forgetpassword.component';
-import { CodeconfirmationComponent } from './componentauth/codeconfirmation/codeconfirmation.component';
 import { ChangermotdepasseComponent } from './componentauth/changermotdepasse/changermotdepasse.component';
 
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
@@ -20,7 +19,6 @@ import {ToastrModule} from "ngx-toastr";
     LoginComponent,
     RegistrComponent,
     ForgetpasswordComponent,
-    CodeconfirmationComponent,
     ChangermotdepasseComponent,
 
   ],

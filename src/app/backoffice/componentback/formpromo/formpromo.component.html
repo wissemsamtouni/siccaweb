@@ -9,7 +9,7 @@
   <div class="col-md-12 stretch-card">
     <div class="card">
       <div class="card-body">
-        <form class="forms-sample">
+        <form class="forms-sample" #form="ngForm" >
 
 
 <div>
@@ -17,8 +17,12 @@
           <br>
           <br>
           <div class="input-group flatpickr" id="flatpickr-date">
-            <input type="text" class="form-control" placeholder="Select date" data-input>
+            <input [(ngModel)]="Promo.date_expiration" required  #date="ngModel" type="text" name="date_expiration" class="form-control" placeholder="Select date" data-input>
             <span class="input-group-text input-group-addon" data-toggle><i data-feather="calendar"></i></span>
+
+            <div *ngIf="date.invalid && date.touched">
+              <p *ngIf="date.hasError('required')">champs obligatoire</p>
+            </div>
           </div>
           <br>
 </div>
@@ -26,29 +30,33 @@
 
           <div class="mb-3">
             <label for="exampleInputUsername1" class="form-label">Pourcentage de reduction</label>
-            <input type="" class="form-control" id="exampleInputUsername1" autocomplete="off" placeholder="0.0 %">
+            <input [(ngModel)]="Promo.pourcentage_reduction" type="number" required pattern="[0-9]{1,15}$" #pr="ngModel" name="pourcentage_reduction" class="form-control" id="exampleInputUsername1" autocomplete="off" placeholder="0.0 %">
+            <div *ngIf="pr.invalid && pr.touched">
+              <p *ngIf="pr.hasError('required')">champs obligatoire</p>
+              <p *ngIf="pr.hasError('pattern')">porcentage invalid</p>
+            </div>
+
           </div>
           <div class="mb-3">
             <label class="form-label">Champs de promotion</label><br><br>
             <label>Evennement :</label>
-            <select class="form-select form-select-sm mb-3">
+            <select class="form-select form-select-sm mb-3" (change)="selectEvent($event)">
               <option selected>-- </option>
-              <option value="1">Evennement1</option>
-              <option value="2">Evennement2</option>
+
+              <option  *ngFor="let item of listevent"  [value]="item.id">{{item.titre}}</option>
 
             </select>
             <label>Materiel :</label>
-            <select class="form-select form-select-sm mb-3">
+            <select class="form-select form-select-sm mb-3" (change)="selectMateriel($event)">
               <option selected> -- </option>
-              <option value="1">Materiel1</option>
-              <option value="2">Materiel2</option>
+              <option  *ngFor="let item of listmateriel"  [value]="item.id_materiel">{{item.categorie}}</option>
 
             </select>
           </div>
           <br>
 
-          <button type="submit" class="btn btn-primary me-2">Ajouter</button>
-          <button class="btn btn-secondary">Cancel</button>
+          <button (click)="savePromo()" [disabled]="form.invalid" type="submit" class="btn btn-primary me-2">Ajouter</button>
+          <button routerLink="/back/dash" class="btn btn-secondary">Cancel</button>
         </form>
 
       </div>

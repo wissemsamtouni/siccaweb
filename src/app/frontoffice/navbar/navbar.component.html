@@ -23,6 +23,8 @@
                     <li><a class="nav-link" routerLink="/panier"><img src="assets/frontassets/images/ajouter-au-panier.png" class="panier"></a></li>
                 </ul>
               <ul *ngIf="authenticated" class="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5">
+                <li><a class="nav-link" routerLink="/panier"><img src="assets/frontassets/images/ajouter-au-panier.png" class="panier"></a></li>
+
                 <li><a class="nav-link">
                   <div class="dropdown">
                   <img class="dropbtn" src="assets/backassets/images/img_7.png" class="logodeux">
@@ -31,6 +33,7 @@
                     <a (click)="logout()" routerLink="/auth/login" href="#"> <img src="assets/backassets/images/img.png" class="logod"> Log Out </a>
                   </div>
                 </div> </a></li>
+
 
               </ul>
             </div>

@@ -26,7 +26,7 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
     Ng2SearchPipeModule,
     BrowserAnimationsModule, // required animations module
     ToastrModule.forRoot({
-      timeOut: 15000, // 15 seconds
+      timeOut: 2000, // 15 seconds
       closeButton: true,
       progressBar: true,
     }),

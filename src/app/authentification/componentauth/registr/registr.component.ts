@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {utilisateur} from "../../../model/utilisateur";
 import {RegistrService} from "../../../services/authService/registr.service";
 import {Router} from "@angular/router";
+import {ToastrService} from "ngx-toastr";
 
 
 
@@ -15,7 +16,7 @@ export class RegistrComponent implements OnInit {
   utilisateur!:utilisateur;
 
 
-  constructor(private registrService:RegistrService ,private router:Router) { }
+  constructor(private registrService:RegistrService ,private router:Router,private toastr: ToastrService) { }
 
   ngOnInit(): void {
     this.utilisateur=new utilisateur();
@@ -24,6 +25,7 @@ export class RegistrComponent implements OnInit {
 saveUser(){
     console.log(this.utilisateur);
     this.registrService.postUser(this.utilisateur).subscribe(()=>this.router.navigate(['/auth/login']));
+    this.toastr.success("compte crée avec succées !")
 
 }
 
