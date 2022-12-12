@@ -20,6 +20,7 @@ import { EmailComponent } from './componentback/email/email.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { PipeevenementPipe } from './componentback/pipeevent/pipeevenement.pipe';
 import {Ng2SearchPipeModule} from "ng2-search-filter";
+import { MaterielComponent } from './componentback/materiel/materiel.component';
 
 
 
@@ -41,7 +42,8 @@ import {Ng2SearchPipeModule} from "ng2-search-filter";
     ChatComponent,
     CalendrierComponent,
     EmailComponent,
-    PipeevenementPipe
+    PipeevenementPipe,
+    MaterielComponent
 
   ],
   imports: [

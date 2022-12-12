@@ -7,6 +7,7 @@ import { BonplanComponent } from './bonplan/bonplan.component';
 import { ContactComponent } from './contact/contact.component';
 import { EvenementsComponent } from './evenements/evenements.component';
 import { FrontofficeComponent } from './frontoffice.component';
+import { MapeventComponent } from './mapevent/mapevent.component';
 import { MaterielComponent } from './materiel/materiel.component';
 import { PaiementComponent } from './paiement/paiement.component';
 import { PanierComponent } from './panier/panier.component';
@@ -17,13 +18,15 @@ const routes: Routes = [
   {path:'',component :FrontofficeComponent,children:[
     {path:'Acceuil', component: AcceuilComponent},
     {path:'Evenement', component:EvenementsComponent},
-    {path:'Apropos ', component:ApproposComponent},
+    //{path:'Apropos ', component:ApproposComponent},
+    {path:'Apropos', component:ApproposComponent},
     {path:'Bonplan', component:BonplanComponent},
     {path:'Materiel', component:MaterielComponent },
     {path:'Contact', component:ContactComponent},
     {path:'panier', component:PanierComponent},
     {path:'paiement', component:PaiementComponent},
-    {path:'thankyou', component:ThankyouComponent}
+    {path:'thankyou', component:ThankyouComponent},
+    {path:'mapevent',component:MapeventComponent}
   ]}
 
 

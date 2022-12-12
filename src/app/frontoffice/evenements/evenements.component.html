@@ -21,27 +21,7 @@
           <h2 class="section-title">Liste des Evenements</h2>
         </div>
       </div>
-     
-      <!-- <div class="row">
-          <tbody >
-              <td *ngFor="let e of listevent ">
-
-          <div class="col-12 col-md-6 col-lg-3 mb-5 mb-md-0">
-              <a class="product-item"  routerLink="/panier">
-              <img src="/api/{{e.image}}" class="img-fluid mb-5">
-              <h3 clas><span class="">{{e.titre}} </span></h3>
-              <span class="d-block position mb-4"> <strong class="product-price">{{e.prixticket}} DNT</strong></span>
-                  <p>{{e.discription}}</p>
-                      <span class="icon-cross"  >
-                       <img src="assets/frontassets/images/cross.svg" class="img-fluid">
-                       </span>
-          </a>
-
-                  </div>
-           End Column 1 -->
-      <!--
-          </td>
-          </tbody>-->
+  
           <input type="text" class="form-control" id="navbarForm" placeholder="Search here..."  [(ngModel)]="searchevent" >
 
       <div class="d-flex justify-content-around flex-wrap ">
@@ -54,9 +34,14 @@
               <p class="card-text">{{e.discription}}</p>
               <p class="card-text"><small class="text-muted"> <span class="d-block position mb-4"> <strong
                 class="product-price">{{e.prixticket}} DNT</strong></span></small></p>
+                <div class="rating"><i style="color: yellow;" class="fa fa-star"></i> <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
+                    class="fa fa-star"></i> <i class="fa fa-star" aria-hidden="true"></i></div>
+
               <a  class="btn btn-primary" [class.disabled]="e.nbrticket<1"
               [class.btn-outline-danger]="e.nbrticket<1"> {{e.nbrticket <1 ? "Or Stock": "Ajouter au panier"}} <img src="assets/frontassets/images/cross.svg"
                                                                     class="img-fluid" (click)="ajouterevenement(e)"></a>
+              <a  class="btn btn-primary" routerLink="/mapevent" ><i  class="fas fa-map"></i></a>                                                    
             </div>
           </div>
         </div>

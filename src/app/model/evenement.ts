@@ -7,6 +7,7 @@ export class evenement {
   nbrticket !: number;
   image !: string;
   prixticket!:number;
+  
 
 
 }

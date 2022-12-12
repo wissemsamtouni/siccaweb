@@ -1,0 +1,513 @@
+
+
+
+
+<div class="row" xmlns="http://www.w3.org/1999/html">
+    <div class="col-md-12 grid-margin stretch-card">
+      <div class="card">
+        <div class="card-body">
+          <h6 class="card-title">Materiel</h6>
+          <form class="forms-sample">
+            <div class="row">
+              <div class="col-md-12 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    <h6 class="card-title">Ajouter Materiel</h6>
+  
+                     <form #myForm="ngForm" name="myForm">
+                    <div class="mb-3">
+                      <label class="form-label">Nom : <span style="color: red">*</span> </label>
+                      <input #inputtitre type="text" class="form-control" placeholder="Enter Titre" name="titre" 
+                            >
+                
+                    </div>
+  
+            <div class="mb-3">
+                      <label class="form-label">Description : <span style="color: red">*</span>  </label>
+  
+                      <input #inputdescription type="textarea" class="form-control"  maxlength="450" minlength="10" placeholder="Enter Titre" name="discription" required ngModel
+                             #desc="ngModel" >
+                   
+                    </div>
+  
+  
+  
+  
+                    <div class="row">
+                      <div class="row">
+                        
+  
+  
+                       
+                        <div class="mb-3">
+                          <label class="form-label">Prix : <span style="color: red">*</span> </label>
+                          <input #inputprix type="Number" class="form-control" placeholder="Enter nomber de ticket.." name="prixticket"
+                                >
+  
+  
+                        </div>
+                        
+                            <div class="form-group md-6">
+                                <label class="form-label">Catégorie : <span style="color: red">*</span> </label>
+                                
+                               
+                                <select  name="disp" class="form-control">
+                                    <option value="">CUISINE DU CAMP</option>
+                                    <option value=""> DORMIR</option>
+                                    <option value="">ÉCLAIRAGE</option>
+                                    <option value="">MATÉRIEL DE RANDONNEE À LA JOURNÉE</option>
+                                </select>
+                               
+                            </div>
+                            <br>
+                        <div class="form-group">
+  
+                        
+                          <div class="mb-3">
+                            <br>
+                            <label class="form-label" >Image Materiel : <span style="color: red">*</span></label>
+                    
+                              <input #inputimage class="form-control" type="file"
+  
+                                     name="image" class="form-control" type="file">
+  
+                              <div class="invalid-feedback">
+                                <div >L'image est requis</div>
+  
+                                <div >L'image est uniquement au format txt</div>
+  
+                            </div>
+  
+                            <button class="btn btn-primary"  type="submit">Ajouter Materiel</button>
+  
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+  </form>
+                  </div>
+  
+                </div>
+  
+              </div>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+              <div class="page-content">
+  
+                <nav class="page-breadcrumb">
+                  <ol class="breadcrumb">
+  
+                    <li class="breadcrumb-item active" aria-current="page">Liste des Evenements</li>
+                  </ol>
+                </nav>
+  
+                <div class="row">
+  
+  
+  
+  
+  
+  
+                  <div class="col-md-12 grid-margin stretch-card">
+  
+                    <div class="card">
+                      <div class="card-body">
+  
+                        <div class=" d-flex justify-content-between">
+                          <table>
+                            <tbody>
+                            <th >Show</th>
+                            <th><select name="dataTableExample_length" aria-controls="dataTableExample"
+                                        class="form-select form-select-sm">
+                              <option value="0" >7</option>
+                            </select></th>
+                            <th>entries</th>
+                            </tbody>
+                          </table>
+                          <div class="">
+                            <input type="text" class="form-control me-sm-auto" placeholder="Search"
+                                   id="input"   aria-controls="Search " name="aaa">
+                          </div>
+                        </div>
+  
+                        </div>
+  
+  
+                        <div class="table-responsive">
+                        <div class="table-responsive">
+  
+                         <!-- <button class="btn btn-outline-success my-2 my-sm-0" type="submit" (click)="search()">Search</button>
+                          -->
+                          <br>
+                          <table id="dataTableExample" class="table table-hover">
+                            <thead>
+                            <tr>
+                              <th>Materiel</th>
+                              <th>Nom</th>
+    
+                              <th>Discription</th>
+                             
+                              <th>Prix </th>
+  
+  
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr >
+                              <td><img src="assets/frontassets/images/tente.jpg"></td>
+
+                              <td>  TENTE</td>
+                              <td> Nos concepteurs ont éco-conçu cette tente 2 personnes simple et facile à monter.</td>
+                              <td> 15 DNT</td>
+                              <td><button class="btn btn-primary"  data-bs-toggle="modal" data-bs-target="#modupdate"  ><i class="fa fa-edit"></i></button></td>
+                              <td><button type="button" class="btn  btn-danger" title="delete" data-bs-toggle="modal" data-bs-target="#modsupp" ><i class="fa-solid fa-trash-can"></i></button></td>
+  
+  
+  
+  
+                            </tr>
+                            <tr >
+                                <td><img src="assets/frontassets/images/sacdecouchage.jpg"></td>
+  
+                                <td> SAC DE COUCHAGE</td>
+                                <td>Sac de couchage pour le camping - ARPENAZ 15°</td>
+                                <td>30 DNT</td>
+                                <td><button class="btn btn-primary"  data-bs-toggle="modal" data-bs-target="#modupdate"  ><i class="fa fa-edit"></i></button></td>
+                                <td><button type="button" class="btn  btn-danger" title="delete" data-bs-toggle="modal" data-bs-target="#modsupp" ><i class="fa-solid fa-trash-can"></i></button></td>
+    
+    
+    
+    
+                              </tr>
+                            
+                              <tr >
+                                <td><img src="assets/frontassets/images/saccamp.jpg"></td>
+  
+                                <td> SAC CAMPING</td>
+                                <td>Sac à dos de voyage 50L - TRAVEL 100</td>
+                                <td>20 DNT</td>
+                                <td><button class="btn btn-primary"  data-bs-toggle="modal" data-bs-target="#modupdate"  ><i class="fa fa-edit"></i></button></td>
+                                <td><button type="button" class="btn  btn-danger" title="delete" data-bs-toggle="modal" data-bs-target="#modsupp" ><i class="fa-solid fa-trash-can"></i></button></td>
+    
+    
+    
+    
+                              </tr>
+                            
+                              <tr >
+                                <td><img src="assets/frontassets/images/tentedouche.jpg"></td>
+  
+                                <td>  TENTE DE DOUCHE</td>
+                                <td>  Largeur de la cabine intérieure: 1.20 m Profondeur de la cabine intérieure: 1.20 m Hauteur de la tente: 2.10 m</td>
+                                <td>23 DNT</td>
+                                <td><button class="btn btn-primary"  data-bs-toggle="modal" data-bs-target="#modupdate"  ><i class="fa fa-edit"></i></button></td>
+                                <td><button type="button" class="btn  btn-danger" title="delete" data-bs-toggle="modal" data-bs-target="#modsupp" ><i class="fa-solid fa-trash-can"></i></button></td>
+    
+    
+    
+    
+                              </tr>
+                            
+                              <tr >
+                                <td><img src="assets/frontassets/images/glasiere.jpg"></td>
+  
+                                <td>GLASIERE</td>
+                                <td>Glacière CAMPING 28 Litres
+                                    Glacière CAMPING 20 Litres
+                                    Glacière CAMPING 10 Litres</td>
+                                <td>20 DNT</td>
+                                <td><button class="btn btn-primary"  data-bs-toggle="modal" data-bs-target="#modupdate"  ><i class="fa fa-edit"></i></button></td>
+                                <td><button type="button" class="btn  btn-danger" title="delete" data-bs-toggle="modal" data-bs-target="#modsupp" ><i class="fa-solid fa-trash-can"></i></button></td>
+    
+    
+    
+    
+                              </tr>
+                            
+                              <tr >
+                                <td><img src="assets/frontassets/images/chesse.jpg"></td>
+  
+                                <td> TABLE DE CAMPING PLIANTE - 4 TABOURETS</td>
+                                <td>Table de camping pliante - 6 tabourets - à 6 personnes</td>
+                                <td>40 DNT</td>
+                                <td><button class="btn btn-primary"  data-bs-toggle="modal" data-bs-target="#modupdate"  ><i class="fa fa-edit"></i></button></td>
+                                <td><button type="button" class="btn  btn-danger" title="delete" data-bs-toggle="modal" data-bs-target="#modsupp" ><i class="fa-solid fa-trash-can"></i></button></td>
+    
+    
+    
+    
+                              </tr>
+                            
+                              <tr >
+                                <td><img src="assets/frontassets/images/Aluminium Camping Cookware Set.jpg"></td>
+  
+                                <td> USTENSILES DE CUISINE DE CAMPING EN ALUMINIUM</td>
+                                <td>14 PCS Ustensiles de Cuisine de Camping en Aluminium</td>
+                                <td>5 DNT</td>
+                                <td><button class="btn btn-primary"  data-bs-toggle="modal" data-bs-target="#modupdate"  ><i class="fa fa-edit"></i></button></td>
+                                <td><button type="button" class="btn  btn-danger" title="delete" data-bs-toggle="modal" data-bs-target="#modsupp" ><i class="fa-solid fa-trash-can"></i></button></td>
+    
+    
+    
+    
+                              </tr>
+                            
+                              
+
+  
+                            </tbody>
+                          </table>
+                        </div>
+  
+  
+                      </div>
+                    </div>
+                  </div>
+  
+  
+                </div>
+  
+              </div>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <!-- modal supprmier evenement-->
+  <div class="modal fade new-project-modal" tabindex="-1" id="modsupp" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Supprmier  un evenement</h5>
+          <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <a>
+            Vous les vous supprmier l'evenement?
+          </a>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary " data-bs-dismiss="modal" >Annuler</button>
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal"  >Supprmier</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+  
+  <!-- modal modifier evenement-->
+  <div class="modal fade new-project-modal col-xxl-12" tabindex="-1" id="modupdate" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Modifier  un evenement</h5>
+          <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <div class="row">
+              <div class="col-md-12 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    <h6 class="card-title">Evenements</h6>
+                    <form class="forms-sample">
+                      <div class="row">
+                        <div class="col-md-12 grid-margin stretch-card">
+                          <div class="card">
+                            <div class="card-body">
+                              <h6 class="card-title">Modifier Evenements</h6>
+                              <form #f="ngForm" >
+                                <div class="mb-3">
+                                  <label class="form-label">Titre : <span style="color: red">*</span> </label>
+                                  <input #inputtitre type="text" class="form-control" placeholder="Enter Titre" name="titre" >
+                                      
+                                  
+                                </div>
+                                <div class="mb-3">
+                                  <label class="form-label">Description : <span style="color: red">*</span>  </label>
+                                  <input #inputdescription type="textarea" class="form-control"  maxlength="450" minlength="10" placeholder="Enter Titre" name="discription">
+  
+                                </div>
+                                <div class="row">
+                                  <div class="row">
+                                    <div class="col-md-12 grid-margin stretch-card">
+                                      <div class="card">
+  
+                                        <div class="card-body justify-content-between">
+  
+                                          <table class="col-md-12 grid-margin">
+                                            <tbody>
+                                            <tr>
+                                              <td>
+                                                <h6 class="card-title">Date Début : <span style="color: red">*</span></h6>
+                                                <div class="input-group flatpickr" id="flatpickr-date">
+                                                  <input #inputdated type="text" class="form-control" placeholder="Select date" data-input name="datedebut" >
+                                                  <span class="input-group-text input-group-addon" data-toggle><i data-feather="calendar"></i></span>
+                                                  <!--<div class="invalid-feedback d-block text-left" *ngIf="datedebut.invalid && datedebut.touched && datedebut.hasError('required')">Date est Obligatoire</div>
+              -->
+                                                </div>
+                                              </td>
+                                              <td>
+                                                <h6 class="card-title">Date Début : <span style="color: red">*</span></h6>
+  
+                                                <div class="input-group flatpickr" id="flatpickr-date" >
+                                                  <input #inputdatef type="text" class="form-control" placeholder="Select date" data-input name="datefin" required  >
+                                                  <span class="input-group-text input-group-addon" data-toggle><i data-feather="calendar"></i></span>
+  
+                                                </div>
+                                              </td>
+                                            </tr>
+                                            </tbody>
+  
+                                          </table>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="mb-3">
+                                      <label  class="form-label" name="nbr">Nombers de tickets : <span style="color: red">*</span></label>
+                                    </div>
+                                    <div class="site-blocks-table">
+                                      <table class="table">
+                                        <tbody>
+                                        <tr>
+                                          <td>
+                                            <div class="input-group mb-3 d-flex align-items-center quantity-container"
+                                                 style="max-width: 120px;" >
+                                              <div class="input-group-prepend">
+                                                <button class="btn btn-outline-black decrease" type="button">&minus;</button>
+                                              </div>
+                                              <input #inputnbrticket type="Number" class="form-control text-center quantity-amount" value="1"
+                                                     aria-label="Example text with button addon"
+                                                     aria-describedby="button-addon1" name="nbrticket">
+                                              <div class="input-group-append">
+                                                <button class="btn btn-outline-black increase" type="button">&plus;</button>
+                                              </div>
+                                            </div>
+                                            <div class="mb-3">
+                                              <label class="form-label">Prix Ticket : <span style="color: red">*</span> </label>
+                                              <input #inputprix type="Number" class="form-control" placeholder="Enter nomber de ticket.." name="prixticket"
+                                                     >
+  
+                                            </div>
+                                          </td>
+                                        </tr>
+                                        </tbody>
+                                      </table>
+                                    </div>
+  
+                                    <!--<div class="mb-3">
+                                      <label class="form-label" >Image Evenements : <span style="color: red">*</span></label>
+  
+                                      <input #inputimage class="form-control" type="file"
+  
+                                             [(ngModel)]="evennement.image" name="image" class="form-control" type="file">
+  
+                                      <div class="invalid-feedback">
+                                        <div >L'image est requis</div>
+  
+                                        <div >L'image est uniquement au format txt</div>
+  
+                                      </div>.30
+  
+                                </div>-->
+  
+                            </div>
+                                </div>
+                                <div class="modal-footer">
+                                  <button type="button" class="btn btn-secondary " data-bs-dismiss="modal" >Annuler</button>
+                                  <button type="button" class="btn btn-primary" data-bs-dismiss="modal" >Modifier</button>
+                                </div>
+                              </form>
+  
+                        </div>
+        </div>
+  
+  
+  
+  
+    </div>
+  </div>
+  
+  
+  
+  
+  
+  
