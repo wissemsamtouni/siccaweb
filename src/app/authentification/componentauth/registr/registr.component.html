@@ -22,36 +22,73 @@
                   <form class="forms-sample" #form="ngForm">
                     <div class="mb-3">
                       <label for="exampleInputUsername1" class="form-label">First Name </label>
-                      <input type="text" name="nom" class="form-control" [(ngModel)]="utilisateur.nom" id="exampleInputUsername1" autocomplete="Username" placeholder="Username">
+                      <input type="text" name="nom" class="form-control" [(ngModel)]="utilisateur.nom" required pattern="[a-zA-Z]{3,20}$" #nom="ngModel" id="exampleInputUsername1" autocomplete="Username" placeholder="Username">
+                      <div *ngIf="nom.invalid && nom.touched">
+                        <p *ngIf="nom.hasError('required')">this field is required</p>
+                        <p *ngIf="nom.hasError('pattern')">respect the pattern</p>
+                      </div>
+
                     </div>
                     <div class="mb-3">
                       <label for="exampleInputUsername1" class="form-label">Last Name</label>
-                      <input type="text" name="prenom"class="form-control"  [(ngModel)]="utilisateur.prenom" autocomplete="Username" placeholder="Username">
+                      <input type="text" name="prenom"class="form-control"  [(ngModel)]="utilisateur.prenom" required pattern="[a-zA-Z]{3,20}$" #prenom="ngModel" autocomplete="Username" placeholder="Username">
+                      <div *ngIf="prenom.invalid && prenom.touched">
+                        <p *ngIf="prenom.hasError('required')">this field is required</p>
+                        <p *ngIf="prenom.hasError('pattern')">respect the pattern</p>
+                      </div>
+
                     </div>
                     <div class="mb-3">
                       <label class="form-label">Email</label>
-                      <input type="text" [(ngModel)]="utilisateur.mail" name="mail" class="form-control"  placeholder="Email">
+                      <input type="email" [(ngModel)]="utilisateur.mail" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" name="mail" #mail="ngModel" class="form-control"  placeholder="Email">
+
+                      <div *ngIf="mail.invalid && mail.touched">
+                        <p *ngIf="mail.hasError('required')">this field is required</p>
+                        <p *ngIf="mail.hasError('pattern')">respect the pattern</p>
+                      </div>
+
                     </div>
                     <div class="mb-3">
                       <label class="form-label">Login</label>
-                      <input type="text" [(ngModel)]="utilisateur.login" name="login" class="form-control"  placeholder="Email">
+                      <input type="text" [(ngModel)]="utilisateur.login" required pattern="[a-zA-Z0-9]{3,15}$" #log="ngModel" name="login" class="form-control"  placeholder="Email">
+
+                      <div *ngIf="log.invalid && log.touched">
+                        <p *ngIf="log.hasError('required')">champs obligatoire</p>
+                        <p *ngIf="log.hasError('pattern')">format invalid</p>
+                      </div>
+
                     </div>
                     <div class="mb-3">
                       <label for="userPassword" class="form-label">Mot de Passe</label>
-                      <input type="password" name="mdp" class="form-control" id="userPassword"  [(ngModel)]="utilisateur.mdp" autocomplete="Username" placeholder="Username">
+                      <input type="password" name="mdp" class="form-control" id="userPassword"  required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" [(ngModel)]="utilisateur.mdp" #pass="ngModel" autocomplete="Username" placeholder="Username">
+                      <div *ngIf="pass.invalid && pass.touched">
+                        <p *ngIf="pass.hasError('required')">champs obligatoire</p>
+                        <p *ngIf="pass.hasError('pattern')">format invalid</p>
+                      </div>
+
                     </div>
                     <div class="mb-3">
                       <label  class="form-label">telephone</label>
-                      <input type="number" [(ngModel)]="utilisateur.tel" name="tel" class="form-control"  placeholder="Email">
+                      <input type="number" [(ngModel)]="utilisateur.tel" required pattern="\d{8}" #tel="ngModel" name="tel" class="form-control"  placeholder="Email">
+
+                      <div *ngIf="tel.invalid && tel.touched">
+                        <p *ngIf="tel.hasError('required')">champs obligatoire</p>
+                        <p *ngIf="tel.hasError('pattern')"> champ doit contenir 8 chiffres</p>
+                      </div>
                     </div>
 
                     <div class="mb-3">
                       <label  class="form-label">Adresse</label>
-                      <input type="text" [(ngModel)]="utilisateur.adresse" name="adresse" class="form-control"  autocomplete="current-password" placeholder="Password">
+                      <input type="text" [(ngModel)]="utilisateur.adresse"  required pattern="[a-zA-Z0-9]{3,50}$" #ad="ngModel" name="adresse" class="form-control"  autocomplete="current-password" placeholder="Password">
+
+                      <div *ngIf="ad.invalid && ad.touched">
+                        <p *ngIf="ad.hasError('required')">champs obligatoire</p>
+                        <p *ngIf="ad.hasError('pattern')"> champ doit contenir 8 chiffres</p>
+                      </div>
                     </div>
                     <div>
                       <a (click)="saveUser()" class="btn btn-primary text-white me-2 mb-2 mb-md-0 text-decoration-none">Sign up</a>
-                      <button type="button"  class="btn btn-outline-primary btn-icon-text mb-2 mb-md-0">
+                      <button type="button" [disabled]="form.invalid" class="btn btn-outline-primary btn-icon-text mb-2 mb-md-0">
                         <i class="btn-icon-prepend" data-feather="twitter"></i>
                         Sign up with twitter
                       </button>
