@@ -14,8 +14,9 @@ import { ContactComponent } from './contact/contact.component';
 import { PanierComponent } from './panier/panier.component';
 import { PaiementComponent } from './paiement/paiement.component';
 import { ThankyouComponent } from './thankyou/thankyou.component';
-
-import { FormsModule } from '@angular/forms';
+import { ProfileComponent } from './profileedit/profile/profile.component';
+import {FormsModule} from "@angular/forms";
+import { PasswordComponent } from './profileedit/password/password.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { MapeventComponent } from './mapevent/mapevent.component';
 
@@ -34,15 +35,18 @@ import { MapeventComponent } from './mapevent/mapevent.component';
     PanierComponent,
     PaiementComponent,
     ThankyouComponent,
+
     MapeventComponent,
-   
+
+    ProfileComponent,
+    PasswordComponent
+
   ],
   imports: [
     CommonModule,
     FrontofficeRoutingModule,
     FormsModule,
     Ng2SearchPipeModule
-    
   ]
 })
 export class FrontofficeModule { }

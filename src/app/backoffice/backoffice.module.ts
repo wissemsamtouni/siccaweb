@@ -9,7 +9,6 @@ import { FooterComponent } from './footer/footer.component';
 import { NotfoundComponent } from './notfound/notfound.component';
 import { DashboardComponent } from './componentback/dashboard/dashboard.component';
 import { FormulaireComponent } from './componentback/formulaire/formulaire.component';
-
 import { TableusersComponent } from './componentback/tableusers/tableusers.component';
 import { FormeventComponent } from './componentback/formevent/formevent.component';
 import { FormbonplanComponent } from './componentback/formbonplan/formbonplan.component';
@@ -17,13 +16,28 @@ import { FormpromoComponent } from './componentback/formpromo/formpromo.componen
 import { ChatComponent } from './componentback/chat/chat.component';
 import { CalendrierComponent } from './componentback/calendrier/calendrier.component';
 import { EmailComponent } from './componentback/email/email.component';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { PipeevenementPipe } from './componentback/pipeevent/pipeevenement.pipe';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ListebonplanComponent } from './componentback/listebonplan/listebonplan.component';
+import { CategoieComponent } from './componentback/categoie/categoie.component';
+import { FormulairecategorieComponent } from './componentback/formulairecategorie/formulairecategorie.component';
+import { ModifierbonplanComponent } from './componentback/modifierbonplan/modifierbonplan.component';
+import { DetaillebonplansComponent } from './componentback/detaillebonplans/detaillebonplans.component';
+const SCRIPT_PATH_LISt = [
+  "../../../assets/backassets/vendors/core/core.js",
+  "../../..assets/backassets/vendors/flatpickr/flatpickr.min.js",
+  "../../..assets/backassets/vendors/apexcharts/apexcharts.min.js",
+  "../../../assets/backassets/vendors/feather-icons/feather.min.js",
+  "../assets/backassets/js/template.js",
+  "../../../assets/backassets/js/dashboard-light.js",
+  "../../../assets/frontassets/js/bootstrap.bundle.min.js",
+  "../../../assets/frontassets/js/tiny-slider.js",
+  "../../../assets/frontassets/js/custom.js"
+
+
+]
 import {Ng2SearchPipeModule} from "ng2-search-filter";
 import { MaterielComponent } from './componentback/materiel/materiel.component';
-
-
-
 
 @NgModule({
   declarations: [
@@ -34,7 +48,6 @@ import { MaterielComponent } from './componentback/materiel/materiel.component';
     NotfoundComponent,
     DashboardComponent,
     FormulaireComponent,
-
     TableusersComponent,
     FormeventComponent,
     FormbonplanComponent,
@@ -43,14 +56,21 @@ import { MaterielComponent } from './componentback/materiel/materiel.component';
     CalendrierComponent,
     EmailComponent,
     PipeevenementPipe,
-    MaterielComponent
-
+    MaterielComponent,
+    PipeevenementPipe,
+    ListebonplanComponent,
+    CategoieComponent,
+    FormulairecategorieComponent,
+    ModifierbonplanComponent,
+    DetaillebonplansComponent,
+    EmailComponent,
   ],
   imports: [
     CommonModule,
     BackofficeRoutingModule,
-    ReactiveFormsModule,
     FormsModule,
+    ReactiveFormsModule,
+
     Ng2SearchPipeModule
   ]
 })

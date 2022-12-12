@@ -14,42 +14,71 @@
     <ul class="nav">
       <li class="nav-item nav-category">Main</li>
       <li class="nav-item">
-        <a class="nav-link">
+        <a class="nav-link  text-decoration-none">
           <i class="link-icon" data-feather="box"></i>
-          <span routerLink="dash" class="link-title">Dashboard</span>
+          <span routerLink="dash" class="link-title ">Dashboard</span>
         </a>
 
       </li>
 
       <li class="nav-item nav-category">Utilisateurs</li>
       <li class="nav-item">
-        <a routerLink="tableusers" class="nav-link">
+        <a routerLink="tableusers" class="nav-link  text-decoration-none" >
           <i class="link-icon" data-feather="users"></i>
           <span class="link-title">Liste des Utilisateurs</span>
         </a>
       </li>
-      <li class="nav-item nav-category">Gestions</li>
+      <li class="nav-item nav-category" >Gestions</li>
       <li class="nav-item">
         <a routerLink="formevent" class="nav-link">
           <i class="link-icon" data-feather="film"></i>
-          <span class="link-title">Gestion evennement</span>
+          <span class="link-title "  >Gestion evennement</span>
         </a>
       </li>
+
       <li class="nav-item">
         <a routerLink="materiel" class="nav-link">
+        <a routerLink="" class="nav-link text-decoration-none">
           <i class="link-icon" data-feather="truck"></i>
           <span class="link-title">Gestion materiel</span>
         </a>
+        </a>
       </li>
+
+<!--
       <li class="nav-item">
-        <a routerLink="" class="nav-link">
+        <a routerLink="/showbonplan" class="nav-link">
+        <a routerLink="" class="nav-link  text-decoration-none">
           <i class="link-icon" data-feather="coffee"></i>
           <span class="link-title">Gestion Bonplan</span>
         </a>
       </li>
+    -->
+    <li class="nav-item">
+      <a class="nav-link" data-bs-toggle="collapse" href="#authPages" role="button" aria-expanded="false" aria-controls="authPages">
+        <i class="link-icon" data-feather="unlock"></i>
+        <span class="link-title">Gestion Bonplan</span>
+        <i class="link-arrow" data-feather="chevron-down"></i>
+      </a>
+      <div class="collapse" id="authPages">
+        <ul class="nav sub-menu">
+          <li class="nav-item">
+            <a routerLink="/showbonplan" class="nav-link">Bonplan</a>
+          </li>
+          <li class="nav-item">
+            <a routerLink="/categorie" class="nav-link">Categorie</a>
+          </li>
+        </ul>
+      </div>
+    </li>
+
+
+
+
+
       <li class="nav-item">
-        <a routerLink="" class="nav-link">
-          <i class="link-icon" data-feather="truck"></i>
+        <a routerLink="promo" class="nav-link  text-decoration-none">
+          <i class="link-icon" data-feather="trending-down"></i>
           <span class="link-title">Gestion Promotion</span>
         </a>
       </li>
@@ -236,8 +265,8 @@
             </li>
           </ul>
         </div>
-      </li> -->
-      <li class="nav-item nav-category">Pages</li>
+      </li>
+      <li class="nav-item nav-category">Pages</li> -->
      <!-- <li class="nav-item">
         <a class="nav-link" data-bs-toggle="collapse" href="#general-pages" role="button" aria-expanded="false" aria-controls="general-pages">
           <i class="link-icon" data-feather="book"></i>
@@ -266,7 +295,7 @@
             </li>
           </ul>
         </div>
-      </li>-->
+      </li>
       <li class="nav-item">
         <a class="nav-link" data-bs-toggle="collapse" href="#authPages" role="button" aria-expanded="false" aria-controls="authPages">
           <i class="link-icon" data-feather="unlock"></i>
@@ -283,7 +312,7 @@
             </li>
           </ul>
         </div>
-      </li>
+      </li>-->
       <!--<li class="nav-item">
         <a class="nav-link" data-bs-toggle="collapse" href="#errorPages" role="button" aria-expanded="false" aria-controls="errorPages">
           <i class="link-icon" data-feather="cloud-off"></i>
@@ -313,7 +342,7 @@
 </nav>
 <nav class="settings-sidebar">
   <div class="sidebar-body">
-    <a href="#" class="settings-sidebar-toggler">
+    <a  class="settings-sidebar-toggler">
       <i data-feather="settings"></i>
     </a>
     <h6 class="text-muted mb-2">Sidebar:</h6>
