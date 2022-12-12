@@ -1,0 +1,59 @@
+<div class="col-md-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+
+            <div class="table-responsive">
+                <table class="table table-hover">
+                    <tr>
+                        <td>Nom</td>
+                        <td>{{listbp.non_bp}}</td>
+                    </tr>
+                    <tr>
+                        <td>categorie</td>
+                        <td>{{listbp.Categorie.nomcat}}</td>
+                    </tr>
+
+                    <tr>
+                        <td>Adresse</td>
+                        <td>{{listbp.adresse}}</td>
+                    </tr>
+                    <tr>
+                        <td>Latitude</td>
+                        <td>{{listbp.latitude}}</td>
+                    </tr>
+                    <tr>
+                        <td>Horaire</td>
+                        <td>{{listbp.horaire}}</td>
+                    </tr>
+                    <tr>
+                        <td>Frais</td>
+                        <td>{{listbp.frais}}</td>
+                    </tr>
+                    <tr>
+                        <td>Logitude</td>
+                        <td>{{listbp.logitude}}</td>
+                    </tr>
+                    <tr>
+                        <td>Image</td>
+                    </tr>
+                    <tr>
+                        <td ><img src="http://localhost:5000/{{listbp.imageSRC}}"></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="card bg-dark text-white">
+        <img src="http://localhost:5000/{{listbp.imageSRC}}" class="card-img" alt="...">
+        <div class="card-img-overlay">
+            <h5 class="card-title">{{listbp.non_bp}}</h5>
+            <p class="card-text">{{listbp.Categorie.nomcat}}</p>
+            <p class="card-text">{{listbp.adresse}}</p>
+            <p class="card-text">{{listbp.descriptin}}</p>
+            <p class="card-text">{{listbp.horaire}}</p>
+            <p class="card-text">{{listbp.frais}}</p>
+        </div>
+        <div class="full" id="map">
+
+        </div>

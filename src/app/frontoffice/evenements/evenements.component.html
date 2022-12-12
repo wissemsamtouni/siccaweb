@@ -1,46 +1,74 @@
 
-	<!-- Start Hero Section -->
-    <div class="hero">
-        <div class="container">
-            <div class="row justify-content-between">
-                <div class="col-lg-5">
-                    <div class="intro-excerpt">
-                        <h1>Evenement</h1>
-                    </div>
-                </div>
-                <div class="col-lg-7">
-                    
-                </div>
-            </div>
+
+ <div class="page-wrapper">
+					
+  <!-- partial:partials/_navbar.html -->
+  <nav class="navbar">
+    
+      </nav>
+      <!-- partial -->
+      </div>
+    
+  
+
+<div class="container">
+  <div class="row  mb-5 flex">
+
+    <div class="container-fluid ">
+
+      <div class="row mb-5">
+        <div class="col-lg-5 mx-auto text-center">
+          <h2 class="section-title">Liste des Evenements</h2>
         </div>
+      </div>
+     
+      <!-- <div class="row">
+          <tbody >
+              <td *ngFor="let e of listevent ">
+
+          <div class="col-12 col-md-6 col-lg-3 mb-5 mb-md-0">
+              <a class="product-item"  routerLink="/panier">
+              <img src="/api/{{e.image}}" class="img-fluid mb-5">
+              <h3 clas><span class="">{{e.titre}} </span></h3>
+              <span class="d-block position mb-4"> <strong class="product-price">{{e.prixticket}} DNT</strong></span>
+                  <p>{{e.discription}}</p>
+                      <span class="icon-cross"  >
+                       <img src="assets/frontassets/images/cross.svg" class="img-fluid">
+                       </span>
+          </a>
+
+                  </div>
+           End Column 1 -->
+      <!--
+          </td>
+          </tbody>-->
+          <input type="text" class="form-control" id="navbarForm" placeholder="Search here..."  [(ngModel)]="searchevent" >
+
+      <div class="d-flex justify-content-around flex-wrap ">
+    
+        <div class="card border-warning m-2 col-md-3" *ngFor="let e of listevent | filter:searchevent ; let i=index ">
+            <img src="/api/{{e.image}}" class="img-fluid rounded-start w-25" alt="..." >
+             <div class="col-md-8">
+            <div class="card-body">
+               <h5 class="card-title">{{e.titre}}</h5>
+              <p class="card-text">{{e.discription}}</p>
+              <p class="card-text"><small class="text-muted"> <span class="d-block position mb-4"> <strong
+                class="product-price">{{e.prixticket}} DNT</strong></span></small></p>
+              <a  class="btn btn-primary" [class.disabled]="e.nbrticket<1"
+              [class.btn-outline-danger]="e.nbrticket<1"> {{e.nbrticket <1 ? "Or Stock": "Ajouter au panier"}} <img src="assets/frontassets/images/cross.svg"
+                                                                    class="img-fluid" (click)="ajouterevenement(e)"></a>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-<!-- End Hero Section -->
-
-
-
-<div class="untree_co-section product-section before-footer-section">
-    <div class="container">
-          <div class="row">
-
-              <!-- Start Column 1 -->
-            <div class="col-12 col-md-4 col-lg-3 mb-5">
-                <a class="product-item"  routerLink="/panier">
-                    <img src="assets/frontassets/images/product-3.png" class="img-fluid product-thumbnail">
-                    <h3 class="product-title">Nordic Chair</h3>
-                    <strong class="product-price">$50.00</strong>
-
-                    <span class="icon-cross"  >
-                        <img src="assets/frontassets/images/cross.svg" class="img-fluid">
-                    </span>
-                </a>
-            </div> 
-            <!-- End Column 1 -->
-                
-           
-         
-        
-                
-          
-    </div>
+  </div>
 </div>
+
+
+
+
+
+
+
 

@@ -1,10 +1,10 @@
 export class evenement{
-  id! : number;
-  titre! : string;
-  discrption! : string;
-  datedebut! : string;
-  datefin! : string;
+  id!:number;
+  titre!:string;
+  discrption!:string;
+  datedebut!:string;
+  datefin!:string;
   nbrticket! : number;
-  image! : string;
-  prixticket! : number;
+  image!:string;
+  prixticket!:number;
 }

@@ -1,0 +1,115 @@
+<div class="row">
+    <div class="col-md-12 grid-margin stretch-card">
+      <div class="card">
+        <div class="card-body">
+          
+          <form #f="ngForm" >
+  
+            <div class="mb-3">
+              <label for="exampleInputText1" class="form-label">Nom bonplas</label>
+              <input type="text" class="form-control" placeholder="Enter bonplan" minlength="2" required name="non_bp"
+                #non_bp="ngModel" ngModel>
+            </div>
+  
+            <div class="alert alert-danger" *ngIf="non_bp.invalid && non_bp.touched">
+              <div *ngIf="non_bp.errors?.['required']">Le non bonplan est obligatoire</div>
+              <div *ngIf="non_bp.errors?.['minlength']">Nombre minimum de caractère est 2</div>
+            </div>
+  
+            <div class="mb-3">
+              <label for="exampleFormControlSelect1" class="form-label">categorie</label>
+              <select class="form-select" required name="nomcat" #CategorieId="ngModel" ngModel>
+                <option selected disabled>Select your age</option>
+                <option>12-18</option>
+                <option>18-22</option>
+                <option>22-30</option>
+                <option>30-60</option>
+                <option>Above 60</option>
+              </select>
+            </div>
+  
+            <div class="alert alert-danger" *ngIf="CategorieId.invalid && CategorieId.touched">
+              <div *ngIf="CategorieId.errors?.['required']">La categorie est obligatoire</div>
+            </div>
+  
+            <div class="mb-3">
+              <label for="exampleInputEmail3" class="form-label">Adresse</label>
+              <input type="text" class="form-control" name="adresse" minlength="2" required placeholder="Entrer adresse"
+                #adresse="ngModel" ngModel>
+            </div>
+  
+            <div class="alert alert-danger" *ngIf="adresse.invalid && adresse.touched">
+              <div *ngIf="adresse.errors?.['required']">L'adresse' est obligatoire</div>
+              <div *ngIf="adresse.errors?.['minlength']">Nombre minimum de caractère est 2</div>
+            </div>
+  
+            <div class="mb-3">
+              <label for="exampleInputNumber1" class="form-label">Logitude</label>
+              <input type="number" class="form-control" name="logitude" placeholder="Entrer logitude" required
+                #logitude="ngModel" ngModel>
+            </div>
+  
+            <div class="alert alert-danger" *ngIf="logitude.invalid && logitude.touched">
+              <div *ngIf="logitude.errors?.['required']">logitude est obligatoire</div>
+            </div>
+  
+            <div class="mb-3">
+              <label for="exampleInputPassword3" class="form-label">Latitude</label>
+              <input type="number" class="form-control" placeholder="Entrer latitude" name="latitude" required
+                #latitude="ngModel" ngModel>
+            </div>
+  
+            <div class="alert alert-danger" *ngIf="latitude.invalid && logitude.touched">
+              <div *ngIf="latitude.errors?.['required']">latitude est obligatoire</div>
+            </div>
+  
+            <div class="mb-3">
+              <label for="exampleInputDisabled1" class="form-label">Horaire</label>
+              <input type="text" class="form-control" name="horaire" placeholder="Entrer horaire" minlength="2" required
+                #horaire="ngModel" ngModel>
+            </div>
+  
+  
+            <div class="alert alert-danger" *ngIf="horaire.invalid && adresse.touched">
+              <div *ngIf="horaire.errors?.['required']">L'horaire' est obligatoire</div>
+              <div *ngIf="horaire.errors?.['minlength']">Nombre minimum de caractère est 2</div>
+            </div>
+  
+            <div class="mb-3">
+              <label for="exampleInputPlaceholder" class="form-label">Frais inscription</label>
+              <input type="text" class="form-control" name="frais" minlength="2" placeholder="Entrer frais d'inscription"
+                required #frais="ngModel" ngModel>
+            </div>
+  
+            <div class="alert alert-danger" *ngIf="frais.invalid && adresse.touched">
+              <div *ngIf="frais.errors?.['required']">Le frais d'inscription est obligatoire</div>
+              <div *ngIf="frais.errors?.['minlength']">Nombre minimum de caractère est 2</div>
+            </div>
+  
+            <div class="mb-3">
+              <label for="exampleFormControlTextarea1" class="form-label">Discription</label>
+              <textarea class="form-control" name="description" required rows="5" #descriptin="ngModel"
+                ngModel></textarea>
+            </div>
+  
+            <div class="alert alert-danger" *ngIf="descriptin.invalid && adresse.touched">
+              <div *ngIf="descriptin.errors?.['required']">La description est obligatoire</div>
+              <div *ngIf="descriptin.errors?.['minlength']">Nombre minimum de caractère est 2</div>
+            </div>
+  
+            <div class="mb-3">
+              <label class="form-label" for="formFile">Image upload</label>
+              
+              <input class="form-control" type="file"  name="imageSRC"   #imageSRC="ngModel" ngModel>
+            </div>
+            <div class="alert alert-danger" *ngIf="imageSRC.invalid && adresse.touched">
+              <div *ngIf="imageSRC.errors?.['required']">La description est obligatoire</div>
+  </div>
+           
+  
+            <button class="btn btn-primary" type="submit" [disabled]="f.invalid">Ajouter</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>

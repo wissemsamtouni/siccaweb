@@ -18,6 +18,9 @@ import { ProfileComponent } from './profileedit/profile/profile.component';
 import {FormsModule} from "@angular/forms";
 import { PasswordComponent } from './profileedit/password/password.component';
 
+import { FormsModule } from '@angular/forms';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+
 
 @NgModule({
   declarations: [
@@ -40,7 +43,7 @@ import { PasswordComponent } from './profileedit/password/password.component';
     CommonModule,
     FrontofficeRoutingModule,
     FormsModule,
-
+    Ng2SearchPipeModule
   ]
 })
 export class FrontofficeModule { }
