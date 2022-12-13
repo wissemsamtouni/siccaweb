@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, } from '@angular/core';
+import { Router } from '@angular/router';
 import { BonplansService } from 'src/app/services/bonplans.service';
 
 @Component({
@@ -7,6 +8,8 @@ import { BonplansService } from 'src/app/services/bonplans.service';
   styleUrls: ['./bonplan.component.css']
 })
 export class BonplanComponent implements OnInit {
+  searchbp!:string;
+
   listeBP:any
   upbonblans = {
     Categorie: '',
@@ -20,16 +23,23 @@ export class BonplanComponent implements OnInit {
     frais: '',
     imageSRC: '',
 
+  };
+  listeone={
+    logitude: '',
+    latitude: '', 
   }
 
-  constructor(private bp: BonplansService) {
-
+  constructor(private bp: BonplansService,private route:Router) {
     this.bp.getallbp().subscribe(data => {this.listeBP = data.bpl
+
+    
     console.log(data)
     })
 
   } 
-
+  map(id: any) {
+    this.route.navigate(['/map/' + id])
+  }
   ngOnInit(): void {
   }
   getbp(Categorie: string, id: any, non_bp: string, adresse: string, description: string, logitude: any, latitude: any, horaire: string, frais: string, imageSRC: string) {
@@ -44,6 +54,7 @@ export class BonplanComponent implements OnInit {
     this.upbonblans.latitude = latitude
     this.upbonblans.imageSRC = imageSRC
   }
+
 
 
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { CategorieService } from 'src/app/services/categorie.service';
 
 @Component({
@@ -9,7 +10,7 @@ import { CategorieService } from 'src/app/services/categorie.service';
 })
 export class FormulairecategorieComponent implements OnInit {
 
-  constructor(private ct:CategorieService,private route:Router) {
+  constructor(private ct:CategorieService,private route:Router,private toaster:ToastrService) {
     this.ct.addcategorie
 
    }
@@ -21,6 +22,9 @@ addcat(f:any){
   this.ct.addcategorie(data).subscribe(response=>{
     console.log(response)
     this.route.navigate(['/categorie'])
+    this.toaster.success('Bonplans ajouter avec succé')
+  },(error)=>{
+    this.toaster.error('error','error')
   })
 }
 }

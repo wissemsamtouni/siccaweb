@@ -23,6 +23,8 @@ import { CategoieComponent } from './componentback/categoie/categoie.component';
 import { FormulairecategorieComponent } from './componentback/formulairecategorie/formulairecategorie.component';
 import { ModifierbonplanComponent } from './componentback/modifierbonplan/modifierbonplan.component';
 import { DetaillebonplansComponent } from './componentback/detaillebonplans/detaillebonplans.component';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+
 
 
 
@@ -65,6 +67,7 @@ const SCRIPT_PATH_LISt = [
     FormulairecategorieComponent,
     ModifierbonplanComponent,
     DetaillebonplansComponent,
+   
     
  
   ],
@@ -73,6 +76,7 @@ const SCRIPT_PATH_LISt = [
     BackofficeRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+    Ng2SearchPipeModule
    
     
    

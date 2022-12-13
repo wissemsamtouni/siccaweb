@@ -6,17 +6,20 @@
                 <div class="intro-excerpt">
                     <h1 class="h1bpl">Bonplan</h1>
                     <p class="mb-4 ">Sur cette page vous trouvez tous les bonplans situé dans l'état du kef</p>
-                       
-                              <input type="text" class="form-control" name="bonplans" id="navbarForm" placeholder="Search here...">
-                          
-                 
+
+                    <input type="text" class="form-control" name="searchbp"  [(ngModel)]="searchbp" id="input"
+                        placeholder="Search here...">
+
+
                 </div>
             </div>
             <div class="col-lg-7">
+                <!--
                 <div class="hero-img-wrap">
                     <img src="assets/frontassets/images/couch.png" class="img-fluid">
-                    
+
                 </div>
+                -->
             </div>
         </div>
     </div>
@@ -24,29 +27,29 @@
 <!-- End Hero Section -->
 
 
-<div class="d-flex justify-content-around flex-wrap">
-    
-        <div class="blog-section">
-            
-            <div class="container">
+<div class="d-flex justify-content-center flex-wrap">
 
-                <div class="row">
+    <div class="blog-section">
 
-                    <!--model ahmed-->
-                    <div *ngFor="let bp of listeBP" class="card" style="width: 18rem;">
-                        <img src="http://localhost:5000/{{bp.imageSRC}}" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">{{bp.Categorie.nomcat}}&nbsp;{{bp.non_bp}}</h5>
-                            <p class="card-text"></p>
-                            <h5>{{bp.Horaire}}</h5>
-                            <button type="button"
-                                (click)="getbp(bp.Categorie.nomcat,bp.id,bp.non_bp,bp.adresse,bp.description,bp.logitude,bp.latitude,bp.horaire,bp.frais,bp.imageSRC)"
-                                class="btn btn-info" data-bs-toggle="modal" data-bs-target="#modifierbp">Plus</button>
-                        </div>
+        <div class="container">
+
+            <div class="row justify-content-between">
+
+                <!--model ahmed-->
+                <div *ngFor="let bp of listeBP | filter:searchbp" class="card mb-4" style="width: 18rem;">
+                    <img src="http://localhost:5000/{{bp.imageSRC}}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">{{bp.Categorie.nomcat}}&nbsp;{{bp.non_bp}}</h5>
+                        <p class="card-text"></p>
+                        <h5>{{bp.Horaire}}</h5>
+                        <button type="button"
+                            (click)="getbp(bp.Categorie.nomcat,bp.id,bp.non_bp,bp.adresse,bp.description,bp.logitude,bp.latitude,bp.horaire,bp.frais,bp.imageSRC)"
+                            class="btn btn-info" data-bs-toggle="modal" data-bs-target="#modifierbp">Plus</button>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
 
 </div>
 <!-- End Blog Section -->
@@ -66,150 +69,66 @@
                 <h5>Frais d'inscriptionl:</h5>{{upbonblans.frais}}
                 <h5>Description:</h5>
                 <p class="card-text">{{upbonblans.description}}</p>
+
+
             </div>
             <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" (click)="map(upbonblans.id)" data-bs-dismiss="modal">Localisation</button>
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
             </div>
         </div>
 
+    </div>
+</div>
 
 
+<!-- Start Testimonial Slider -->
+<div class="testimonial-section before-footer-section" *ngFor="let bp of listeBP">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-7 mx-auto text-center">
+                <h2 class="section-title">{{bp.Categorie.nomcat}}&nbsp;{{bp.non_bp}}</h2>
+            </div>
+        </div>
 
-        <!-- Start Testimonial Slider -->
-        <div class="testimonial-section before-footer-section">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-7 mx-auto text-center">
-                        <h2 class="section-title">Testimonials</h2>
+        <div class="row justify-content-center">
+            <div class="col-lg-12">
+                <div class="testimonial-slider-wrap text-center">
+
+                    <div id="testimonial-nav">
+                        <span class="prev" data-controls="prev"><span class="fa fa-chevron-left"></span></span>
+                        <span class="next" data-controls="next"><span class="fa fa-chevron-right"></span></span>
                     </div>
-                </div>
 
-                <div class="row justify-content-center">
-                    <div class="col-lg-12">
-                        <div class="testimonial-slider-wrap text-center">
+                    <div class="testimonial-slider">
 
-                            <div id="testimonial-nav">
-                                <span class="prev" data-controls="prev"><span class="fa fa-chevron-left"></span></span>
-                                <span class="next" data-controls="next"><span class="fa fa-chevron-right"></span></span>
+                        <div class="item">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8 mx-auto">
+
+                                    <div class="testimonial-block text-center">
+                                        <blockquote class="mb-5">
+                                            <p>&ldquo;{{bp.description}}&rdquo;</p>
+                                        </blockquote>
+
+                                        <div class="author-info">
+                                            <div class="author-pic">
+                                                <img src="http://localhost:5000/{{upbonblans.imageSRC}}" alt="Maria Jones"
+                                                    class="img-fluid">
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
+
+                                </div>
                             </div>
-
-                            <div class="testimonial-slider">
-
-                                <div class="item">
-                                    <div class="row justify-content-center">
-                                        <div class="col-lg-8 mx-auto">
-
-                                            <div class="testimonial-block text-center">
-                                                <blockquote class="mb-5">
-                                                    <p>&ldquo;Donec facilisis quam ut purus rutrum lobortis. Donec vitae
-                                                        odio
-                                                        quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam
-                                                        vulputate
-                                                        velit imperdiet dolor tempor tristique. Pellentesque habitant
-                                                        morbi
-                                                        tristique senectus et netus et malesuada fames ac turpis
-                                                        egestas.
-                                                        Integer convallis volutpat dui quis scelerisque.&rdquo;</p>
-                                                </blockquote>
-
-                                                <div class="author-info">
-                                                    <div class="author-pic">
-                                                        <img src="assets/frontassets/images/person-1.png"
-                                                            alt="Maria Jones" class="img-fluid">
-                                                    </div>
-                                                    <h3 class="font-weight-bold">Maria Jones</h3>
-                                                    <span class="position d-block mb-3">CEO, Co-Founder, XYZ Inc.</span>
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- END item -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                <div class="item" *ngFor="let bp of listeBP">
-                                    <div class="row justify-content-center">
-                                        <div class="col-lg-8 mx-auto">
-
-                                            <div class="testimonial-block text-center">
-                                                <blockquote class="mb-5">
-                                                    <p>&ldquo;Donec facilisis quam ut purus rutrum lobortis. Donec vitae
-                                                        odio
-                                                        quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam
-                                                        vulputate
-                                                        velit imperdiet dolor tempor tristique. Pellentesque habitant
-                                                        morbi
-                                                        tristique senectus et netus et malesuada fames ac turpis
-                                                        egestas.
-                                                        Integer convallis volutpat dui quis scelerisque.&rdquo;</p>
-                                                </blockquote>
-
-                                                <div class="author-info">
-                                                    <div class="author-pic">
-                                                        <img src="assets/frontassets/images/person-1.png"
-                                                            alt="Maria Jones" class="img-fluid">
-                                                    </div>
-                                                    <h3 class="font-weight-bold">{{bp.non_bp}}</h3>
-                                                    <span class="position d-block mb-3">CEO, Co-Founder, XYZ Inc.</span>
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- END item -->
-
-                                <div class="item">
-                                    <div class="row justify-content-center">
-                                        <div class="col-lg-8 mx-auto">
-
-                                            <div class="testimonial-block text-center">
-                                                <blockquote class="mb-5">
-                                                    <p>&ldquo;Donec facilisis quam ut purus rutrum lobortis. Donec vitae
-                                                        odio
-                                                        quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam
-                                                        vulputate
-                                                        velit imperdiet dolor tempor tristique. Pellentesque habitant
-                                                        morbi
-                                                        tristique senectus et netus et malesuada fames ac turpis
-                                                        egestas.
-                                                        Integer convallis volutpat dui quis scelerisque.&rdquo;</p>
-                                                </blockquote>
-
-                                                <div class="author-info">
-                                                    <div class="author-pic">
-                                                        <img src="assets/frontassets/images/person-1.png"
-                                                            alt="Maria Jones" class="img-fluid">
-                                                    </div>
-                                                    <h3 class="font-weight-bold">Maria Jones</h3>
-                                                    <span class="position d-block mb-3">CEO, Co-Founder, XYZ Inc.</span>
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- END item -->
-
-                            </div>
-
                         </div>
+                        <!-- END item -->
                     </div>
+
                 </div>
             </div>
         </div>
-        <!-- End Testimonial Slider -->
+    </div>
+</div>
+<!-- End Testimonial Slider -->

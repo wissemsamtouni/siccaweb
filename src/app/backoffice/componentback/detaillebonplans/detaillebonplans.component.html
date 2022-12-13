@@ -1,17 +1,44 @@
 
-<div class="card bg-dark text-white">
-    <img src="http://localhost:5000/{{listbp.imageSRC}}" class="card-img" alt="...">
-    <div class="card-img-overlay">
-        <h5 class="card-title">{{listbp.non_bp}}</h5>
-        <p class="card-text">{{listbp.Categorie.nomcat}}</p>
-        <p class="card-text">{{listbp.adresse}}</p>
-        <p class="card-text">{{listbp.descriptin}}</p>
-        <p class="card-text">{{listbp.horaire}}</p>
-        <p class="card-text">{{listbp.frais}}</p>
-    </div>
-    </div>
 
-   
+    <div class="why-choose-section">
+        <div class="container">
+            <div class="row justify-content-between">
+                <div class="col-lg-6">
+                    <h2 class="section-title">{{listbp.Categorie.nomcat}}&emsp;{{listbp.non_bp}}</h2>
+                    <p class="card-text">{{listbp.description}}</p>
+                    <div class="row my-5">
+                        <div class="col-6 col-md-6">
+                            <div class="feature">
+                                <div class="icon">
+                                    <img src="assets/frontassets/images/argent.png" alt="Image" class="imf-fluid">
+                                </div>
+                                <h3>Frais Inscription</h3>
+                                <p class="card-text">{{listbp.frais}}</p>
+                            </div>
+                        </div>
+    
+                        <div class="col-6 col-md-6">
+                            <div class="feature">
+                                <div class="icon">
+                                    <img src="assets/frontassets/images/return.svg" alt="Image" class="imf-fluid">
+                                </div>
+                                <h3>Horaire du travail</h3>
+                                <p class="card-text">{{listbp.horaire}}</p>
+                            </div>
+                        </div>
+    
+                    </div>
+                </div>
+    
+                <div class="col-lg-5">
+                    <div class="img-wrap">
+                        <img src="http://localhost:5000/{{listbp.imageSRC}}" alt="Image" class="img-fluid">
+                    </div>
+                </div>
+    
+            </div>
+        </div>
+    </div>
      
      
     

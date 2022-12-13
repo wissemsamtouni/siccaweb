@@ -18,6 +18,7 @@ import { DetaillebonplansComponent } from './componentback/detaillebonplans/deta
 
 
 
+
 const routes: Routes = [
   {path:'',component :BackofficeComponent,children:[
       { path: 'dash', component: DashboardComponent },
@@ -28,7 +29,8 @@ const routes: Routes = [
       {path:'updatebonplan',component:ModifierbonplanComponent },
       {path:'detailsbp/:id',component:DetaillebonplansComponent},
       {path:'categorie',component:CategoieComponent},
-      {path:'addcategorie',component:FormulairecategorieComponent}
+      {path:'addcategorie',component:FormulairecategorieComponent},
+      
       
 
     ]}
