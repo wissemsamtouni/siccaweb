@@ -28,7 +28,7 @@
                     <label class="form-label">Description : <span style="color: red">*</span>  </label>
 
                     <input #inputdescription type="textarea" class="form-control"  maxlength="450" minlength="10" placeholder="Enter Titre" name="discription" required ngModel
-                           #desc="ngModel" [(ngModel)]="evennement.discription" >
+                           #desc="ngModel" [(ngModel)]="evennement.discrption" >
                     <div class="invalid-feedback d-block text-left" *ngIf="desc.invalid && desc.touched && desc.hasError('required')">Description est Obligatoire</div>
                     <div class="invalid-feedback d-block text-left" *ngIf="desc.invalid && desc.touched && desc.hasError('maxlength')">le langeur maximun de description est 450 caractere</div>
                     <div class="invalid-feedback d-block text-left" *ngIf="desc.invalid && desc.touched && desc.hasError('minlength')">le langeur minimum de description est 10 caractere</div>
@@ -109,11 +109,11 @@
 
                         <div  class="invalid-feedback">
                           <div >Categories is required</div>
-                     
+
                         </div>
                         <div class="mb-3">
                           <label class="form-label" >Image Evenements : <span style="color: red">*</span></label>
-                  
+
                             <input #inputimage class="form-control" type="file"
 
                                    [(ngModel)]="evennement.image" name="image" class="form-control" type="file">
@@ -367,7 +367,7 @@
                               <div class="mb-3">
                                 <label class="form-label">Description : <span style="color: red">*</span>  </label>
                                 <input #inputdescription type="textarea" class="form-control"  maxlength="450" minlength="10" placeholder="Enter Titre" name="discription" required ngModel
-                                       #desc="ngModel" [(ngModel)]="evennement.discription" >
+                                       #desc="ngModel" [(ngModel)]="evennement.discrption" >
                                 <div class="invalid-feedback d-block text-left" *ngIf="desc.invalid && desc.touched && desc.hasError('required')">Description est Obligatoire</div>
                                 <div class="invalid-feedback d-block text-left" *ngIf="desc.invalid && desc.touched && desc.hasError('maxlength')">le langeur maximun de description est 450 caractere</div>
                                 <div class="invalid-feedback d-block text-left" *ngIf="desc.invalid && desc.touched && desc.hasError('minlength')">le langeur minimum de description est 10 caractere</div>

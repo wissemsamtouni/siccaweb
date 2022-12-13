@@ -17,9 +17,8 @@ import { ThankyouComponent } from './thankyou/thankyou.component';
 import { ProfileComponent } from './profileedit/profile/profile.component';
 import {FormsModule} from "@angular/forms";
 import { PasswordComponent } from './profileedit/password/password.component';
-
-import { FormsModule } from '@angular/forms';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { MapeventComponent } from './mapevent/mapevent.component';
 
 
 @NgModule({
@@ -36,8 +35,12 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     PanierComponent,
     PaiementComponent,
     ThankyouComponent,
+
+    MapeventComponent,
+
     ProfileComponent,
     PasswordComponent
+
   ],
   imports: [
     CommonModule,

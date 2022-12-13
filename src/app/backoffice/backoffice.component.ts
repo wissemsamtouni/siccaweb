@@ -13,7 +13,7 @@ const SCRIPT_PATH_LIST =[
    "../../assets/backassets/vendors/moment/moment.min.js",
   "../assets/frontassets/js/bootstrap.bundle.min.js",
   "../assets/frontassets/js/tiny-slider.js",
-  "../assets/frontassets/js/custom.js"
+  "../assets/frontassets/js/custom.js",
   "../../assets/backassets/js/flatpickr.js",
  "../../assets/backassets/vendors/jquery-validation/jquery.validate.min.js",
     "../../assets/backassets/vendors/bootstrap-maxlength/bootstrap-maxlength.min.js",

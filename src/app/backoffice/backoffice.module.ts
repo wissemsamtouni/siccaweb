@@ -9,7 +9,6 @@ import { FooterComponent } from './footer/footer.component';
 import { NotfoundComponent } from './notfound/notfound.component';
 import { DashboardComponent } from './componentback/dashboard/dashboard.component';
 import { FormulaireComponent } from './componentback/formulaire/formulaire.component';
-
 import { TableusersComponent } from './componentback/tableusers/tableusers.component';
 import { FormeventComponent } from './componentback/formevent/formevent.component';
 import { FormbonplanComponent } from './componentback/formbonplan/formbonplan.component';
@@ -38,6 +37,7 @@ const SCRIPT_PATH_LISt = [
 
 ]
 import {Ng2SearchPipeModule} from "ng2-search-filter";
+import { MaterielComponent } from './componentback/materiel/materiel.component';
 
 @NgModule({
   declarations: [
@@ -48,28 +48,29 @@ import {Ng2SearchPipeModule} from "ng2-search-filter";
     NotfoundComponent,
     DashboardComponent,
     FormulaireComponent,
-
     TableusersComponent,
     FormeventComponent,
     FormbonplanComponent,
     FormpromoComponent,
     ChatComponent,
     CalendrierComponent,
-
     EmailComponent,
-    PipeevenementPipe
+    PipeevenementPipe,
+    MaterielComponent,
+    PipeevenementPipe,
     ListebonplanComponent,
     CategoieComponent,
     FormulairecategorieComponent,
     ModifierbonplanComponent,
-    DetaillebonplansComponent
+    DetaillebonplansComponent,
     EmailComponent,
   ],
   imports: [
     CommonModule,
     BackofficeRoutingModule,
-    FormsModule,ReactiveFormsModule
     FormsModule,
+    ReactiveFormsModule,
+
     Ng2SearchPipeModule
   ]
 })
