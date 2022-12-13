@@ -11,11 +11,15 @@ export class Map2Component implements OnInit {
   map!:L.Map;
   id=''
   listbp:any
+  xx=0
+  yy=0
   constructor(private bp:BonplansService,private route :ActivatedRoute) {
     this.route.params.subscribe(data=>this.id=data['id'])
     this.bp.getone(this.id).subscribe(response=>{this.listbp=response.bplData
-    
-     
+    this.xx=parseInt(response.bplData.latitude)
+     this.yy=parseInt(response.bplData.logitude)
+     console.log(this.xx)
+     console.log(this.yy)
     console.log(response)})
 
 
@@ -23,7 +27,7 @@ export class Map2Component implements OnInit {
    }
 
   ngOnInit(): void {
-    
+   
     const map = L.map('map').setView([36.181133, 8.713061], 13);
 
     L.    tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -38,7 +42,7 @@ export class Map2Component implements OnInit {
        fillColor: 'streelbue',    //Fill in the color, the default value is the same as the color value
        fillOpacity: 0.5,     //Filling Transparency
        radius: 500           //circle radius, in meters
-   }).addTo(this.map);
+   }).addTo(map);
   setTimeout(()=>{
    this.map.invalidateSize();
    

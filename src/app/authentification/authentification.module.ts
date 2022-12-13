@@ -7,6 +7,10 @@ import { AuthentificationComponent } from './authentification.component';
 import { LoginComponent } from './componentauth/login/login.component';
 import { RegistrComponent } from './componentauth/registr/registr.component';
 import { ForgetpasswordComponent } from './componentauth/forgetpassword/forgetpassword.component';
+import { ChangermotdepasseComponent } from './componentauth/changermotdepasse/changermotdepasse.component';
+
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {ToastrModule} from "ngx-toastr";
 
 
 @NgModule({
@@ -14,11 +18,17 @@ import { ForgetpasswordComponent } from './componentauth/forgetpassword/forgetpa
     AuthentificationComponent,
     LoginComponent,
     RegistrComponent,
-    ForgetpasswordComponent
+    ForgetpasswordComponent,
+    ChangermotdepasseComponent,
+
   ],
   imports: [
     CommonModule,
-    AuthentificationRoutingModule
+    AuthentificationRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+
+
   ]
 })
 export class AuthentificationModule { }

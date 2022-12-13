@@ -19382,7 +19382,7 @@ body {
 }
 
 .navbar {
-  width:100%;
+  width: calc(100% - 240px);
   height: 60px;
   background: #fff;
   border-bottom: 1px solid #e9ecef;
@@ -19391,7 +19391,7 @@ body {
   padding: 0;
   position: fixed;
   left: 0;
-  right: 0;
+  right: 240px;
   z-index: 978;
   box-shadow: -3px 0 10px 0 rgba(183, 192, 206, 0.2);
   transition: width 0.1s ease, right 0.1s ease;
