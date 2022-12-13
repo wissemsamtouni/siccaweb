@@ -23,6 +23,8 @@ import { CategoieComponent } from './componentback/categoie/categoie.component';
 import { FormulairecategorieComponent } from './componentback/formulairecategorie/formulairecategorie.component';
 import { ModifierbonplanComponent } from './componentback/modifierbonplan/modifierbonplan.component';
 import { DetaillebonplansComponent } from './componentback/detaillebonplans/detaillebonplans.component';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { MaterielComponent } from './componentback/materiel/materiel.component';
 const SCRIPT_PATH_LISt = [
   "../../../assets/backassets/vendors/core/core.js",
   "../../..assets/backassets/vendors/flatpickr/flatpickr.min.js",
@@ -36,8 +38,8 @@ const SCRIPT_PATH_LISt = [
 
 
 ]
-import {Ng2SearchPipeModule} from "ng2-search-filter";
-import { MaterielComponent } from './componentback/materiel/materiel.component';
+
+
 
 @NgModule({
   declarations: [
@@ -63,14 +65,14 @@ import { MaterielComponent } from './componentback/materiel/materiel.component';
     FormulairecategorieComponent,
     ModifierbonplanComponent,
     DetaillebonplansComponent,
-    EmailComponent,
+    EmailComponent,FormpromoComponent
+
   ],
   imports: [
     CommonModule,
     BackofficeRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-
     Ng2SearchPipeModule
   ]
 })

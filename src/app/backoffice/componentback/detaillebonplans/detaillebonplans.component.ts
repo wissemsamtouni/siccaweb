@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+
 import { BonplansService } from 'src/app/services/bonplans.service';
 
 @Component({
@@ -16,7 +17,8 @@ this.bp.getone(this.id).subscribe(response=>{this.listbp=response.bplData
 console.log(response)})
    }
 
-  ngOnInit(): void {
+  ngOnInit(): void { 
+    
   }
 
 }

@@ -9,7 +9,7 @@ import { CategorieService } from 'src/app/services/categorie.service';
 })
 export class CategoieComponent implements OnInit {
 listcategorie:any=[]
-bpfilter:any
+catfilter!:string;
 upcategorie={
   nomcat:'',
   id:''
