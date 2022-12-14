@@ -44,7 +44,7 @@ export class LoginComponent implements OnInit {
       if(response.y==="0"){
 
         console.error("user banned");
-        this.toastr.success('user banned');
+        this.toastr.error('user banned');
 
       }
 
