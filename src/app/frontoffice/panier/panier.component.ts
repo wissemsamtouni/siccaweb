@@ -9,7 +9,7 @@ import { PanierService } from 'src/app/services/panier.service';
 })
 export class PanierComponent implements OnInit {
   paymentHandler: any = null;
-  stripeAPIKey: any = 'sk_test_51MDASDLtBuFc9f6IcbpcBmHigR1LiuffNI5tVBNKM7Nt8Gv0HUdPNMPK7YY8b6K5wniys87T6pRHOqfrB4jEi7W800vnmuDPbU';
+  stripeAPIKey: any = 'pk_test_51MDASDLtBuFc9f6ITsWNl0DjpGO9xM1WnUDpzpeP0e9Rv8IE35sjlFHQE9oCvGCxGFpAJyZdJV8xXxDNnamcJqfw00MDn3JGTy';
   constructor(private panierservic: PanierService, private tostrservice:ToastrService) { }
 listeItems: any;
 reservation: any;
@@ -49,7 +49,8 @@ makePayment(amount: number){
     locale: 'auto',
     token: function (stripeToken: any) {
       console.log(stripeToken);
-      alert('Stripe token generated!');
+      //alert('Stripe token generated!');
+      //this.tostrservice.success('Ajouter avec success');
       paymentstripe(stripeToken) ;
     },
   });
