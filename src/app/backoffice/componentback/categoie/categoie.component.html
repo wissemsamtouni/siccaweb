@@ -12,7 +12,7 @@
       <div class="input-group-text">
         <i data-feather="search"></i>
       </div>
-      <input type="text" class="form-control" id="navbarForm" name="categorie" [(ngModel)]="bpfilter" placeholder="Search here...">
+      <input type="text" class="form-control" id="navbarForm" name="categorie" [(ngModel)]="catfilter" placeholder="Search here...">
     </div>
   
   <div class="col-md-12 grid-margin stretch-card">
@@ -30,8 +30,8 @@
               <th>Supprimer</th>
             </tr>
             </thead>
-            <tbody *ngFor="let c of listcategorie;index as i">
-            <tr *ngIf="c.nomcat === bpfilter || bpfilter==null" >
+            <tbody >
+            <tr *ngFor="let c of listcategorie | filter:catfilter;index as i">
               <th>{{c.id}}</th>
               <td>{{c.nomcat}}</td>
               <td><button class="btn btn-primary" (click)="getcategorie(c.nomcat,c.id)" data-bs-toggle="modal" data-bs-target="#modifiercat" >Modifier</button></td>

@@ -34,8 +34,8 @@
             <th>Supprimer</th>
           </tr>
           </thead>
-          <tbody *ngFor="let bp of listeBP;index as i ">
-          <tr *ngIf="bp.CategorieId === bpfilter ||bp.non_bp === bpfilter || bpfilter==null" >
+          <tbody >
+          <tr *ngFor="let bp of listeBP |filter:bpfilter;index as i ">
             <th>{{bp.non_bp}}</th>
             <td>{{bp.Categorie.nomcat}}</td>
             <td>{{bp.adresse}}</td>

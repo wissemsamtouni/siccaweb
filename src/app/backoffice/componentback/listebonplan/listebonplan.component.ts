@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class ListebonplanComponent implements OnInit {
   listeBP: any
-  bpfilter:any
+  bpfilter!:string;
   upbonblans = {
     nomcat: '',
     id: '',
