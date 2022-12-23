@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component,ViewChild,ElementRef, OnInit } from '@angular/core';
 import { BonplansService } from 'src/app/services/bonplans.service';
 
 import { FormsModule } from '@angular/forms';
@@ -11,6 +11,15 @@ import { ToastrService } from 'ngx-toastr';
   styleUrls: ['./listebonplan.component.css']
 })
 export class ListebonplanComponent implements OnInit {
+  @ViewChild('inputnon_bp') inputnon_bp!:ElementRef;
+  @ViewChild('inputcategorie') inputcategorie!:ElementRef;
+  @ViewChild('inputadresse') inputadresse!:ElementRef;
+  @ViewChild('inputlogitude') inputlogitude!:ElementRef;
+  @ViewChild('inputlatitude') inputlatitude!:ElementRef;
+  @ViewChild('inputhoraire') inputhoraire!:ElementRef;
+  @ViewChild('inputfrais') inputfrais!:ElementRef;
+  @ViewChild('inputdescription') inputdescription!:ElementRef;
+  @ViewChild('inputimageSRC',{static:false})inputimageSRC!:ElementRef;
   listecategorie:any
   listeBP: any
   bpfilter!:string;
@@ -66,20 +75,31 @@ export class ListebonplanComponent implements OnInit {
     this.upbonblans.imageSRC = imageSRC
   }
 
-  updatebonplans(f: any) {
-    let data = f.value
-    this.bp.updatebp(this.upbonblans.id, data).subscribe(response => {
+  updatebonplans() {
+    const CategorieId=  this.inputcategorie.nativeElement.value;
+    const non_bp=  this.inputnon_bp.nativeElement.value;
+    const adresse=  this.inputadresse.nativeElement.value;
+    const logitude=  this.inputlogitude.nativeElement.value;
+    const latitude=  this.inputlatitude.nativeElement.value;
+    const horaire=  this.inputhoraire.nativeElement.value;
+    const frais=  this.inputfrais.nativeElement.value;
+    const description=  this.inputdescription.nativeElement.value;
+    const imageSRC=  this.inputimageSRC.nativeElement.files[0];
+    
+    const formdata =  new FormData()
+    formdata.set('CategorieId',CategorieId)
+    formdata.set('adresse',adresse,)
+    formdata.set('non_bp',non_bp,)
+    formdata.set('logitude',logitude)
+    formdata.set('latitude',latitude,)
+    formdata.set('horaire',horaire,)
+    formdata.set('frais',frais,)
+    formdata.set('description',description,)
+    formdata.set('imageSRC',imageSRC,)
+  console.log(formdata)
+    
+    this.bp.updatebp(this.upbonblans.id, formdata).subscribe(response => {
       console.log(response)
-      let indexid = this.listeBP.findIndex((obj: any) => obj.id == this.upbonblans.id)
-      this.listeBP[indexid].non_bp = data.non_bp
-      this.listeBP[indexid].CategorieId = data.CategorieId
-      this.listeBP[indexid].adresse = data.adresse
-      this.listeBP[indexid].description = data.description
-      this.listeBP[indexid].frais = data.frais
-      this.listeBP[indexid].horaire = data.horaire
-      this.listeBP[indexid].logitude = data.logitude
-      this.listeBP[indexid].latitude = data.latitude
-      this.listeBP[indexid].imageSRC = data.imageSRC
       this.route.navigate(['/showbonplan'])
       this.toaster.success('Bonplan Modifier avec succé')
     },(error)=>{
