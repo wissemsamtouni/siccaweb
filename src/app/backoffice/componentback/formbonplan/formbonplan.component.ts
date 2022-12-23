@@ -41,7 +41,7 @@ this.ct.getallcategorie().subscribe(data=>this.listecategorie=data.cat)
   const frais=  this.inputfrais.nativeElement.value;
   const description=  this.inputdescription.nativeElement.value;
   const imageSRC=  this.inputimageSRC.nativeElement.files[0];
-  
+
   const formdata =  new FormData()
   formdata.set('CategorieId',CategorieId)
   formdata.set('adresse',adresse,)
@@ -53,8 +53,6 @@ this.ct.getallcategorie().subscribe(data=>this.listecategorie=data.cat)
   formdata.set('description',description,)
   formdata.set('imageSRC',imageSRC,)
 console.log(formdata)
-
-   
     this.bp.addbp(formdata).subscribe(response => {
       this.route.navigate(['/showbonplan'])
       this.toaster.success('Bonplan Ajouter avec succé')
@@ -64,5 +62,5 @@ console.log(formdata)
         }
       )
   }
- 
+
 }

@@ -36,6 +36,7 @@
 
               </tr>
               </thead>
+              <br>
               <tbody *ngFor="let u of list|filter:aaa;let i=index ">
               <tr>
 
@@ -48,8 +49,8 @@
                 <td>{{u.adresse}}</td>
                 <td>{{u.etat}}</td>
                 <td style="text-align: center">
-                  <button *ngIf="u.etat=='1'" (click)="banner(u.id_utilisateur)" type="button" class="btn btn-danger"><i data-feather="lock"></i></button>
-                  <button *ngIf="u.etat=='0'"(click)="banner(u.id_utilisateur)" type="button" class="btn btn2 btn-success"><i data-feather="unlock"></i></button></td>
+                  <button *ngIf="u.etat=='1'" (click)="banner(u.id_utilisateur)" type="button" class="btn btn-danger">Banner<!--<i data-feather="lock"></i>--></button>
+                  <button *ngIf="u.etat=='0'"(click)="banner(u.id_utilisateur)" type="button" class="btn btn2 btn-success">Activer<!--<i data-feather="unlock"></i>--></button></td>
               </tr>
 
               </tbody>

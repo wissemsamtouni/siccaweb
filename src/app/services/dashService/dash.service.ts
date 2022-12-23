@@ -7,6 +7,7 @@ import {utilisateur} from "../../model/utilisateur";
 })
 export class DashService {
   utilisateurUrl: string = "http://localhost:5000/utilisateurs/getAllUsers";
+  oneuser: string="http://localhost:5000/utilisateurs/afficheruser";
 
   constructor(private HttpC:HttpClient) { }
 
@@ -15,5 +16,9 @@ export class DashService {
   getUsers(){
 
     return this.HttpC.get<any>(this.utilisateurUrl);
+  }
+  getUser(){
+
+      return this.HttpC.get<any>(this.oneuser,{withCredentials:true});
   }
 }

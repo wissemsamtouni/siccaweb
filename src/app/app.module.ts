@@ -9,6 +9,7 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { PipePipe } from './pipe.pipe';
 import {ToastrModule} from "ngx-toastr";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {NgChartsModule} from "ng2-charts";
 
 
 @NgModule({
@@ -36,7 +37,7 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
       closeButton: true,
       progressBar: true,
     }),
-
+    NgChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

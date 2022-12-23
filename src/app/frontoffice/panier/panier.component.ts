@@ -9,28 +9,25 @@ import { PanierService } from 'src/app/services/panier.service';
 })
 export class PanierComponent implements OnInit {
   paymentHandler: any = null;
-  stripeAPIKey: any = 'sk_test_51MDASDLtBuFc9f6IcbpcBmHigR1LiuffNI5tVBNKM7Nt8Gv0HUdPNMPK7YY8b6K5wniys87T6pRHOqfrB4jEi7W800vnmuDPbU';
+  stripeAPIKey: any = 'pk_test_51MDASDLtBuFc9f6ITsWNl0DjpGO9xM1WnUDpzpeP0e9Rv8IE35sjlFHQE9oCvGCxGFpAJyZdJV8xXxDNnamcJqfw00MDn3JGTy';
   constructor(private panierservic: PanierService, private tostrservice:ToastrService) { }
 listeItems: any;
 reservation: any;
 panier: any;
 prixtotal: number=0;
 success: boolean = false
-  
+
 failure:boolean = false
   ngOnInit(): void {
     this.panierservic.getpanier().subscribe((data) =>{this.listeItems = data.lignepanier;this.calculprixtotal(data.lignepanier)});
     this.invokeStripe();
-   
-   
-   
   }
 calculprixtotal(list:any){
   console.log(list);
   list.forEach((element: any) => {
     console.log(element)
     this.prixtotal +=  parseInt(element.prixticket)*parseInt(element.quantite);
-    
+
   });console.log(this.prixtotal);}
   delete(idpanier:any, iditem:any ){
     console.log(idpanier,iditem)
@@ -49,7 +46,8 @@ makePayment(amount: number){
     locale: 'auto',
     token: function (stripeToken: any) {
       console.log(stripeToken);
-      alert('Stripe token generated!');
+      //alert('Stripe token generated!');
+      //this.tostrservice.success('Ajouter avec success');
       paymentstripe(stripeToken) ;
     },
   });
@@ -68,7 +66,7 @@ makePayment(amount: number){
     name: 'Evenement réservée',
     description: '',
     amount: amount,
-   
+
   });
 }
 invokeStripe() {

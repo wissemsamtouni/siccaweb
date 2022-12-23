@@ -21,6 +21,7 @@ export class LoginComponent implements OnInit {
               private router: Router) { }
 
   ngOnInit(): void {
+
     this.form = this.formBuilder.group({
       login: '',
       mdp: ''
@@ -44,7 +45,7 @@ export class LoginComponent implements OnInit {
       if(response.y==="0"){
 
         console.error("user banned");
-        this.toastr.success('user banned');
+        this.toastr.error('user banned');
 
       }
 
@@ -59,12 +60,12 @@ export class LoginComponent implements OnInit {
 
 
         });
-      }else if(response.x==='admin'){
+      }else {
 
 
-        this.router.navigate(['/back/dash']).then(() => {
+        this.router.navigate(['back/dash']).then(() => {
 
-          this.toastr.success('Welcome');
+          this.toastr.success('Welcome administator');
 
 
         });
