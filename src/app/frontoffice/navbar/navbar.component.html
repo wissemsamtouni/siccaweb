@@ -7,23 +7,23 @@
                 <img src="assets/frontassets/images/Untitled design (1).png" class="logo">
                 <ul class="custom-navbar-nav navbar-nav ms-auto mb-2 mb-md-0">
                     <li class="nav-item ">
-                        <a class="nav-link" routerLink="/Acceuil">Acceuil</a>
+                        <a class="nav-link" routerLink="/front/Acceuil">Acceuil</a>
                     </li>
-                    <li><a class="nav-link"routerLink="/Apropos">À propos</a></li>
-                    <li><a class="nav-link" routerLink="/Evenement">Evenements</a></li>
-                    <li><a class="nav-link" routerLink="/Bonplan">Bonplan</a></li>
-                    <li><a class="nav-link" routerLink="/Materiel">Materiel</a></li>
-                    <li><a class="nav-link" routerLink="Contact">Contact us</a></li>
+                    <li><a class="nav-link"routerLink="/front/Apropos">À propos</a></li>
+                    <li><a class="nav-link" routerLink="/front/Evenement">Evenements</a></li>
+                    <li><a class="nav-link" routerLink="/front/Bonplan">Bonplan</a></li>
+                    <li><a class="nav-link" routerLink="/front/Materiel">Materiel</a></li>
+                    <li><a class="nav-link" routerLink="/frontContact">Contact us</a></li>
                 </ul>
               <ul *ngIf="!authenticated"  class="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5">
 
 
                     <li><a class="nav-link" routerLink="/auth/registr" id="motdepasse">S'inscrire</a> </li>
                     <li><a class="nav-link" routerLink="/auth/login"> <button type="button" class="btn btn-outline-warning mb-1 mb-md-0" class="btn">Se Connecté</button> </a></li>
-                    <li><a class="nav-link" routerLink="/panier" style="color: brown;"><img src="assets/frontassets/images/ajouter-au-panier.png" class="panier">{{totalItem}}2</a></li>
+                    <li><a class="nav-link" routerLink="/front/panier" style="color: brown;"><img src="assets/frontassets/images/ajouter-au-panier.png" class="panier">{{totalItem}}2</a></li>
                 </ul>
               <ul *ngIf="authenticated" class="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5">
-                <li><a class="nav-link" routerLink="/panier"><img src="assets/frontassets/images/ajouter-au-panier.png" class="panier"></a></li>
+                <li><a class="nav-link" routerLink="/front/panier"><img src="assets/frontassets/images/ajouter-au-panier.png" class="panier"></a></li>
 
                 <li><a class="nav-link">
                   <div class="dropdown">

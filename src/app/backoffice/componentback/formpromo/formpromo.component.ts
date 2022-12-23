@@ -14,18 +14,22 @@ import {ToastrService} from "ngx-toastr";
 export class FormpromoComponent implements OnInit {
  listevent!:evenement[];
  listmateriel!:materiel[];
+ list!:promo[];
+ aaa!:string;
  Promo!:promo;
   constructor(private Service:PromoService,private router:Router,private toastr: ToastrService) { }
 
   ngOnInit(): void {
     this.Promo=new promo();
-
+    this.Service.getallpromo().subscribe((data)=>this.list=(data.allpromo),);
     this.Service.getevent().subscribe((data)=>this.listevent=(data.event),);
     this.Service.getmateriel().subscribe((data)=>this.listmateriel=(data.materiels),);
+
   }
   savePromo(){
     console.log(this.Promo);
     this.Service.addpromo(this.Promo).subscribe(()=>this.router.navigate(['/back/promo']));
+    this.ngOnInit()
     this.toastr.success("promo ajouter avec succées")
 
 
@@ -36,5 +40,9 @@ export class FormpromoComponent implements OnInit {
   }
   selectEvent(event:any){
     this.Promo.EvenementId=event.target.value;
+  }
+  supprimer(id_promo:number){
+    this.Service.delete(id_promo).subscribe();
+    this.ngOnInit()
   }
 }
