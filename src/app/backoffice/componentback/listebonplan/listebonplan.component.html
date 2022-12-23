@@ -40,7 +40,7 @@
             <td>{{bp.Categorie.nomcat}}</td>
             <td>{{bp.adresse}}</td>
             <td><button class="btn btn-primary" (click)="details(bp.id)">Details</button></td>
-            <td><button class="btn btn-Success" (click)="getbp(bp.nomcat,bp.id,bp.non_bp,bp.adresse,bp.description,bp.logitude,bp.latitude,bp.horaire,bp.frais,bp.imageSRC)" data-bs-toggle="modal" data-bs-target="#modifierbp">Modifier</button></td>
+            <td><button class="btn btn-Success" (click)="getbp(bp.CategorieId,bp.id,bp.non_bp,bp.adresse,bp.description,bp.logitude,bp.latitude,bp.horaire,bp.frais,bp.imageSRC)" data-bs-toggle="modal" data-bs-target="#modifierbp">Modifier</button></td>
             <td><button class="btn btn-danger" (click)="deletebonplans(bp.id,i)">Supprimer</button></td>
           </tr>
           </tbody>
@@ -68,7 +68,7 @@
         <form #f="ngForm" >
           <div class="mb-3">
             <label for="exampleInputText1" class="form-label">Nom bonplas</label>
-            <input type="text" class="form-control" placeholder="Enter bonplan" minlength="2" required name="non_bp"
+            <input  #inputnon_bp  type="text" class="form-control" placeholder="Enter bonplan" minlength="2" required name="non_bp"
               #non_bp="ngModel" ngModel  [(ngModel)]="upbonblans.non_bp">
           </div>
 
@@ -79,20 +79,16 @@
 
           <div class="mb-3">
             <label for="exampleFormControlSelect1" class="form-label">categorie</label>
-            <!--<select class="form-select" required name="nomcat" (change)="changecategorie($event)"
-            name="nomcat">
-              <option *ngFor="let c of listecategorie">{{c.nomcat}}</option>
-
-            </select>-->
-            <input type="text" class="form-control" name="nomcat" minlength="2" required placeholder="Entrer adresse"
-            #adresse="ngModel" ngModel [(ngModel)]="upbonblans.nomcat">
+            <select #inputcategorie class="form-select" required name="CategorieId" [(ngModel)]="upbonblans.CategorieId">
+              <option *ngFor="let c of listecategorie" [value]="c.id">{{c.nomcat}}</option>
+            </select>
           </div>
 
 
 
           <div class="mb-3">
             <label for="exampleInputEmail3" class="form-label">Adresse</label>
-            <input type="text" class="form-control" name="adresse" minlength="2" required placeholder="Entrer adresse"
+            <input #inputadresse  type="text" class="form-control" name="adresse" minlength="2" required placeholder="Entrer adresse"
               #adresse="ngModel" ngModel [(ngModel)]="upbonblans.adresse">
           </div>
 
@@ -103,7 +99,7 @@
 
           <div class="mb-3">
             <label for="exampleInputNumber1" class="form-label">Logitude</label>
-            <input type="number" class="form-control" name="logitude" placeholder="Entrer logitude" required
+            <input #inputlogitude type="number" class="form-control" name="logitude" placeholder="Entrer logitude" required
               #logitude="ngModel" ngModel [(ngModel)]="upbonblans.logitude">
           </div>
 
@@ -113,7 +109,7 @@
 
           <div class="mb-3">
             <label for="exampleInputPassword3" class="form-label">Latitude</label>
-            <input type="number" class="form-control" placeholder="Entrer latitude" name="latitude" required
+            <input #inputlatitude type="number" class="form-control" placeholder="Entrer latitude" name="latitude" required
               #latitude="ngModel" ngModel [(ngModel)]="upbonblans.latitude">
           </div>
 
@@ -123,7 +119,7 @@
 
           <div class="mb-3">
             <label for="exampleInputDisabled1" class="form-label">Horaire</label>
-            <input type="text" class="form-control" type="text" name="horaire" placeholder="Entrer horaire"
+            <input #inputhoraire type="text" class="form-control" type="text" name="horaire" placeholder="Entrer horaire"
               minlength="2" required #horaire="ngModel" ngModel [(ngModel)]="upbonblans.horaire">
           </div>
 
@@ -135,7 +131,7 @@
 
           <div class="mb-3">
             <label for="exampleInputPlaceholder" class="form-label">Frais inscription</label>
-            <input type="text" class="form-control" type="text" name="frais" minlength="2"
+            <input #inputfrais type="text" class="form-control" type="text" name="frais" minlength="2"
               placeholder="Entrer frais d'inscription" required #frais="ngModel" ngModel [(ngModel)]="upbonblans.frais">
           </div>
 
@@ -146,7 +142,7 @@
 
           <div class="mb-3">
             <label for="exampleFormControlTextarea1" class="form-label">Discription</label>
-            <textarea class="form-control" type="text" name="description" required rows="5" #descriptin="ngModel"
+            <textarea #inputdescription class="form-control" type="text" name="description" required rows="5" #descriptin="ngModel"
               ngModel [(ngModel)]="upbonblans.description"></textarea>
           </div>
 
@@ -158,7 +154,7 @@
           <div class="mb-3">
             <label class="form-label" for="formFile">Image upload</label>
 
-            <input class="form-control" type="file" name="imageSRC" #imageSRC="ngModel" ngModel>
+            <input #inputimageSRC class="form-control" type="file" name="imageSRC" #imageSRC="ngModel" ngModel [(ngModel)]="upbonblans.imageSRC">
           </div>
           <div class="alert alert-danger" *ngIf="imageSRC.invalid && adresse.touched">
             <div *ngIf="imageSRC.errors?.['required']">L'image' est obligatoire</div>
@@ -170,5 +166,5 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="Submit" [disabled]="f.invalid" class="btn btn-primary" (click)="updatebonplans(f)" >Modifier</button>
+        <button type="Submit" [disabled]="f.invalid" class="btn btn-primary" (click)="updatebonplans()" >Modifier</button>
       </div>

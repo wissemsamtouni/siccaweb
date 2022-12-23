@@ -16,10 +16,11 @@ export class Map2Component implements OnInit {
   constructor(private bp:BonplansService,private route :ActivatedRoute) {
     this.route.params.subscribe(data=>this.id=data['id'])
     this.bp.getone(this.id).subscribe(response=>{this.listbp=response.bplData
-    this.xx=parseInt(response.bplData.latitude)
-     this.yy=parseInt(response.bplData.logitude)
-     console.log(this.xx)
-     console.log(this.yy)
+    this.xx=response.bplData.latitude
+     this.yy=response.bplData.logitude
+     console.log("x:"+this.xx)
+     console.log(typeof this.xx)
+     console.log("y"+this.yy)
     console.log(response)})
 
 
@@ -27,8 +28,7 @@ export class Map2Component implements OnInit {
    }
 
   ngOnInit(): void {
-   
-    const map = L.map('map').setView([36.181133, 8.713061], 13);
+       const map = L.map('map').setView([36.181133, 8.713061], 13);
 
     L.    tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
       maxZoom: 17,
