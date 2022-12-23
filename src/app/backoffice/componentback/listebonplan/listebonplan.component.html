@@ -51,7 +51,7 @@
 </div>
 
   <div >
-  <a routerLink="/addbonpan" class="btn btn-primary" style="float:right ;">Ajouter bonplans</a>
+  <a routerLink="/back/addbonpan" class="btn btn-primary" style="float:right ;">Ajouter bonplans</a>
   </div>
 
 
@@ -159,10 +159,10 @@
           <div class="alert alert-danger" *ngIf="imageSRC.invalid && adresse.touched">
             <div *ngIf="imageSRC.errors?.['required']">L'image' est obligatoire</div>
           </div>
-          
+
 
         </form>                    <!--form-->
-      
+
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

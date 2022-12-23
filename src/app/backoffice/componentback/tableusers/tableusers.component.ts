@@ -22,6 +22,7 @@ export class TableusersComponent implements OnInit {
   }
   banner(id_utilisateur:number){
     this.banService.banner(id_utilisateur,this.Utilisateur).subscribe();
-    this.ngOnInit()
+    window.location.reload();
+
   }
 }

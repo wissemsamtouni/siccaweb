@@ -26,19 +26,19 @@ export class BonplanComponent implements OnInit {
   };
   listeone={
     logitude: '',
-    latitude: '', 
+    latitude: '',
   }
 
   constructor(private bp: BonplansService,private route:Router) {
     this.bp.getallbp().subscribe(data => {this.listeBP = data.bpl
 
-    
+
     console.log(data)
     })
 
-  } 
+  }
   map(id: any) {
-    this.route.navigate(['/map/' + id])
+    this.route.navigate(['/front/map/' + id])
   }
   ngOnInit(): void {
   }
