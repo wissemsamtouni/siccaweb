@@ -1,5 +1,7 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { CategorieService } from 'src/app/services/categorie.service';
 
 @Component({
@@ -14,7 +16,7 @@ upcategorie={
   nomcat:'',
   id:''
 }
-  constructor(private ct:CategorieService) {
+  constructor(private ct:CategorieService,private toaster:ToastrService,private route:Router) {
 this.ct.getallcategorie().subscribe(data=>{this.listcategorie=data.cat,
 console.log(data)
 })
@@ -28,7 +30,11 @@ delete(id:any,i:number){
     
     console.log(Response)
     this.listcategorie.splice(i,1)
-  })
+    this.toaster.success('Categorie Supprimer avec succé')
+  },(error)=>{
+    this.toaster.error('error','error')
+  
+      })
 }
 getcategorie(nomcat:string,id:any){
 this.upcategorie.nomcat=nomcat
@@ -42,6 +48,11 @@ updatecategorie(f:any){
     console.log(response)
 let indexid=this.listcategorie.findIndex((obj:any)=>obj.id==this.upcategorie.id)
 this.listcategorie[indexid].nomcat=data.nomcat
+this.route.navigate(['/categorie'])
+this.toaster.success('Categorie Modifier avec succé')
+},(error)=>{
+  this.toaster.error('error','error')
+
     });
   
 }

@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import {HttpClient} from "@angular/common/http";
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root'  
 })
 export class ClientGuard implements CanActivate {
   constructor(  private router: Router, private http: HttpClient) { }
