@@ -3,7 +3,7 @@
     width: 60px;
     height: 60px;
     background: #fff;
-  
+
     border-radius: 50px;
     transition: 0.5s;
     box-shadow:0 0 0 5px #2573ef;
@@ -13,7 +13,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    
+
     width: 60px;
     height: 60px;
     background: #fff;
@@ -29,7 +29,7 @@
   .search .icon:before {
     content: '';
     position: absolute;
-   
+
     width: 15px;
     height: 15px;
     borrder:3px solid #287dfc;
@@ -37,17 +37,17 @@
     margin-left: auto;
   }
     transform: translate(-4px, -4px);
-    
+
   }
   .search .icon:after {
     content: '';
     position: absolute;
-   
+
     width: 3px;
     height: 12px;
     borrder:#287dfc;
    transform: translate(6px, 6px) rotate(315deg);
-    
+
   } */
 
   #btnmap{
@@ -56,3 +56,129 @@
   #imageitem{
     margin: auto;
   }
+/*@import url('https://fonts.googleapis.com/css?family=Roboto:700');*/
+
+/*body {*/
+
+/*  background-color: #131417;*/
+/*}*/
+
+/*.containr {*/
+/*  color: #e5e5e5;*/
+/*  font-size: 1.26rem;*/
+/*  height: 1vh;*/
+/*  display: flex;*/
+/*  align-items: center;*/
+/*  justify-content: center;*/
+/*}*/
+
+/*.animation {*/
+/*  height:35px;*/
+/*  overflow:hidden;*/
+/*  margin-left: 1rem;*/
+/*}*/
+
+/*.animation > div > div {*/
+/*  padding: 0.25rem 0.25rem;*/
+/*  height:4.90rem;*/
+/*  margin-bottom: 0.81rem;*/
+/*  margin-top: 0.81rem;*/
+/*  display:inline-block;*/
+/*}*/
+
+/*.animation div:first-child {*/
+/*  animation: text-animation 8s infinite;*/
+/*}*/
+/*.first div {*/
+/*  background-color:blue;*/
+/*}*/
+/*.second div {*/
+/*  background-color:#CD921E;*/
+/*}*/
+/*.third div {*/
+/*  background-color:#c10528;*/
+/*}*/
+
+/*@keyframes text-animation {*/
+/*  0% {margin-top: 0;}*/
+/*  10% {margin-top: 0;}*/
+/*  20% {margin-top: -5.62rem;}*/
+/*  30% {margin-top: -5.62rem;}*/
+/*  40% {margin-top: -11.24rem;}*/
+/*  60% {margin-top: -11.24rem;}*/
+/*  70% {margin-top: -5.62rem;}*/
+/*  80% {margin-top: -5.62rem;}*/
+/*  90% {margin-top: 0;}*/
+/*  100% {margin-top: 0;}*/
+/*}*/
+
+@import url("https://fonts.googleapis.com/css2?family=Alumni+Sans:wght@400;600;700&display=swap");
+
+$blue: #2962ff;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Alumni Sans", sans-serif;
+  font-size: 80px;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items:flex-start;
+  min-height: 5vh;
+  font-size: 1.5em;
+  color: red;
+  text-transform: uppercase;
+  gap: 20px;
+}
+
+h1 {
+  font-size: 0.5em;
+
+@media (max-width: 50px) {
+  font-size: 1.3em;
+}
+}
+
+.text-shadow {
+  font-style: italic;
+  text-transform: uppercase;
+  color: blue;
+  -webkit-text-stroke: red;
+  -webkit-text-stroke-width: 1px;
+  text-shadow: 4px 4px 15px $black;
+  transition: all 0.5s ease-in-out;
+  text-align: center;
+  letter-spacing: 0.2em;
+  animation: flicker 0.5s ease-in-out infinite alternate;
+
+&:hover {
+   color:blue;
+ }
+}
+
+.tags small {
+@media (max-width: 50px) {
+  font-size: 0.5em;
+}
+}
+
+@keyframes flicker {
+  0% {
+    opacity: 0.3;
+    text-shadow: 2px 2px 10px $blue;
+  }
+  100% {
+    opacity: 1;
+    text-shadow: 2px 2px 20px $blue;
+  }
+}
+
+

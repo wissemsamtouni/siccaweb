@@ -5,3 +5,8 @@
 .btn:hover{
   background-color: #3a414e;
 }
+.btnd {
+  background-color: red;
+  color: white;
+  border-radius: 30px;
+}

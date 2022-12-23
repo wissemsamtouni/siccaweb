@@ -19,7 +19,7 @@ import {FormpromoComponent} from "./componentback/formpromo/formpromo.component"
 import {GuardGuard} from "../guard/guard.guard";
 
 const routes: Routes = [
-  {path:'',component :BackofficeComponent,children:[
+  {path:'',component :BackofficeComponent,canActivate:[GuardGuard],children:[
       { path: 'dash', component: DashboardComponent },
       {path:'basic',component:FormulaireComponent},
       {path:'materiel',component:MaterielComponent},

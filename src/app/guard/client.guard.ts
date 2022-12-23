@@ -13,16 +13,16 @@ export class ClientGuard implements CanActivate {
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
 
 
-    this.http.get('http://localhost:5000/utilisateurs/login', {withCredentials: true}).subscribe(
+    this.http.get('http://localhost:5000/utilisateurs/afficheruser', {withCredentials: true}).subscribe(
       (res: any) => {
-        if (res.x === 'client') {
+        console.log(res);
+        if (res.role === 'client') {
+          console.log('client vvvvvvvv');
           return true;
         }else {
           this.router.navigate(['/auth/login']);
           return false;
         }
-
-
       },
       err => {
         this.router.navigate(['/auth/login']);
@@ -30,7 +30,7 @@ export class ClientGuard implements CanActivate {
       }
     );
 
-    return false;
+    return true;
 
 
 

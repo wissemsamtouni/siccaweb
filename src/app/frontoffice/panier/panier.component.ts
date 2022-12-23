@@ -16,21 +16,18 @@ reservation: any;
 panier: any;
 prixtotal: number=0;
 success: boolean = false
-  
+
 failure:boolean = false
   ngOnInit(): void {
     this.panierservic.getpanier().subscribe((data) =>{this.listeItems = data.lignepanier;this.calculprixtotal(data.lignepanier)});
     this.invokeStripe();
-   
-   
-   
   }
 calculprixtotal(list:any){
   console.log(list);
   list.forEach((element: any) => {
     console.log(element)
     this.prixtotal +=  parseInt(element.prixticket)*parseInt(element.quantite);
-    
+
   });console.log(this.prixtotal);}
   delete(idpanier:any, iditem:any ){
     console.log(idpanier,iditem)
@@ -69,7 +66,7 @@ makePayment(amount: number){
     name: 'Evenement réservée',
     description: '',
     amount: amount,
-   
+
   });
 }
 invokeStripe() {

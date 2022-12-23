@@ -8,12 +8,12 @@ import {evenement} from "../model/evenement";
 export class EvenementService {
   eventurl : string="http://localhost:5000/event/af";
   eventadd:string="http://localhost:5000/event/add";
-  eventdelete: string="api/event/delet/";
-  eventupdate: string="api/event/update/"
-  addpanierurl : string="api/panier/addR/";
- 
+  eventdelete: string="http://localhost:5000/event/delet/";
+  eventupdate: string="http://localhost:5000/event/update/"
+  addpanierurl : string="http://localhost:5000/panier/addR";
+
   //eventsearch:string="api/event/search?titre="
-  
+
   constructor(private  http:HttpClient) { }
   getallevent(){
     return this.http.get<any>(this.eventurl);

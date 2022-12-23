@@ -20,18 +20,18 @@ import {PasswordComponent} from "./profileedit/password/password.component";
 
 const routes: Routes = [
 
-  {path:'',component :FrontofficeComponent,children:[
-    {path:'Acceuil', component: AcceuilComponent},
-    {path:'Evenement', component:EvenementsComponent},
-    {path:'Apropos ', component:ApproposComponent},
-    {path:'Bonplan', component:BonplanComponent},
-    {path:'Materiel', component:MaterielComponent },
-    {path:'Contact', component:ContactComponent},
-    {path:'panier', component:PanierComponent},
-    {path:'paiement', component:PaiementComponent},
-    {path:'thankyou', component:ThankyouComponent},
-    {path:'map/:id',component:Map2Component}
-  ]},
+  // {path:'',component :FrontofficeComponent,canActivate:[ClientGuard],children:[
+  //   {path:'Acceuil', component: AcceuilComponent},
+  //   {path:'Evenement', component:EvenementsComponent},
+  //   {path:'Apropos ', component:ApproposComponent},
+  //   {path:'Bonplan', component:BonplanComponent},
+  //   {path:'Materiel', component:MaterielComponent },
+  //   {path:'Contact', component:ContactComponent},
+  //   {path:'panier', component:PanierComponent},
+  //   {path:'paiement', component:PaiementComponent},
+  //   {path:'thankyou', component:ThankyouComponent},
+  //   {path:'map/:id',component:Map2Component}
+  // ]},
 
   {
     path: '', component: FrontofficeComponent, children: [
@@ -43,13 +43,14 @@ const routes: Routes = [
       {path: 'Bonplan', component: BonplanComponent},
       {path: 'Materiel', component: MaterielComponent},
       {path: 'Contact', component: ContactComponent},
-      {path: 'panier', component: PanierComponent},
+      {path: 'panier', component: PanierComponent,canActivate:[ClientGuard]},
       {path: 'paiement', component: PaiementComponent},
       {path: 'thankyou', component: ThankyouComponent},
 
       {path: 'mapevent', component: MapeventComponent},
 
       {path: 'password', component: PasswordComponent},
+      {path:'map/:id',component:Map2Component}
 
 
 

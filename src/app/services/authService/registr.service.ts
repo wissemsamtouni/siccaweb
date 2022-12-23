@@ -20,4 +20,5 @@ export class RegistrService {
      return this.HttpU.post<utilisateur>(this.utilisateurPostUrl, u);
 
   }
+
 }

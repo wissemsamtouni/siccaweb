@@ -7,11 +7,8 @@ import {LoginguardGuard} from "./guard/loginguard.guard";
 import {ClientGuard} from "./guard/client.guard";
 
 const routes: Routes = [
-  {path:'',redirectTo:'Acceuil',
-  pathMatch:'full'},
- { path: '', loadChildren: () => import('./frontoffice/frontoffice.module').then(m => m.FrontofficeModule)},
-  { path: '', loadChildren: () => import('./backoffice/backoffice.module').then(m => m.BackofficeModule) },
- { path: 'front', loadChildren: () => import('./frontoffice/frontoffice.module').then(m => m.FrontofficeModule)    },
+  {path:'',redirectTo:'Acceuil', pathMatch:'full'},
+  { path: 'front', loadChildren: () => import('./frontoffice/frontoffice.module').then(m => m.FrontofficeModule) },
 
   { path: 'back', loadChildren: () => import('./backoffice/backoffice.module').then(m => m.BackofficeModule) },
 

@@ -1,14 +1,14 @@
 
 
  <div class="page-wrapper">
-					
+
   <!-- partial:partials/_navbar.html -->
 
       <!-- partial -->
       </div>
     <br>
     <br>
-  
+
 
 <div class="container">
   <div class="row  mb-5 flex">
@@ -20,31 +20,51 @@
           <h2 class="section-title">Liste des Evenements</h2>
         </div>
       </div>
-  
+
           <input type="text" class="form-control" id="navbarForm" placeholder="Search here..."  [(ngModel)]="searchevent" >
 
       <div class="d-flex justify-content-around flex-wrap ">
-    
+
         <div class="card border-warning m-2 col-md-3" *ngFor="let e of listevent | filter:searchevent ; let i=index ">
 
           <br>
           <img  id="imageitem" src="/api/{{e.image}}" class="img-fluid rounded-start w-75" alt="..." >
              <div class="col-md-8">
             <div class="card-body">
+              <div  *ngIf="e.promo == null">
                <h5 class="card-title">{{e.titre}}</h5>
               <p class="card-text">{{e.discription}}</p>
               <p class="card-text"><small class="text-muted"> <span class="d-block position mb-4"> <strong
                 class="product-price">{{e.prixticket}} DNT</strong></span></small></p>
+              </div>
+              <div *ngIf="e.promo != null">
+<!--                <main class="containr">-->
+<!--                  &lt;!&ndash;<p>Hello 👋 I'm</p>&ndash;&gt;-->
+<!--                  <section class="animation">-->
+<!--                    <div class="first"><div>promotion</div></div>-->
+<!--                    <div class="second"><div>promotion</div></div>-->
+<!--                    <div class="third"><div>promotion</div></div>-->
+<!--                  </section>-->
+<!--                </main>-->
+                <h5 class="card-title">{{e.titre}}</h5>
+                <p class="card-text">{{e.discription}}</p>
+                <section>
+                  <h1 class="text-shadow"> en promotion </h1>
+                </section>
+<!--                <p class="card-text"><small class="text-muted"> <span class="d-block position mb-4"> <strong-->
+<!--                  class="product-price" style="text-decoration:line-through">{{e.prixticket}} DNT</strong></span></small></p>-->
+                <p class="card-text">{{(e.promo.pourcentage_reduction/100)* e.prixticket}}</p>
+              </div>
                 <div class="rating"><i style="color: yellow;" class="fa fa-star"></i> <i class="fa fa-star"  style="color: yellow;"></i>
-                  <i class="fa fa-star"  style="color: yellow;"></i> <i class="fa fa-star" style="color: yellow;"></i> <i 
-                    class="fa fa-star"></i> 
+                  <i class="fa fa-star"  style="color: yellow;"></i> <i class="fa fa-star" style="color: yellow;"></i> <i
+                    class="fa fa-star"></i>
                 </div>
-<table><tr><td>
-              <a  class="btn btn-primary" [class.disabled]="e.nbrticket<1"
-              [class.btn-outline-danger]="e.nbrticket<1"> {{e.nbrticket <1 ? "Or Stock": "Ajouter au panier"}} <img src="assets/frontassets/images/cross.svg"
-                                                                    class="img-fluid" (click)="ajouterevenement(e)"></a></td>
-                                                                    <td>
-              <a  class="btn btn-primary" routerLink="/mapevent" id="btnmap" ><i  class="fas fa-map"></i></a>    </td>                                                
+        <table>
+          <tr>
+            <td>
+              <a  class="btn btn-primary" [class.disabled]="e.nbrticket<1" [class.btn-outline-danger]="e.nbrticket<1"> {{e.nbrticket <1 ? "Or Stock": "Ajouter au panier"}} <img src="assets/frontassets/images/cross.svg" class="img-fluid" (click)="ajouterevenement(e)"></a></td>
+            <td>
+              <a  class="btn btn-primary" routerLink="/mapevent" id="btnmap" ><i  class="fas fa-map"></i></a>    </td>
             </tr>
             </table>
             </div>
