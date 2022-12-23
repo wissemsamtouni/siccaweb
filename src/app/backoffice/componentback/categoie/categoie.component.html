@@ -6,7 +6,7 @@
       </div>
     </div>
   </div>
-  
+
   <form class="search-form">
     <div class="input-group">
       <div class="input-group-text">
@@ -14,7 +14,7 @@
       </div>
       <input type="text" class="form-control" id="navbarForm" name="categorie" [(ngModel)]="catfilter" placeholder="Search here...">
     </div>
-  
+
   <div class="col-md-12 grid-margin stretch-card">
     <div class="card">
       <div class="card-body">
@@ -37,21 +37,21 @@
               <td><button class="btn btn-primary" (click)="getcategorie(c.nomcat,c.id)" data-bs-toggle="modal" data-bs-target="#modifiercat" >Modifier</button></td>
               <td><button  class="btn btn-danger"  (click)="delete(c.id,i)">supprimer</button></td>
             </tr>
-           
+
             </tbody>
           </table>
         </div>
       </div>
     </div>
   </div>
-  
-  
-    
+
+
+
 
     <div >
-      <a routerLink="/addcategorie" class="btn btn-primary" style="float:right ;">Ajouter Categorie</a>
+      <a routerLink="/back/addcategorie" class="btn btn-primary" style="float:right ;">Ajouter Categorie</a>
       </div>
-    
+
 
 <!-- Modal modifier categorie-->
 <div class="modal fade" id="modifiercat" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -74,18 +74,17 @@
               <input type="text" class="form-control" [(ngModel)]="upcategorie.nomcat"  minlength="2" required name="nomcat"
                 #cat="ngModel" ngModel>
             </div>
-  
+
             <div class="alert alert-danger" *ngIf="cat.invalid && cat.touched">
               <div *ngIf="cat.errors?.['required']">La categorie est obligatoire</div>
               <div *ngIf="cat.errors?.['minlength']">Nombre minimum de caractère est 2</div>
             </div>
-  
-            
+
+
           </form>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
           <button type="Submit" (click)="updatecategorie(f)" [disabled]="f.invalid" class="btn btn-primary"  >Modifier</button>
         </div>
-  
-  
+

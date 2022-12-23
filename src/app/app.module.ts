@@ -32,11 +32,6 @@ import {NgChartsModule} from "ng2-charts";
     Ng2SearchPipeModule,
     Ng2SearchPipeModule,
     BrowserAnimationsModule, // required animations module
-    ToastrModule.forRoot({
-      timeOut: 2000, // 15 seconds
-      closeButton: true,
-      progressBar: true,
-    }),
     NgChartsModule
   ],
   providers: [],
