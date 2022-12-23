@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import * as L from 'leaflet';
+import { Loader } from '@googlemaps/js-api-loader';
+
 import { BonplansService } from 'src/app/services/bonplans.service';
 @Component({
   selector: 'app-map2',
@@ -28,26 +29,26 @@ export class Map2Component implements OnInit {
    }
 
   ngOnInit(): void {
-       const map = L.map('map').setView([36.181133, 8.713061], 13);
+    let loader = new Loader({
+      apiKey: 'AIzaSyBZ2mqgEPqEMa4za9uX6S_bCxxzlstupOU'
+    })
 
-    L.    tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      maxZoom: 17,
-      attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-  }).addTo(map);
+    loader.load().then(() => {
 
-  const markerItem= L.marker([36.181133, 8.713061]).addTo(map).bindPopup('Dar Boumakhlouf').openPopup();
- 
-     var circle = L.circle([ 36.181133, 8.713061], {
-       color: 'streelbue',         //Circle trajectory color, that is, the color of the outer border
-       fillColor: 'streelbue',    //Fill in the color, the default value is the same as the color value
-       fillOpacity: 0.5,     //Filling Transparency
-       radius: 500           //circle radius, in meters
-   }).addTo(map);
-  setTimeout(()=>{
-   this.map.invalidateSize();
-   
-  },0)
+      let map = new google.maps.Map(document.getElementById('map')!, {
 
+        center: {lat: this.xx, lng: this.yy},
+        zoom: 13,
+      })
+
+
+   new google.maps.Marker({
+        position: {lat: this.xx, lng: this.yy },
+        map: map,
+        title: this.listbp.non_bp
+      });
+
+    })
 
   }
 
