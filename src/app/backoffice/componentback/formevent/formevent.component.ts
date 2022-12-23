@@ -114,7 +114,7 @@ countevent : number=0;
       formData.set('image',image);
 
       console.log(formData.get('titre'))
-      this.http.post('/api/event/add', formData).subscribe({
+      this.http.post('http://localhost:5000/event/add', formData).subscribe({
       next:(reponse
     :
       any
@@ -126,6 +126,7 @@ countevent : number=0;
     ,
 
       error:(error) => {
+        console.log(error);
         this.tostrservice.error('error', 'error');
       }
     }
@@ -135,7 +136,7 @@ countevent : number=0;
 
     } catch (error) {
       console.log(error);
-    } 
+    }
     this.Reset();
 
   }

@@ -21,6 +21,7 @@
     "@angular/router": "~13.3.0",
     "@googlemaps/js-api-loader": "^1.15.1",
     "@types/stripe-checkout": "^1.0.4",
+    "angular-sweetalert-2": "^1.0.1",
     "animations": "^0.0.0",
     "bootstrap": "^5.2.2",
     "leaflet": "^1.9.3",

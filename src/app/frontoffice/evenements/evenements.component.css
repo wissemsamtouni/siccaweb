@@ -33,7 +33,9 @@
     width: 15px;
     height: 15px;
     borrder:3px solid #287dfc;
-    border-radius: 50%; 
+    border-radius: 50%;   #btnmap{
+    margin-left: auto;
+  }
     transform: translate(-4px, -4px);
     
   }
@@ -47,3 +49,10 @@
    transform: translate(6px, 6px) rotate(315deg);
     
   } */
+
+  #btnmap{
+    margin-left: 70%;
+  }
+  #imageitem{
+    margin: auto;
+  }

@@ -197,7 +197,7 @@
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="profileDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <img class="wd-30 ht-30 rounded-circle" src="assets/backassets/images/Wissem%20Samtaoui%20(1).jpg" alt="profile">
+            <img (click)="logout()" routerLink="/auth/login" class="wd-30 ht-30 rounded-circle" src="assets/backassets/images/logout.png" alt="profile">
           </a>
           <div class="dropdown-menu p-0" aria-labelledby="profileDropdown">
             <div class="d-flex flex-column align-items-center border-bottom px-5 py-3">
@@ -228,7 +228,7 @@
                   <span>Switch User</span>
                 </a>
               </li>
-              <li (click)="logout()" routerLink="/auth/login" class="dropdown-item py-2">
+              <li  class="dropdown-item py-2">
                 <a  class="text-body ms-0">
                   <i class="me-2 icon-md" data-feather="log-out"></i>
                   <span>Log Out</span>
