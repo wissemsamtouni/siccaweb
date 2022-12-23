@@ -2,6 +2,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { BonplansService } from 'src/app/services/bonplans.service';
 import { CategorieService } from 'src/app/services/categorie.service';
 
@@ -25,7 +26,7 @@ export class FormbonplanComponent implements OnInit {
     console.log(e.target.value)
   }
  listecategorie:any
-  constructor(private bp: BonplansService, private route: Router,private ct:CategorieService) {
+  constructor(private bp: BonplansService, private route: Router,private ct:CategorieService,private toaster:ToastrService) {
 this.ct.getallcategorie().subscribe(data=>this.listecategorie=data.cat)
   }
   ngOnInit(): void {
@@ -54,9 +55,14 @@ this.ct.getallcategorie().subscribe(data=>this.listecategorie=data.cat)
 console.log(formdata)
 
    
-    this.bp.addbp(formdata).subscribe(response => 
+    this.bp.addbp(formdata).subscribe(response => {
       this.route.navigate(['/showbonplan'])
-  )
+      this.toaster.success('Bonplan Ajouter avec succé')
+    },(error)=>{
+      this.toaster.error('error','error')
+    
+        }
+      )
   }
  
 }
