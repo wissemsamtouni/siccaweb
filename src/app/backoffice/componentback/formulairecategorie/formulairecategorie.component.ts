@@ -21,7 +21,7 @@ addcat(f:any){
   let data=f.value;
   this.ct.addcategorie(data).subscribe(response=>{
     console.log(response)
-    this.route.navigate(['/categorie'])
+    this.route.navigate(['/back/categorie'])
     this.toaster.success('Categorie ajouter avec succé')
   },(error)=>{
     this.toaster.error('error','error')

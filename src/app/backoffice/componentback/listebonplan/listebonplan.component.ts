@@ -48,7 +48,7 @@ export class ListebonplanComponent implements OnInit {
   ngOnInit(): void {
   }
   details(id: any) {
-    this.route.navigate(['/detailsbp/' + id])
+    this.route.navigate(['/back/detailsbp/' + id])
   }
 
   deletebonplans(id: any, i: number) {
@@ -58,7 +58,7 @@ export class ListebonplanComponent implements OnInit {
       this.toaster.success('Bonplan Supprimer avec succé')
     },(error)=>{
       this.toaster.error('error','error')
-    
+
         }
     )
   }
@@ -85,7 +85,7 @@ export class ListebonplanComponent implements OnInit {
     const frais=  this.inputfrais.nativeElement.value;
     const description=  this.inputdescription.nativeElement.value;
     const imageSRC=  this.inputimageSRC.nativeElement.files[0];
-    
+
     const formdata =  new FormData()
     formdata.set('CategorieId',CategorieId)
     formdata.set('adresse',adresse,)
@@ -97,14 +97,14 @@ export class ListebonplanComponent implements OnInit {
     formdata.set('description',description,)
     formdata.set('imageSRC',imageSRC,)
   console.log(formdata)
-    
+
     this.bp.updatebp(this.upbonblans.id, formdata).subscribe(response => {
       console.log(response)
       this.route.navigate(['/showbonplan'])
       this.toaster.success('Bonplan Modifier avec succé')
     },(error)=>{
       this.toaster.error('error','error')
-    
+
         }
     )
 
