@@ -24,16 +24,16 @@ console.log(data)
 
   ngOnInit(): void {
   }
-  
+
 delete(id:any,i:number){
   this.ct.deletecategorie(id).subscribe(Response=>{
-    
+
     console.log(Response)
     this.listcategorie.splice(i,1)
     this.toaster.success('Categorie Supprimer avec succé')
   },(error)=>{
     this.toaster.error('error','error')
-  
+
       })
 }
 getcategorie(nomcat:string,id:any){
@@ -48,12 +48,12 @@ updatecategorie(f:any){
     console.log(response)
 let indexid=this.listcategorie.findIndex((obj:any)=>obj.id==this.upcategorie.id)
 this.listcategorie[indexid].nomcat=data.nomcat
-this.route.navigate(['/categorie'])
+this.route.navigate(['/back/categorie'])
 this.toaster.success('Categorie Modifier avec succé')
 },(error)=>{
   this.toaster.error('error','error')
 
     });
-  
+
 }
 }

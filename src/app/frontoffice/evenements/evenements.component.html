@@ -51,9 +51,10 @@
                 <section>
                   <h1 class="text-shadow"> en promotion </h1>
                 </section>
-<!--                <p class="card-text"><small class="text-muted"> <span class="d-block position mb-4"> <strong-->
-<!--                  class="product-price" style="text-decoration:line-through">{{e.prixticket}} DNT</strong></span></small></p>-->
-                <p class="card-text">{{(e.promo.pourcentage_reduction/100)* e.prixticket}}</p>
+<!--               <p class="card-text"><small class="text-muted"> <span class="d-block position mb-4"> <strong>-->
+<!--                 class="product-price" style="text-decoration:line-through">{{e.prixticket}} DNT</strong></span></small></p>-->
+                <p class="card-text" style="text-decoration:line-through">{{e.prixticket}} DNT</p><br>
+                <p class="card-text">{{e.prixticket*(1-(e.promo.pourcentage_reduction/100))}} DNT</p>
               </div>
                 <div class="rating"><i style="color: yellow;" class="fa fa-star"></i> <i class="fa fa-star"  style="color: yellow;"></i>
                   <i class="fa fa-star"  style="color: yellow;"></i> <i class="fa fa-star" style="color: yellow;"></i> <i

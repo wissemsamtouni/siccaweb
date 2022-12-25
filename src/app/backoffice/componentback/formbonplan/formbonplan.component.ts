@@ -54,11 +54,11 @@ this.ct.getallcategorie().subscribe(data=>this.listecategorie=data.cat)
   formdata.set('imageSRC',imageSRC,)
 console.log(formdata)
     this.bp.addbp(formdata).subscribe(response => {
-      this.route.navigate(['/showbonplan'])
+      this.route.navigate(['/back/showbonplan'])
       this.toaster.success('Bonplan Ajouter avec succé')
     },(error)=>{
       this.toaster.error('error','error')
-    
+
         }
       )
   }
